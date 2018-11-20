@@ -17,7 +17,7 @@ In this case study, we'll detail our journey in building this project, the strat
 
 ## 3 Utilizing Containers
 
-### 3.1 Sementing Users by Container
+### 3.1 Segmenting Users by Container
 
 ### 3.2 Securing Containers
 
@@ -28,10 +28,14 @@ In this case study, we'll detail our journey in building this project, the strat
 
 ### 4.1 Connecting Multiple Users to the Same Container
 
-### 4.2 Syncing Input and Output
+### 4.2 Syncing Input
 
-### 4.3 Handling REPL Conflict Resolution
+#### Getting the Current Prompt
 
+### 4.3 Syncing Output
+
+### 4.4 Handling REPL Conflict Resolution
+<!-- OK to not handle conflicts since our use case, we don't expect two users to type in the REPL at the same time -->
 
 ## 5 Optimizations
 
@@ -63,6 +67,7 @@ ng
 >       # final chunk of data
 ```
 
+#### Buffering Outputs
 With this effect, it makes sense to concatenate all chunks before sending it as a complete response. This is known as **output buffering**. In fact, it is used by PHP to delay a response until the entire HTML content is ready before it is sent to the client.
 [Output Buffering for Web Developers](http://web.archive.org/web/20101216035343/http://dev-tips.com/featured/output-buffering-for-web-developers-a-beginners-guide)
 
@@ -72,12 +77,28 @@ After buffering output, it would look something like:
 [1,2,3].map(String)\r\n[ '1', '2', '3' ]\r\n> 
 ```
 
-The advantage to this in our use case is that we can easily parse out the current prompt depending on the current runtime (`>` for Node.js, `irb(main):XXX:0>` for Ruby and `>>>` for Python) on the client-side.
+The advantage to this in our use case is that we can easily parse out the current prompt depending on the current runtime (`>` for Node.js, `irb(main):XXX:0>` for Ruby and `>>>` for Python) on the client-side. The prompt is useful for re-writing the entire terminal line when syncing with other clients.
 
-However, buffering outputs cost additional processing time. Since chunks of data arrive in different paces (around 1-4 ms), we would set a maximum wait time of 5 ms every time a new data chunk is received. If no new data is received within the 5 ms, it means that the output is finished and we can send the complete buffered output to the client.
+However, buffering outputs cost additional processing time. Since chunks of data arrive in different paces (around 1-4 ms in between), we would set a maximum wait time of 5 ms every time a new data chunk is received. If no new data is received within the 5 ms, it means that the output is finished and we can send the complete buffered output to the client.
 
-This is our initial approach.
+#### Streaming Outputs
+Our initial approach of buffering outputs seem to work fine. However, we found out that we could parse out the prompt on the server-side instead by caching the last chunk of data received. An example data chunk would be `=> 123\r\nirb(main):003:0> `, and with this we are able to easily parse out the `irb(main):003:0> ` prompt.
 
+With this, it is no longer necessary to buffer outputs. Instead, we could stream the outputs as-is to the client. The benefit of this is that it removes any additional processing as well as simplifying our code base.
+
+With these two approaches, we decided to run some benchmarking to confirm that streaming is the better approach. We utilized Artillery, a load testing toolkit to measure the performance of both approaches.
+
+Our benchmarking set-up involves connecting 20 virtual users one at a time to our server, with each submitting 5 evaluation requests, thereby totaling 100 requests per test.
+
+The results clearly show that the streaming approach is the winner:
+
+| Server Location  |  Median Latency with Buffering Enabled (ms)  | Median Latency without Buffering (ms) | Difference |
+| --- | --- | --- | --- |
+| localhost |  12.3 | 2.1 | 10.2 |
+| remote, near (NYC to NYC) | 21.3 |  15.2 | 6.1 |
+| remote, far (NYC to SF) | 89.3 | 78.9 | 10.4 |
+
+Now 10 ms improvement in latency may not seem like a huge difference, but it represents more than 10% of the total time before a response is received, after an evaluation request has been sent. Our goal here is to minimize the latency to maintain a real-time experience for users, therefore it makes sense to employ streaming instead of buffering.
 
 
 ## 6 Future Work
