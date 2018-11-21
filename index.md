@@ -26,7 +26,9 @@ Our first task is to create a version of SpaceCraft that services a single user 
 In SpaceCraft, a user makes a language selection from a drop-down menu which will automatically update the REPL to their chosen language's runtime. They can then write code directly into the REPL for evaluation or into an embedded editor for writing larger programs. When code is submitted through either the REPL or by clicking a Run button for the editor, SpaceCraft will take the code as input and send it to our backend for evaluation. Once the code has been evaluated, our backend will send the result as output to the client which will present the result in the REPL for users to see.
 
 ## 2.1 Creating the User Interface
+SpaceCraft's user interface was created with [Xterm.js](https://github.com/xtermjs/xterm.js/) and [CodeMirror](https://codemirror.net/). Xterm is a terminal front-end component written JavaScript that enables us to create an emulated terminal in which users can write their code and submit for evaluation. When a user hits Enter in the terminal front-end, we submit their code as input to our backend for evaluation, and the result is then sent to our frontend to be displayed in our terminal component.
 
+CodeMirror is a versatile text editor implemented in JavaScript for the browser. It's specialized for writing and editing code and provides a familiar text editor experiences for developers. By leveraging Xterm.js and CodeMirror to create our user interface and receive input, our team was able to focus our efforts on developing a rich REPL experience for Ruby, JavaScript, and Python with a secure framework for handling malicious user input. But first, how exactly did we handle our user input and properly evaluate it on our backend? Let's dive in to see!
 
 ## 2.1 Streaming Input to the Backend
 
