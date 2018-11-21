@@ -37,7 +37,12 @@ CodeMirror is a versatile text editor implemented in JavaScript for the browser.
 ### 2.1 Interacting with the REPL program on the Back-end
 
 ## 3 Utilizing Containers
+At this point, we've successfully created a single user version of SpaceCraft that can take a user's code and evaluate it in a language runtime. With this achievement comes new problems to solve, and we now have to tackle three main challenges:
+- How do we provide each user with a complete copy of our application to evaluate their code?
+- How do we prevent users from submiting malicious code to our backend processes and interfering with other users?
+- How do we manage our backend computing resources for each user so that one user's code evaluation doesn't rob resources from another user?
 
+To address these problems, we chose to implement containers as they allow us to provide an isolated, complete copy of our application to each user while enabling us to set security and resource management measures on each container. With this approach, we can effectively separate users from each other, contain malicious code, and ensure that one container only uses a set amount of CPU, memory, networking, and block IO resources. Let's start with how we segment users by container.
 
 ### 3.1 Segmenting Users by Container
 
