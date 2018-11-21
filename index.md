@@ -50,20 +50,20 @@ We can reasonably expect that everything that is written to the standard input o
 
 However, streams may be blocked when we try to read from the standard output. One problem is that the standard input may not send any data to the REPL process for evaluation until the input stream is closed. [Advanced Programming in the UNIX Environment", W. Richard Stevens, Addison-Wesley, 18th Printing, 1999, page 417]
 
-!(input blocking)[https://i.imgur.com/6BeNWWn.png]
+![input blocking](https://i.imgur.com/6BeNWWn.png)
 
 Another problem is that the reading function would hang when trying to read from an output stream until new data is present. The read(3) linux man page states that:
 
 > if some process has the pipe open for writing, read() shall block the calling thread until some data is written or the pipe is closed by all processes that had the pipe open for writing.
 
-!(stdin closed)[https://i.imgur.com/xCrsC2Y.png]
+![stdin closed](https://i.imgur.com/xCrsC2Y.png)
 
 Although there are [techniques](http://eyalarubas.com/python-subproc-nonblock.html) to unblock the processes for reading or writing from the streams, the techniques are not universal on all languages. We chose not to continue this approach as any additional language supported would increase the complexity.
 
 ### Interacting with a Pseudo-terminal
 To interact with an interactive program (such as a REPL), we need to persuade the program that its input is coming from a terminal by connecting its standard input/output to a pseudo-terminal. A pseudo-terminal emulates a command line interface within our application, so that our application will (*think*)[https://github.com/Microsoft/node-pty] that it is interacting with a terminal and will be able to send control sequences in the form of string data type.
 
-!(pty)[https://i.imgur.com/HhkrErY.png]
+![pty](https://i.imgur.com/HhkrErY.png)
 
 The Linux manual page explains this stating that anything that is written to the pseudo-terminal is provided to the process as though it was input typed on the terminal. For example, writing the interrupt character to the pseudo-terminal would cause an interrupt signal to be generated for our REPL child process 45.
 
