@@ -28,6 +28,9 @@ Our first task is to create a version of SpaceCraft that services a single user 
 In SpaceCraft, a user makes a language selection from a drop-down menu which will automatically update the REPL to their chosen language's runtime. They can then write code directly into the REPL for evaluation or into an embedded editor for writing larger programs. When code is submitted through either the REPL or by clicking a Run button for the editor, SpaceCraft will take the code as input and send it to our back-end for evaluation. Once the code has been evaluated, our back-end will send the result as output to the client, which then will be displayed on the user's REPL.
 
 ## 2.1 Creating the User Interface
+SpaceCraft's user interface was created with [Xterm.js](https://github.com/xtermjs/xterm.js/) and [CodeMirror](https://codemirror.net/). Xterm is a terminal front-end component written JavaScript that enables us to create an emulated terminal in which users can write their code and submit for evaluation. When a user hits Enter in the terminal front-end, we submit their code as input to our backend for evaluation, and the result is then sent to our frontend to be displayed in our terminal component.
+
+CodeMirror is a versatile text editor implemented in JavaScript for the browser. It's specialized for writing and editing code and provides a familiar text editor experiences for developers. By leveraging Xterm.js and CodeMirror to create our user interface and receive input, our team was able to focus our efforts on developing a rich REPL experience for Ruby, JavaScript, and Python with a secure framework for handling malicious user input. But first, how exactly did we handle our user input and properly evaluate it on our backend? Let's dive in to see!
 
 ## 2.2 Interacting with the REPL program on the Back-end
 When we provide users the ability to submit code remotely to be evaluated on our server, we have to simulate the entire REPL experience ourselves. This is different from an off-line interaction, where the user interacts directly with an interactive REPL console (such as the Node.js REPL).
@@ -71,13 +74,19 @@ With this, our application will not need to manually handle the child process' i
 
 The trade-off of using a pseudo-terminal is that there is a slight increase in overhead as we are adding an additional processing layer in between our application and the underlying REPL child process. However, with all the benefits mentioned, this approach fits our use case.
 
-
-
 # Network Architecture
 
 ## Client-server Architecture
 
 ## WebSockets
+
+## 3 Utilizing Containers
+At this point, we've successfully created a single user version of SpaceCraft that can take a user's code and evaluate it in a language runtime. With this achievement comes new problems to solve, and we now have to tackle three main challenges:
+- How do we provide each user with a complete copy of our application to evaluate their code?
+- How do we prevent users from submiting malicious code to our backend processes and interfering with other users?
+- How do we manage our backend computing resources for each user so that one user's code evaluation doesn't rob resources from another user?
+
+To address these problems, we chose to implement containers as they allow us to provide an isolated, complete copy of our application to each user while enabling us to set security and resource management measures on each container. With this approach, we can effectively separate users from each other, contain malicious code, and ensure that one container only uses a set amount of CPU, memory, networking, and block IO resources. Let's start with how we segment users by container.
 
 # 3 Utilizing Containers
 
@@ -164,8 +173,16 @@ While a 10 ms improvement in latency may not seem like a huge difference, it rep
 ## 6 Future Work
 
 ### 6.1 Improve User Experiences
+Currently, when multiple users write code in our text editor on the front-end there is no distinction between user cursors. This can make it difficult to see the location of all the cursors or to tell which cursor belongs to which user as they type. To improve the collaboration experience, we want to assign each cursor a unique color and name, similar to a small tooltip icon. This will make it easier to distinguish where each cursor is located in the editor and who is writing what.
 
 ### 6.2 Support Low-Level Languages
+While SpaceCraft supports Ruby, JavaScript, and Python, we would like to expand our list of supported languages to include low-level languages like Rust, Go, C/C++, or Java. The process to support these languages will be more involved than higher-level languages since we will need to:
+- Take the user's input and write it as a file in our backend.
+- Have the low-level language runtime compile the code in the file and save the result as a separate file.
+- Parse the contents of the result file and stream it as output to the user.
+- Clean up our backend by deleting these generated files.
+
+This is process is a fair bit more complicated than how we've supported our current list of languages, and we're excited to tackle the challenge to expand the capabilities of SpaceCraft!
 
 
 ## 7 About the Team
