@@ -33,7 +33,6 @@ In SpaceCraft, a user makes a language selection from a drop-down menu which wil
 ## 2.2 Building a Pseudoterminal
 
 
-
 ## 3 Utilizing Containers
 
 ### 3.1 Sementing Users by Container
