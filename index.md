@@ -1,7 +1,7 @@
 <!-- Insert SpaceCraft logo either above, below, or next to title -->
-## SpaceCraft: A Real-Time, Collaborative REPL and Code Editor
+# SpaceCraft: A Real-Time, Collaborative REPL and Code Editor
 
-## 1 Introduction
+# 1 Introduction
 SpaceCraft is an open-source, real-time collaborative REPL (Read-Eval-Print-Loop) that allows users to write and execute code in the browser for Ruby, JavaScript, and Python. We built this project using Node.js and Docker, with clients and server communicating over WebSockets.
 
 The major challenges we faced were creating and managing server-side processes for executing code in the selected language runtime, allowing multiple clients to collaborate on the same REPL, and building a framework for security and resource usage with Docker containers.
@@ -11,60 +11,55 @@ In this case study, we'll detail our journey in building this project, the strat
 ## 1.1 High-Level Goals
 SpaceCraft's goals on the surface are simple. We provide users with a choice of languages to code in and present both a terminal-like REPL and editor for them to write and evaluate their code. Additionally, a user can invite other users to join their session to collaborate on writing code in the editor and REPL. Thus, when one user write code or submits code for evaluation, all collaborating users will see their code and executed code on their screen in real-time.
 
-Since we are providing users with a terminal-like REPL on the client-side that directly connects to our backend for code execution, we know that we will need to handle any potentially malicious input from users who aim to exploit our project. Therefore, we need to:
+Since we are providing users with a terminal-like REPL on the client-side that directly connects to our back-end for code execution, we know that we will need to handle any potentially malicious input from users who aim to exploit our project. Therefore, we need to:
 - Isolate each user's session from the sessions of other users (non-collaborating users.)
 - Prevent any malicious code from affecting our system.
 - Manage the usage of our server's resources for each session so that one user's code doesn't affect other users.
 
-## 2 Building a REPL
+# 2 Building a REPL
 Our first task is to create a version of SpaceCraft that services a single user per session. This version should allow the user to:
 - Select from a list of supported languages.
 - Write code in the REPL, submit for evaluation by hitting Enter, and receive the result as output.
 - Write code in the editor, submit for evaluation by clicking a Run button, and receive the result as output.
-- Store state in the REPL for later use, such as variables, objects, methods/functions, etc.
+- Store state in the client-side for display and collaboration purposes, such as the current language and the current line of input before evaluation.
 
-In SpaceCraft, a user makes a language selection from a drop-down menu which will automatically update the REPL to their chosen language's runtime. They can then write code directly into the REPL for evaluation or into an embedded editor for writing larger programs. When code is submitted through either the REPL or by clicking a Run button for the editor, SpaceCraft will take the code as input and send it to our backend for evaluation. Once the code has been evaluated, our backend will send the result as output to the client which will present the result in the REPL for users to see.
+In SpaceCraft, a user makes a language selection from a drop-down menu which will automatically update the REPL to their chosen language's runtime. They can then write code directly into the REPL for evaluation or into an embedded editor for writing larger programs. When code is submitted through either the REPL or by clicking a Run button for the editor, SpaceCraft will take the code as input and send it to our back-end for evaluation. Once the code has been evaluated, our back-end will send the result as output to the client, which will be displayed on the user's browser REPL.
 
 ## 2.1 Creating the User Interface
 
+## 2.2 Interacting with the REPL program on the Back-end
 
-## 2.1 Streaming Input to the Backend
+# Network Architecture
 
-## 2.2 Building a Pseudoterminal
+## Client-server Architecture
 
-### 2.1 Interacting with the REPL program on the Back-end
-
-## 3 Utilizing Containers
-
-### 3.1 Segmenting Users by Container
-
-### 3.2 Securing Containers
-
-### 3.3 Managing Container Resources
+## WebSockets
 
 
-## 4 Collaboration with Multiple Users
+# 3 Utilizing Containers
 
-### 4.1 Connecting Multiple Users to the Same Container
+## 3.1 Segmenting Users by Container
 
-### 4.2 Syncing Input
+## 3.2 Securing Containers
 
-#### Getting the Current Prompt
+## 3.3 Managing Container Resources
 
-### 4.3 Syncing Output
 
-### 4.4 Handling REPL Conflict Resolution
+# 4 Collaboration with Multiple Users
 
-#### Getting the Current Prompt
+## 4.1 Connecting Multiple Users to the Same Container
 
-### 4.3 Syncing Output
+## 4.2 Syncing Input
 
-### 4.4 Handling REPL Conflict Resolution
-<!-- OK to not handle conflicts since our use case, we don't expect two users to type in the REPL at the same time -->
+### Getting the Current Prompt
 
-## 5 Optimizations
+## 4.3 Syncing Output
 
-### 5.1 Streaming vs. Buffering Outputs
+## 4.4 Handling REPL Conflict Resolution
+
+# 5 Optimizations
+
+## 5.1 Streaming vs. Buffering Outputs
 A REPL program sends outputs in the form of chunks of data. For each evaluation, our application would receive several to many smaller chunks of output data.
 
 To demonstrate this, let's evaluate the code `[1,2,3].map(String)` on the Node REPL. We can reasonably expect the final output to be:
@@ -92,7 +87,7 @@ ng
 >       # final chunk of data
 ```
 
-#### Buffering Outputs
+### Buffering Outputs
 With this effect, it makes sense to concatenate all chunks before sending it as a complete response. This is known as **output buffering**. [Output Buffering for Web Developers](http://web.archive.org/web/20101216035343/http://dev-tips.com/featured/output-buffering-for-web-developers-a-beginners-guide)
 
 After buffering output, it would look something like:
@@ -105,7 +100,7 @@ The advantage to this in our use case is that we can easily parse out the curren
 
 However, buffering outputs cost additional processing time. Since chunks of data arrive in different paces (around 1-4 ms in between), we would set a maximum wait time of 5 ms every time a new data chunk is received. If no new data is received within the 5 ms, we conclude that the output is finished and we can send the complete buffered output to the client.
 
-#### Streaming Outputs
+### Streaming Outputs
 Our initial approach of buffering outputs seem to work fine. However, we found out that we could parse out the prompt on the server-side instead by caching the last chunk of data received. An example data chunk would be `=> 123\r\nirb(main):003:0> `, by caching this data chunk, we can easily parse out the `irb(main):003:0> ` prompt.
 With this, it is no longer necessary to buffer outputs. Instead, we could stream the outputs as-is to the client. The benefit of this is that it not only removes any additional processing, but also simplifies our code logic by omitting any use of `setTimeouts` or `setIntervals`.
 
