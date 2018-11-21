@@ -4,9 +4,11 @@
 # 1 Introduction
 SpaceCraft is an open-source, real-time collaborative REPL (Read-Eval-Print-Loop) that allows users to write and execute code in the browser for Ruby, JavaScript, and Python. We built this project using Node.js and Docker, with clients and server communicating over WebSockets.
 
+SpaceCraft aims to provide a tool which developers can use to easily experiment with a programming language, while eliminating the burden of downloading and configuring the languages on their local machine. Furthermore, our real-time collaborative REPL encourages easy pair-programming between interviewers and candidates, or a small team of developers who wanted to share their experiences on a programming language.
+
 The major challenges we faced were creating and managing server-side processes for executing code in the selected language runtime, allowing multiple clients to collaborate on the same REPL, and building a framework for security and resource usage with Docker containers.
 
-In this case study, we'll detail our journey in building this project, the strategies we imployed to synchronize collaborating clients in real-time, the security techniques we implemented to prevent malicious code, and our final networked solution. We'll explore the choices we made to efficiently transfer user input and evaluated output between the clients and server, reduce our latency, and balance our resource usage across containers.
+In this case study, we'll detail our journey in building this project, the strategies we employed to synchronize collaborating clients in real-time, the security techniques we implemented to prevent malicious code, and our final networked solution. We'll explore the choices we made to efficiently transfer user input and evaluated output between the clients and server, reduce our latency, and balance our resource usage across containers.
 
 ## 1.1 High-Level Goals
 SpaceCraft's goals on the surface are simple. We provide users with a choice of languages to code in and present both a terminal-like REPL and editor for them to write and evaluate their code. Additionally, a user can invite other users to join their session to collaborate on writing code in the editor and REPL. Thus, when one user write code or submits code for evaluation, all collaborating users will see their code and executed code on their screen in real-time.
@@ -21,20 +23,20 @@ Our first task is to create a version of SpaceCraft that services a single user 
 - Select from a list of supported languages.
 - Write code in the REPL, submit for evaluation by hitting Enter, and receive the result as output.
 - Write code in the editor, submit for evaluation by clicking a Run button, and receive the result as output.
-- Store state in the client-side for display and collaboration purposes, such as the current language and the current line of input before evaluation.
+- Store state in the client, such as the current line of input for evaluation and the current language for UI display.
 
-In SpaceCraft, a user makes a language selection from a drop-down menu which will automatically update the REPL to their chosen language's runtime. They can then write code directly into the REPL for evaluation or into an embedded editor for writing larger programs. When code is submitted through either the REPL or by clicking a Run button for the editor, SpaceCraft will take the code as input and send it to our back-end for evaluation. Once the code has been evaluated, our back-end will send the result as output to the client, which will be displayed on the user's browser REPL.
+In SpaceCraft, a user makes a language selection from a drop-down menu which will automatically update the REPL to their chosen language's runtime. They can then write code directly into the REPL for evaluation or into an embedded editor for writing larger programs. When code is submitted through either the REPL or by clicking a Run button for the editor, SpaceCraft will take the code as input and send it to our back-end for evaluation. Once the code has been evaluated, our back-end will send the result as output to the client, which then will be displayed on the user's REPL.
 
 ## 2.1 Creating the User Interface
 
 ## 2.2 Interacting with the REPL program on the Back-end
+One interesting challenge with providing a service where users can remotely submit code for evaluation is that the interaction between the user and the REPL shell program will have to be manually communicated through our application logic. An example of REPL shell program would be the Node.js.js REPL Our application must be able to send inputs to the underlying REPL shell program
 
 # Network Architecture
 
 ## Client-server Architecture
 
 ## WebSockets
-
 
 # 3 Utilizing Containers
 
@@ -62,7 +64,7 @@ In SpaceCraft, a user makes a language selection from a drop-down menu which wil
 ## 5.1 Streaming vs. Buffering Outputs
 A REPL program sends outputs in the form of chunks of data. For each evaluation, our application would receive several to many smaller chunks of output data.
 
-To demonstrate this, let's evaluate the code `[1,2,3].map(String)` on the Node REPL. We can reasonably expect the final output to be:
+To demonstrate this, let's evaluate the code `[1,2,3].map(String)` on the Node.js REPL. We can reasonably expect the final output to be:
 
 ```
 > [1,2,3].map(String)
