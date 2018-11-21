@@ -38,6 +38,7 @@ CodeMirror is a versatile text editor implemented in JavaScript for the browser.
 
 ## 3 Utilizing Containers
 
+
 ### 3.1 Segmenting Users by Container
 
 ### 3.2 Securing Containers
@@ -128,8 +129,16 @@ While a 10 ms improvement in latency may not seem like a huge difference, it rep
 ## 6 Future Work
 
 ### 6.1 Improve User Experiences
+Currently, when multiple users write code in our text editor on the front-end there is no distinction between user cursors. This can make it difficult to see the location of all the cursors or to tell which cursor belongs to which user as they type. To improve the collaboration experience, we want to assign each cursor a unique color and name, similar to a small tooltip icon. This will make it easier to distinguish where each cursor is located in the editor and who is writing what.
 
 ### 6.2 Support Low-Level Languages
+While SpaceCraft supports Ruby, JavaScript, and Python, we would like to expand our list of supported languages to include low-level languages like Rust, Go, C/C++, or Java. The process to support these languages will be more involved than higher-level languages since we will need to:
+- Take the user's input and write it as a file in our backend.
+- Have the low-level language runtime compile the code in the file and save the result as a separate file.
+- Parse the contents of the result file and stream it as output to the user.
+- Clean up our backend by deleting these generated files.
+
+This is process is a fair bit more complicated than how we've supported our current list of languages, and we're excited to tackle the challenge to expand the capabilities of SpaceCraft!
 
 
 ## 7 About the Team
