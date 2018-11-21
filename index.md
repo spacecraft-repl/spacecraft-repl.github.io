@@ -42,7 +42,7 @@ In this case study, we'll detail our journey in building this project, the strat
 ### 5.1 Streaming vs. Buffering Outputs
 A REPL program sends outputs in the form of chunks of data. For each evaluation, our application would receive several to many smaller chunks of output data.
 
-To demonstrate this, let's evaluate the code `[1,2,3].map(String)` on the Node REPL. We can reasonably expect the final output to be:
+To demonstrate this, let's evaluate the code `[1,2,3].map(String)` on the Node REPL. After the code has been evaluated, we can reasonably expect the final output to be:
 
 ```
 > [1,2,3].map(String)
@@ -50,9 +50,9 @@ To demonstrate this, let's evaluate the code `[1,2,3].map(String)` on the Node R
 >
 ```
 
-However, since our Node REPL program is connected to a pseudo-terminal, the evaluation result is written out through the standard output (a readable stream). This means that the first chunk of data available to be read from the readable stream may not contain our full output.
+However, since we are writing and reading data directly to and from a pseudo-terminal, the evaluation result is written out through the standard output (a readable stream). This means that the first chunk of data available to be read from the readable stream may not contain our full output.
 
-So in fact, the chunks of output data from the same example above may look something like this:
+In fact, the chunks of output data from the same example above may look something like this:
 
 ```
 [1      # first chunk of data
@@ -68,8 +68,7 @@ ng
 ```
 
 #### Buffering Outputs
-With this effect, it makes sense to concatenate all chunks before sending it as a complete response. This is known as **output buffering**. In fact, it is used by PHP to delay a response until the entire HTML content is ready before it is sent to the client.
-[Output Buffering for Web Developers](http://web.archive.org/web/20101216035343/http://dev-tips.com/featured/output-buffering-for-web-developers-a-beginners-guide)
+With this effect, it makes sense to concatenate all chunks before sending it as a complete response. This is known as **output buffering**. [Output Buffering for Web Developers](http://web.archive.org/web/20101216035343/http://dev-tips.com/featured/output-buffering-for-web-developers-a-beginners-guide)
 
 After buffering output, it would look something like:
 
