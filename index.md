@@ -4,7 +4,7 @@
 # 1 Introduction
 SpaceCraft is an open-source, real-time collaborative REPL (Read-Eval-Print-Loop) that allows users to write and execute code in the browser for Ruby, JavaScript, and Python. We built this project using Node.js and Docker, with clients and server communicating over WebSockets.
 
-SpaceCraft aims to provide a tool which developers can use to easily experiment with a programming language, while eliminating the burden of downloading and configuring the languages on their local machine. Furthermore, our real-time collaborative REPL encourages easy pair-programming between interviewers and candidates, or a small team of developers who wanted to share their experiences on a programming language.
+SpaceCraft aims to provide a tool which developers can use to easily experiment with a programming language, while eliminating the burden of downloading and configuring the languages on their local machine. Furthermore, our real-time collaborative REPL encourages easy pair-programming between interviewers and candidates, or between a small team of developers who wanted to share their experiences on a programming language.
 
 The major challenges we faced were creating and managing server-side processes for executing code in the selected language runtime, allowing multiple clients to collaborate on the same REPL, and building a framework for security and resource usage with Docker containers.
 
@@ -30,7 +30,48 @@ In SpaceCraft, a user makes a language selection from a drop-down menu which wil
 ## 2.1 Creating the User Interface
 
 ## 2.2 Interacting with the REPL program on the Back-end
-One interesting challenge with providing a service where users can remotely submit code for evaluation is that the interaction between the user and the REPL shell program will have to be manually communicated through our application logic. An example of REPL shell program would be the Node.js.js REPL Our application must be able to send inputs to the underlying REPL shell program
+When we provide users the ability to submit code remotely to be evaluated on our server, we have to simulate the entire REPL experience ourselves. This is different from an off-line interaction, where the user interacts directly with an interactive REPL console (such as the Node.js REPL).
+
+In fact, the interaction between the user and the underlying REPL program will have to be manually set-up through our application logic. Our application must be able to send inputs to the REPL program, wait for the evaluations to complete and then read any outputs from the program that will be sent to the user. The complexity increases as we deal with REPL programs of different languages which are implemented differently in nature.
+
+We will explore three different approaches which can help in simulating a REPL to the user.
+
+### Interact with the language’s built-in REPL API library
+Many languages provide APIs to access and interact with its native REPL program. Node.js for example, provides the `repl` module that allows developers to work directly with its API from within the application code. 
+
+The problem with using language-specific APIs, however, is that we would have to write and run the application code in that language's runtime. For each additional language supported, we would need to re-write the same logic in that language. The complexity increases exponentially with the number of languages supported.
+
+Thus, our goal of supporting three languages, and potentially more in the future, does not benefit from this approach.
+
+### Spawning a REPL Child Process and Interacting Directly with It
+We could also make use of APIs that enable us to access the standard streams of a REPL child process. In particular, we are going to access the standard input (a writable stream) as well as the standard output (a readable stream) of the REPL child process. For further reading on streams, check out [Node.js Streams](https://medium.freecodecamp.org/node-js-streams-everything-you-need-to-know-c9141306be93#4fc8).
+
+We can reasonably expect that everything that is written to the standard input of the REPL process will be evaluated, and the corresponding results will be available to be read from the standard output.
+
+However, streams may be blocked when we try to read from the standard output. One problem is that the standard input may not send any data to the REPL process for evaluation until the input stream is closed. [Advanced Programming in the UNIX Environment", W. Richard Stevens, Addison-Wesley, 18th Printing, 1999, page 417]
+
+!(input blocking)[https://imgur.com/6BeNWWn]
+
+Another problem is that the reading function would hang when trying to read from an output stream until new data is present. The read(3) linux man page states that:
+
+> if some process has the pipe open for writing, read() shall block the calling thread until some data is written or the pipe is closed by all processes that had the pipe open for writing.
+
+!(stdin closed)[https://imgur.com/xCrsC2Y]
+
+Although there are [techniques](http://eyalarubas.com/python-subproc-nonblock.html) to unblock the processes for reading or writing from the streams, the techniques are not universal on all languages. We chose not to continue this approach as any additional language supported would increase the complexity.
+
+### Interacting with a Pseudo-terminal
+To interact with an interactive program (such as a REPL), we need to persuade the program that its input is coming from a terminal by connecting its standard input/output to a pseudo-terminal. A pseudo-terminal emulates a command line interface within our application, so that our application will (*think*)[https://github.com/Microsoft/node-pty] that it is interacting with a terminal and will be able to send control sequences in the form of string data type.
+
+!(pty)[https://imgur.com/HhkrErY]
+
+The Linux manual page explains this stating that anything that is written to the pseudo-terminal is provided to the process as though it was input typed on the terminal. For example, writing the interrupt character to the pseudo-terminal would cause an interrupt signal to be generated for our REPL child process 45.
+
+With this, our application will not need to manually handle the child process' input/output streams. Our application can also easily interact with the program by sending Ctrl-C instead of manually sending signals to the REPL program to abort an evaluation (such as terminating an infinite loop). Furthermore, our application will automatically capture all escape codes for colored text output that will be displayed on our browser terminal.
+
+The trade-off of using a pseudo-terminal is that there is a slight increase in overhead as we are adding an additional processing layer in between our application and the underlying REPL child process. However, with all the benefits mentioned, this approach fits our use case.
+
+
 
 # Network Architecture
 
