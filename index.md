@@ -18,7 +18,14 @@ Since we are providing users with a terminal-like REPL on the client-side that d
 - Prevent any malicious code from affecting our system.
 - Manage the usage of our server's resources for each session so that one user's code doesn't affect other users.
 
-# 2 Building a REPL
+
+# 2 Network Architecture
+
+## 2.1 Client-server Architecture
+
+## 2.2 WebSockets
+
+# 3 Building a REPL
 Our first task is to create a version of SpaceCraft that services a single user per session. This version should allow the user to:
 - Select from a list of supported languages.
 - Write code in the REPL, submit for evaluation by hitting Enter, and receive the result as output.
@@ -27,12 +34,12 @@ Our first task is to create a version of SpaceCraft that services a single user 
 
 In SpaceCraft, a user makes a language selection from a drop-down menu which will automatically update the REPL to their chosen language's runtime. They can then write code directly into the REPL for evaluation or into an embedded editor for writing larger programs. When code is submitted through either the REPL or by clicking a Run button for the editor, SpaceCraft will take the code as input and send it to our back-end for evaluation. Once the code has been evaluated, our back-end will send the result as output to the client, which then will be displayed on the user's REPL.
 
-## 2.1 Creating the User Interface
+## 3.1 Creating the User Interface
 SpaceCraft's user interface was created with [Xterm.js](https://github.com/xtermjs/xterm.js/) and [CodeMirror](https://codemirror.net/). Xterm is a terminal front-end component written JavaScript that enables us to create an emulated terminal in which users can write their code and submit for evaluation. When a user hits Enter in the terminal front-end, we submit their code as input to our backend for evaluation, and the result is then sent to our frontend to be displayed in our terminal component.
 
 CodeMirror is a versatile text editor implemented in JavaScript for the browser. It's specialized for writing and editing code and provides a familiar text editor experiences for developers. By leveraging Xterm.js and CodeMirror to create our user interface and receive input, our team was able to focus our efforts on developing a rich REPL experience for Ruby, JavaScript, and Python with a secure framework for handling malicious user input. But first, how exactly did we handle our user input and properly evaluate it on our backend? Let's dive in to see!
 
-## 2.2 Interacting with the REPL program on the Back-end
+## 3.2 Interacting with the REPL program on the Back-end
 When we provide users the ability to submit code remotely to be evaluated on our server, we have to simulate the entire REPL experience ourselves. This is different from an off-line interaction, where the user interacts directly with an interactive REPL console (such as the Node.js REPL).
 
 In fact, the interaction between the user and the underlying REPL program will have to be manually set-up through our application logic. Our application must be able to send inputs to the REPL program, wait for the evaluations to complete and then read any outputs from the program that will be sent to the user. The complexity increases as we deal with REPL programs of different languages which are implemented differently in nature.
@@ -74,29 +81,6 @@ With this, our application will not need to manually handle the child process' i
 
 The trade-off of using a pseudo-terminal is that there is a slight increase in overhead as we are adding an additional processing layer in between our application and the underlying REPL child process. However, with all the benefits mentioned, this approach fits our use case.
 
-# Network Architecture
-
-## Client-server Architecture
-
-## WebSockets
-
-## 3 Utilizing Containers
-At this point, we've successfully created a single user version of SpaceCraft that can take a user's code and evaluate it in a language runtime. With this achievement comes new problems to solve, and we now have to tackle three main challenges:
-- How do we provide each user with a complete copy of our application to evaluate their code?
-- How do we prevent users from submiting malicious code to our backend processes and interfering with other users?
-- How do we manage our backend computing resources for each user so that one user's code evaluation doesn't rob resources from another user?
-
-To address these problems, we chose to implement containers as they allow us to provide an isolated, complete copy of our application to each user while enabling us to set security and resource management measures on each container. With this approach, we can effectively separate users from each other, contain malicious code, and ensure that one container only uses a set amount of CPU, memory, networking, and block IO resources. Let's start with how we segment users by container.
-
-# 3 Utilizing Containers
-
-## 3.1 Segmenting Users by Container
-
-## 3.2 Securing Containers
-
-## 3.3 Managing Container Resources
-
-
 # 4 Collaboration with Multiple Users
 
 ## 4.1 Connecting Multiple Users to the Same Container
@@ -108,6 +92,20 @@ To address these problems, we chose to implement containers as they allow us to 
 ## 4.3 Syncing Output
 
 ## 4.4 Handling REPL Conflict Resolution
+
+## 5 Utilizing Containers
+At this point, we've successfully created a single user version of SpaceCraft that can take a user's code and evaluate it in a language runtime. With this achievement comes new problems to solve, and we now have to tackle three main challenges:
+- How do we provide each user with a complete copy of our application to evaluate their code?
+- How do we prevent users from submiting malicious code to our backend processes and interfering with other users?
+- How do we manage our backend computing resources for each user so that one user's code evaluation doesn't rob resources from another user?
+
+To address these problems, we chose to implement containers as they allow us to provide an isolated, complete copy of our application to each user while enabling us to set security and resource management measures on each container. With this approach, we can effectively separate users from each other, contain malicious code, and ensure that one container only uses a set amount of CPU, memory, networking, and block IO resources. Let's start with how we segment users by container.
+
+## 5.1 Segmenting Users by Container
+
+## 5.2 Securing Containers
+
+## 5.3 Managing Container Resources
 
 # 5 Optimizations
 
