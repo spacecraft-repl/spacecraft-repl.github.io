@@ -4,7 +4,7 @@
 # 1 Introduction
 SpaceCraft is an open-source, real-time collaborative REPL (Read-Eval-Print-Loop) that allows users to write and execute code in the browser for Ruby, JavaScript, and Python. We built this project using Node.js and deployed via Docker, with the a client-server network architecture that communicates over WebSockets.
 
-![demo](https://docs.google.com/drawings/d/e/2PACX-1vTnye5TTl38DZck_fV70plwTDrvrE5FfUqEO2kBCAvnb0fOOB9EGDcgRov10SZSdqLhJcZsA4TiCHHQ/pub?w=960&h=615)
+![demo](https://docs.google.com/drawings/d/e/2PACX-1vTnye5TTl38DZck_fV70plwTDrvrE5FfUqEO2kBCAvnb0fOOB9EGDcgRov10SZSdqLhJcZsA4TiCHHQ/pub?w=1440)
 
 SpaceCraft serves as a tool for developers to easily experiment with a programming language, while eliminating the burden of downloading and configuring the languages on their local machine. Furthermore, SpaceCraft makes pair-programming easy between interviewers and candidates, or with a small team of developers who want to share their experiences with a programming language.
 
@@ -39,7 +39,7 @@ In considering our network architecture, we need to make sure that our choice me
 
 ## 2.1 Client-server Architecture
 
-![client-server](https://docs.google.com/drawings/d/e/2PACX-1vQo6W0USG30ETbTw7ztlMQ7Z24iQp9dT1-65CyZXbJdvZWflNiRAedbbhJyeArL40YQ7TNbIoEwN5at/pub?w=959&h=345)
+![client-server](https://docs.google.com/drawings/d/e/2PACX-1vQo6W0USG30ETbTw7ztlMQ7Z24iQp9dT1-65CyZXbJdvZWflNiRAedbbhJyeArL40YQ7TNbIoEwN5at/pub?w=1440)
 
 We chose a client-server architecture in which users connect to a central server and start up a REPL session. Users who wish to collaborate can then connect to the same REPL session and have their input/output sync.
 
@@ -56,14 +56,14 @@ Long polling, Server sent events and
 Websockets by Rasmus Appelqvist,
 Oliver Örnmyr")</sup>. This is a ~95% decrease from using HTTP, and particularly useful in our case where we continuously stream data from the server to the clients.
 
-![http vs websockets](https://docs.google.com/drawings/d/e/2PACX-1vQAdYwKH7kjzDDQv9GF-tpR9d2ZRK_vA661f2x3JPdTrPcE9c78WCl5rdyYW5XmyUy9wTYUlEZwQrEp/pub?w=960&h=433)
+![http vs websockets](https://docs.google.com/drawings/d/e/2PACX-1vQAdYwKH7kjzDDQv9GF-tpR9d2ZRK_vA661f2x3JPdTrPcE9c78WCl5rdyYW5XmyUy9wTYUlEZwQrEp/pub?w=1440)
 > A full duplex persistent connection is possible with WebSockets. The connection stays open until either the client or server disconnects. Reference: [WebSockets - A Conceptual Deep-Dive](https://www.ably.io/concepts/websockets)
 
 Additionally, since the TCP connection over WebSockets remains open until either the client or server disconnects we can easily know when a user disconnects from out application. This enables us to efficiently begin the container teardown process and free up resources for new users. Finally, WebSockets allows us to maintain 1024 or more connections per server as opposed to ~6 connections per server with HTTP. This enables us to scale our application more efficiently as our user base grows.
 
 ## 2.3 Where Should We Execute the Code?
 
-![client-side server-side](https://docs.google.com/drawings/d/e/2PACX-1vSKVCKGZZHwgQFbXnMcyYpkhr4fJOUeeOxPp2zl1uLXM4nyxPOB7xT8gqMEkYZSlomKjDdk32voKaC6/pub?w=960&h=312)
+![client-side server-side](https://docs.google.com/drawings/d/e/2PACX-1vSKVCKGZZHwgQFbXnMcyYpkhr4fJOUeeOxPp2zl1uLXM4nyxPOB7xT8gqMEkYZSlomKjDdk32voKaC6/pub?w=1440)
 
 Now that we've established our network architecture and communications, we need to decide where our code should be executed: on the client or on the server?
 
@@ -98,19 +98,19 @@ When code is submitted for evaluation, our app will take the code as input and s
 ## 3.1 Creating the User Interface
 SpaceCraft's user interface is created with [Xterm.js](https://github.com/xtermjs/xterm.js/) and [CodeMirror](https://codemirror.net/). Xterm is a terminal front-end component written in JavaScript that creates an emulated terminal for our REPL in which users can write their code and submit for evaluation. When a user hits Enter in the RPL, their code is sent as input to our server for evaluation, and the result is then sent back to be displayed in the REPL.
 
-![front-end UI](https://docs.google.com/drawings/d/e/2PACX-1vT218z12UgSMqH_Yqbn-d-ZqFIhVvESDv5-8HeZebQsOoRhCxK6bjw7OYP0a9fiQWPzhiVBSWMob0l6/pub?w=960&h=615)
+![front-end UI](https://docs.google.com/drawings/d/e/2PACX-1vT218z12UgSMqH_Yqbn-d-ZqFIhVvESDv5-8HeZebQsOoRhCxK6bjw7OYP0a9fiQWPzhiVBSWMob0l6/pub?w=1440)
 
 CodeMirror is a versatile text editor implemented in JavaScript for the browser. It's specialized for writing and editing code and provides a familiar text editor experiences for developers. By leveraging Xterm.js and CodeMirror to create our user interface and receive input, our team was able to focus our efforts on developing a rich REPL experience for Ruby, JavaScript, and Python, along with a secure framework for handling malicious user input. So now we need to figure out how to handle a user's input and properly evaluate it on our backend.
 
 ## 3.2 Interacting with the REPL program on the Back-end
 Since we want provide users with the ability to submit code remotely for server-side evaluation, we have to simulate the entire interaction with the REPL program ourselves. This is fundamentally different from the regular experience with a REPL program in which a user directly inputs code into an interactive REPL console like *irb* or *node*.
 
-![local interaction](https://docs.google.com/drawings/d/e/2PACX-1vQOAjlP1_EdFI1Jk_8rRaA_ExbLCtqczdL6rsAXwedI7OnYP4ovCn1Z12BXkEYk4UOa-Cy3aU3ue0sb/pub?w=960&h=179)
+![local interaction](https://docs.google.com/drawings/d/e/2PACX-1vQOAjlP1_EdFI1Jk_8rRaA_ExbLCtqczdL6rsAXwedI7OnYP4ovCn1Z12BXkEYk4UOa-Cy3aU3ue0sb/pub?w=1440)
 > A regular interaction between a user and a REPL program via a terminal
 
 For our project, the interaction between the user and the underlying REPL program will have to be manually set-up through our application logic. Our application must be able to send inputs to the REPL program on the back-end and read any outputs after an evaluation is completed. This means that we have to also consider the complexity that comes with interacting with REPLs of different languages.
 
-![simulated interaction](https://docs.google.com/drawings/d/e/2PACX-1vQ6MwTViENag3nS5sQ-cyiwE4lQbTO-oa8Dc5SMNRjqpDTejskWvnHRZOFTpp_whkr15GmjpjQ0gkX3/pub?w=962&h=188)
+![simulated interaction](https://docs.google.com/drawings/d/e/2PACX-1vQ6MwTViENag3nS5sQ-cyiwE4lQbTO-oa8Dc5SMNRjqpDTejskWvnHRZOFTpp_whkr15GmjpjQ0gkX3/pub?w=1440)
 > Our application has to properly write inputs to the underlying REPL program and read outputs from it
 
 With this challenge in mind, we will explore three different approaches that can help set up our interaction with the REPL program.
@@ -138,7 +138,7 @@ First, streams may be blocked when we try to read from the standard output. One 
 
 Second, interpreted languages are usually written in lower-level languages, and due to how the language interacts with the standard stream, it may be a cause of hanging outputs. For example, the C implementation of `read()` [function](https://linux.die.net/man/3/read) would hang when we try to read from an output stream, until new data is being written to the corresponding input stream.
 
-![streams blocking](https://docs.google.com/drawings/d/e/2PACX-1vR4hvoZaifOI5Xh_BkDWiGcKP28pu8DCevtEJKMsi08O0fIaNozngsKoWNItFskmBjBMN8OURK9oOpP/pub?w=960&h=347)
+![streams blocking](https://docs.google.com/drawings/d/e/2PACX-1vR4hvoZaifOI5Xh_BkDWiGcKP28pu8DCevtEJKMsi08O0fIaNozngsKoWNItFskmBjBMN8OURK9oOpP/pub?w=1440)
 
 Although there are [techniques](http://eyalarubas.com/python-subproc-nonblock.html) to unblock the processes for reading or writing from the streams, the techniques are not universal on all languages. If we were to implement various techniques to get around this issue, our application's code complexity would increase significantly. Thus, this approach does not fit our use case.
 
@@ -147,14 +147,14 @@ The solution that we found to overcome this challenge is through the use of pseu
 
 **How can we enable a user to interact with a terminal-oriented program on a remote host?**
 
-![remote interaction ?](https://docs.google.com/drawings/d/e/2PACX-1vSiAyIrp0gxipR4IAwjRFzwHDuBIMhNoM8Vzz9zEF2J0CsRviYUNhxP0kID5V-05NGp0cwsx6ZxP8Ik/pub?w=960&h=417)
+![remote interaction ?](https://docs.google.com/drawings/d/e/2PACX-1vSiAyIrp0gxipR4IAwjRFzwHDuBIMhNoM8Vzz9zEF2J0CsRviYUNhxP0kID5V-05NGp0cwsx6ZxP8Ik/pub?w=1440)
 > Providing communication over a network solves part of the problem, but it does not address the connection of standard input, output and error to a terminal-oriented program
 
 A terminal-oriented program expects a terminal to perform certain kinds of processing of its inputs and outputs. This is useful to prevent the default blocking of buffering during reads and writes from our application. The additional processing will also allow the generation of terminal-related signals (such as SIGINT) onto the program.<sup>[[1]](https://nostarch.com/tlpi "The Linux Programming Interface, Chapter 64, pages 1375-1377")</sup> In other words, the terminal appropriately translates inputs and outputs between our application and the REPL program.
 
 A pseudoterminal provides this missing piece, which is a terminal device that connects to our REPL program. In doing so, it acts a communication channel between our application code and the underlying REPL program so that they may be able to speak to each other.
 
-![pseudo-terminal remote interaction](https://docs.google.com/drawings/d/e/2PACX-1vSHn46g_dV1eF_O5RU1fCG1jXXCU0JuJLf0qtigaZGKGrynvv9meoI7Rism-0qfwNLU52JUSn4wjGU9/pub?w=960&h=417)
+![pseudo-terminal remote interaction](https://docs.google.com/drawings/d/e/2PACX-1vSHn46g_dV1eF_O5RU1fCG1jXXCU0JuJLf0qtigaZGKGrynvv9meoI7Rism-0qfwNLU52JUSn4wjGU9/pub?w=1440)
 > Connecting the pseudoterminal with our application server and our REPL program solves the communication issues mentioned previously
 
 This is useful since we can easily persuade our REPL program that its input is coming from a terminal, and thus allow us to gain the benefits of:
@@ -182,122 +182,117 @@ We'll first handle the REPL synchronization, for which there are two main compon
 ## 4.1 Syncing Output
 To synchronize outputs, our application server broadcasts the evaluation outputs to currently connected clients. The flow of output synchronization is as follows:
 
-![output sync evaluation](https://docs.google.com/drawings/d/e/2PACX-1vQpdFdytJndBFsKwvJTqgLZd6UhIe7dEY27olnXjDX5lo8BXocZN3xA1zbXFZMVkCW4m7h1h3kmOt3V/pub?w=962&h=204)
+![output sync evaluation](https://docs.google.com/drawings/d/e/2PACX-1vQpdFdytJndBFsKwvJTqgLZd6UhIe7dEY27olnXjDX5lo8BXocZN3xA1zbXFZMVkCW4m7h1h3kmOt3V/pub?w=1440)
 1. Client requests a line of code to be evaluated
 2. Application server receives line of code
 3. Application server sends the line of code to the pseudoterminal that is connected to the REPL program.
 4. The REPL program evaluates the line of code and sends the appropriate output data to the pseudoterminal.
 5. Application server reads the evaluation outputs from the pseudoterminal.
 
-![output sync broadcast](https://docs.google.com/drawings/d/e/2PACX-1vT1eaaey9-P8vNXGVRrCeTvEr1lMDlr8OrHSZZAHfjNMT9mb3CfQtCqR7neKcKu-nXjqAN0A3R5SBgQ/pub?w=960&h=386)
+![output sync broadcast](https://docs.google.com/drawings/d/e/2PACX-1vT1eaaey9-P8vNXGVRrCeTvEr1lMDlr8OrHSZZAHfjNMT9mb3CfQtCqR7neKcKu-nXjqAN0A3R5SBgQ/pub?w=1440)
 
 6. Application server broadcasts and streams the outputs to all connected clients.
 7. Clients receive the outputs and display them on the front-end terminal.
 
 ## 4.2 Syncing Input
-To demonstrate input synchronization, we will make use of an example as follows:
-1. The current REPL input line is empty
-2. User enters a character `[` into the repl terminal
+Since we are building our input synchronization feature from scratch, we need to manually handle the current line of input. We chose to track the current line of input on the client-side so that local edits can be updated and displayed immediately. With this approach however, there is a possibility that conflicts will occur if two clients happened to edit their inputs at the same time. Nonetheless, this is generally not an issue for our use case, as we'll explore more in the following section.
 
-3. The user's client state is updated to `{ line: '[' }`, at the same time, `[` is written into the front-end terminal
+Our input-syncing mechanism consists of the following steps:
 
-```javascript
-handleKeypress (key) {
-  state.line += key
-  term.write(key)
-  this.emitLineChanged()
-}
-```
+![input sync 1](https://docs.google.com/drawings/d/e/2PACX-1vT7AnhrTSfePigTwPc-Igul7a6A9k3fkygmmfoGylp85kB_BNDc2AKKv8qNPZJrs68VcHa3KM6ooAnK/pub?w=1172&h=621)
 
-4. The user's client emits an event to the application server indicating that the current line is changed
+1. The state of the input line before any changes.
+2. The user presses a key on the REPL front-end terminal. The state is updated in the user's client.
+3. The user's client sends a message with the current input line to inform the application server that the current line has been changed.
 
-```javascript
-emitLineChanged () {
-  socket.emit('lineChanged', { line: state.line })
-},
-```
+![input sync broadcast](https://docs.google.com/drawings/d/e/2PACX-1vTbNvqeH7bv8wC0VfljTRm3PSQxhyRBvdKdaQlcpR-PpHeiIpyYiOiUH9UINaafsSfpiJwM3LcH9cFH/pub?w=1305&h=624)
 
-5. Application server broadcasts the updated current line to all other connected clients
+4. Our application server broadcasts a message that includes the current line and prompt to other clients. The prompt is retrieved from the most recent output cache. It is used to rewrite the entire terminal line in the following step.
 
-```javascript
-socket.on('lineChanged', ({ line }) => {
-  socket.broadcast.emit('syncLine', { line })  
-})
-```
+5. When other clients receive the message, their local states are updated to include the current line of input.
 
-6. All other connected clients update their state to `{ line: '[' }` and the character is written into the front-end terminal.
+6. The client updates its UI by first clearing the last line of the terminal. Since the prompt is also erased, it has to rewrite the prompt before writing the current input line.
 
-```javascript
-socket.on('syncLine', ({ line }) => {
-  state.line = line
-  resetTermLine()
-  term.write(line)
-})
-```
 
 ## 4.3 Handling Conflicts in Shared Editing
-Giving users the option to collaborate in real-time means that potential conflicts can occur if multiple users type at the same time. This may occur if our server receives updates in a different order than they were sent due to the difference in locations between clients and the central server. When conflicts happen, both clients [may not converge](https://conclave-team.github.io/conclave-site/#what-is-a-real-time-collaborative-text-editor]) to the same state. 
+Giving users the option to collaborate in real-time means that potential conflicts can occur if multiple users type at the same time. This may occur if our server receives updates in a different order than they were sent due to one client being closer to the server than another. When conflicts happen, both clients [may not converge](https://conclave-team.github.io/conclave-site/#what-is-a-real-time-collaborative-text-editor]) to the same state. 
 
 For example, when a user inserts a character at position index 0 and another user deletes at the same position, and both operations happen at the same time, we need to resolve any conflicts so that both clients will arrive at the same state.
 
 ### 4.3.1 Conflict Resolution in REPL terminal
 In our REPL terminal, we will rely on [eventual consistency](https://en.wikipedia.org/wiki/Eventual_consistency) to resolve conflicts. This means that if both clients happen to type on the REPL terminal at the same time, the last update that is received by our application will take precedence. This is also known as "last write wins".
 
+![last write wins](https://docs.google.com/drawings/d/e/2PACX-1vQWK_l-v1bmvCcqjVJNHi1StdP7avDVq833bcppB_FXXAYJ84ilmOzXLs4HBsCIaas5EiPYvbij79X3/pub?w=1302&h=690)
+
+1. Both users in client A and B edit at the same time. Client A's update will arrive first due to a lower latency than client B's
+2. Since client B's update is received last, it takes precedence and overwrites the previous update.
+3. Our application server broadcasts the last update to the other clients.
+
 We chose not to employ any Operational Transformation or Conflict-free Replicated Data Type (CRDT) techniques for resolving potential conflicts in our REPL terminal input, due to unnecessary code complexity as well as additional server overhead. Our reasoning is that we expect users to take turns instead of competing against each other when evaluating inputs in our REPL.
 
 ### 4.3.2 Conflict Resolution in Text Editor
-Now that we've handled the REPL input and output synchronization, let's turn to the text editor. The text editor component will allow multiple users to write code at the same time. We can expect there to be a higher likelihood that a conflict will occur in the editor because most people will write their code in the editor and then submit for evaluation. We can reasonably expect that both users will type at the same time, and if they happen to type into each other's code by accident, we would like to make sure that their operations are:
-- commutative: concurrent insertion converge to the same result, regardless of order in which they are applied
-- idempotent: duplicated delete operations are only applied once to produce the same result
+Now that we've handled the REPL input and output synchronization, let's turn to the text editor. The text editor component will allow multiple users to write code at the same time. We can expect there to be a higher likelihood that a conflict will occur in the editor because most people will write their code in the editor and then submit for evaluation. We can reasonably expect that both users will type at the same time, and if they happen to type into each other's code by accident, we would like to make sure that:
+- concurrent insertion converge to the same result, regardless of order in which they are applied
+- duplicated delete operations are only applied once to produce the same result
 
-> Source: [Conclave: A Real-Time Collaborative Text Editor](https://conclave-team.github.io/conclave-site/)
+![conflict in concurrent edit](https://docs.google.com/drawings/d/e/2PACX-1vQkm0mEhBrkFW1rqPl6ZAu7UJCQ_5Q0IUazA5lxt3JtZxWDCJgbhUHB1OVr_dh_3LLxAMlFeUPG29p2/pub?w=1305&h=594)
+> Simultaneous insertion and deletion produce different results. Source: [Conclave: A Real-Time Collaborative Text Editor](https://conclave-team.github.io/conclave-site/)
 
-To solve this issue, we utilized Yjs, a shared editing framework that utilizes an optimized CRDT for conflict resolution. We also chose Yjs because of its WebSockets adapter that integrates nicely into our application.
+To solve this issue, we utilized [Yjs](https://github.com/y-js/yjs), a shared editing framework that utilizes Conflict-Free Replicated Data Type (CRDT) for conflict resolution. We also chose Yjs because of its WebSockets adapter that integrates nicely into our application.
 
-However, the trade-off of utilizing Yjs is that it increases memory consumption on the server-side. This is likely due to the caching of replicated data structures that are required for CRDTs to work. Nonetheless, we chose to use it since it provides a low-latency collaborative environment for our users.
+However, the trade-off of utilizing Yjs is that it increases memory consumption on the server-side. This is likely due to the caching of replicated data structures that are required for CRDTs to work. Nonetheless, we chose to use it since it provides a low-latency and conflict-free collaborative environment for our users.
 
-# 5 Utilizing Containers
-At this point, we've succeeded in taking a user's code and evaluating it in a language runtime while also synchronizing displays across collaborating users. Now, we need to consider the security and resource management challenges mentioned at then start of this case study.
+# 5 Security & Resource Management with Containers
+At this point, we've succeeded in taking a user's code and evaluating it in a language runtime while also synchronizing displays across collaborating users. Now, we need to consider the security and resource management challenges mentioned at the start of this case study.
 
-Since we are connecting users with a pseudoterminal that allows execution of user input on our server, we leave ourselves and our users open to the risk of a user submitting malicious code directly into our backend. In order to prevent this situation, we need to isolate each user's session, and thereby isolate their code, within our application. With this isolation comes several challenges:
+Since we are connecting users with a pseudoterminal that allows execution of user input on our server, we leave ourselves and our users open to the risk of any malicious code submitted directly into our backend. We will need to think of a way to protect both ourselves and our users.
+
+## 5.1 Naive Approach: Check User Input Against List
+Our initial idea was to run a check on all user input against a list of possibly malicious commands. For example, let's say a user attempts to submit a command like `system rm -rf /` into the Ruby REPL. We can check their input against a list of Linux commands and match `rm -rf /` which would lead our system to halting the execution of this input. 
+
+While this sounds like a straightforward solution, it's hindered by the fact that we would need to consider and plan for all possible inputs that could be malicious. This is an enormous task that would require a significant amount of research to make sure that we don't miss every possibility, and is compounded by any language-specific inputs for our supported languages. It also addes an additional processing step to our application logic which would negatively impact our user's experienced latency.
+
+## 5.2 Solution: Isolation via Containers
+
+Instead, we can isolate each user's session, and thereby isolate their code, within our application. This will help contain any malicious code away from our host system and other users. With this isolation comes several challenges:
 - How do we provide each user with an isolated, complete copy of our application to evaluate their code?
 - How do we handle any malicious code submitted by the user, which may be able to break out of isolation?
 - How do we manage our backend computing resources for isolated user so that one user's code evaluation doesn't rob resources from another user?
 - How do we enable multiple users to collaborate in the same isolated environment?
 
-## 5.1 Naive Solution: Check User Input Against List
-Our initial idea was to run a check on all user input against a list of possibly malicious commands. For example, let's say a user attempts to submit a command like `system rm -rf /` into the Ruby REPL. We can check their input against a list of Linux commands and match `rm -rf /` which would lead our system to halting the execution of this input. 
+We chose to implement containers to address these challenges. Through containers, we are able to provide an isolated, complete copy of our application for each user. We can effectively separate users from each other, easily add layers of security to contain malicious code, and ensure that one container only uses a set amount of resources. Let's start with how we can segment users by container.
 
-While this sounds like a straightforward solution, it's hindered by the fact that we would need to consider and plan for all possible inputs that could be malicious. This is an enormous task that would require a significant amount of research to make sure that we don't miss every possibility, and is compounded by any language-specific inputs for our supported languages. It also addes an additional processing step to our application logic which would negatively impact our user's experienced latency.
-
-Instead, we chose to implement containers to address these challenges. Through containers, we are able to provide an isolated, complete copy of our application for each user while enabling us to set security and resource management measures on each container. With this approach, we can effectively separate users from each other, easily add layers of security to contain malicious code, and ensure that one container only uses a set amount of resources. Let's start with how we can segment users by container.
-
-## 5.2 Segmenting Users by Container
+## 5.3 Segmenting Users by Container
 The core idea behind containers is that you create a single unit of software that is encapsulated and can be deployed anywhere. By putting your software and dependencies in a container and operating within in, we can effectively deploy our container on any system without worrying about the host system configurations. In addition, containers provide a level of isolation from the rest of the system that enable security measures to be placed to prevent the software in a container from affecting the rest of the system and other users' sessions.
 
 <!-- Docker logo -->
 
-To start, we used Docker to create our containers which will each hold an entire copy of our application code. Containers are created using an image file, which provides the details of all the software and dependencies that should be included in the container. Once we need to instantiate a new container, we simply execute a run command that instantiates a container using the image file as a blueprint.
+To start, we used Docker to create our containers which will each hold an entire copy of our application code. Containers are created using an image, which provides the details of all the software and dependencies that should be included in the container. Once we need to instantiate a new container, we simply execute a run command that instantiates a container using the image as a blueprint.
+
+![docker image](https://docs.google.com/drawings/d/e/2PACX-1vRGOfNrPPMkt8RdA_USJSal6Kcatzr9TmoH9zjjSybDbygU6HizCDJraLG358rO84oplyJPwrJug5wM/pub?w=1305&h=674)
 
 Thus, our new user workflow is as follows:
 1. a new user makes a request to our application.
-2. when our server receives the request, a new container is created based on the image file.
-3. the server then forwards the user's request to the container.
-4. the user is then taken to the container which serves as their session and they can begin coding away with our REPL.
+2. when our server receives the request, a new container is created based on an image that contains our application, required dependencies and operating system.
+3. the server then redirects the user's request to the container.
+4. the user then establishes an active connection with container which serves as their session and they can begin coding away with our REPL.
 
 With this design, each user is given their own isolated environment to write and evaluate their code. If any user attempts to submit malicious code to destroy our application, they will only be affecting their copy of our application code within the container and our host system is unaffected.
 
+![isolated attack](https://docs.google.com/drawings/d/e/2PACX-1vRtVA-YL9rfCMfvPq6Wm5uOFp611rGOf0KscBC38Q-KjnNnebUiwgRSa7XSTeQ_g9LX7r9nJ-SPH3MY/pub?w=1440&h=740)
+> When a container is compromised due to a malicious attack only the session that is associated with the container will be affected.
+
 However, this is only a start as there are ways for users to break out of their containers and we need to add some more security measures. Also, at this point each container can draw upon all of the host server's resources to evaluate the user's code. This is not ideal since one user's code could be more computationally intensive and consume more CPU and memory resources away from other users, thereby worsening their session's performance. Let's see how we can fix this!
 
-## 5.3 Securing Containers
+## 5.4 Securing Containers
 The main issue of security within containers is when users are given root access, which is actually the default setting with Docker. This allows users to have complete access to the files within the container and the ability to do some truly malicious activity. 
 
-### 5.3.1 Remove Root-level Access
+### 5.4.1 Remove Root-level Access
 The first step to securing our container is to remove the default root-level access and prevent users from being able to execute harmful commands such as `rm -rf /` in our application.
 
 To achieve this, we can simply create a user with restricted permissions that will run as the default profile for any user in our container. The restrictions include making them a non-root user and creating a special `bin` folder from which they access their terminal commands. This special `bin` folder will have a limited number of commands for use and will not include commands such as `touch`, `mkdir`, `rm`, and so on.
 
-### 5.3.2 Strengthen Isolation with Container Runtime Sandbox
+### 5.4.2 Strengthen Isolation with Container Runtime Sandbox
 While containers provide some isolation between our host system and application, containers [are not inherently a sandbox](https://cloud.google.com/blog/products/gcp/open-sourcing-gvisor-a-sandboxed-container-runtime). Applications that run in containers access system resources in the same way that non-containerized applications do, which is by making privileged system calls directly to the host kernel. What this means is that container escape is still possible with a successful privilege escalation attack. An example would be the [Dirty Cow](https://en.wikipedia.org/wiki/Dirty_COW) (copy-on-write) vulnerability that gives attackers write access to a read-only file, essentially giving them access to root.
 
 > Our current container architecture. Docker alone provides weak isolation, where all system calls made by our application are accepted by the host kernel
@@ -318,7 +313,7 @@ The trade-offs of using such a container runtime sandbox however, are reduced ap
 
 With these measures in place, we have effectively made a user profile that is incapable of accessing or changing the files in the container, along with making it a lot harder for users to submit malicious code.
 
-## 5.4 Managing Container Resources
+## 5.5 Managing Container Resources
 Now that we've tackled the security issues of using containers, we need to turn our attention to managing the container's resources. By default, each container is able to consume the entire CPU and memory of their host server to complete their processes. While this makes sense at a high level as you want each container to have sufficient resources to complete their work, it becomes a liability when a user submits code for evaluation that is computationally intensive.
 
 For example, a user in one container may write a program that requires a large amount of mathematical calculations, string processing, or infinite loops that cause a spike in CPU usage which causes a drop in performance for other containers. Or a user may input large amounts of data into the text editor that eat away at the available memory in our host server and leave little remaining for other users. To combat these issues and ensure that each container only uses a reasonable amount of resources, we can use Docker's cgroups (control groups) to place a resource limit on each container.
@@ -326,19 +321,18 @@ For example, a user in one container may write a program that requires a large a
 At its core, a cgroup is simply a limitation placed on an application or container to a specific set of resources. By specifying this limitation when creating a container, we can easily set the max CPU or memory allowed for use by a container. So if we want to spin up a container that can only use 20% of our total CPU and 100MBs of our total memory, all we need to do is include ` --memory=100m -it --cpus=".2"` within our `docker run` command. And just like that, we've handled any potential hogging of resources by a single container and ensured stable performance across the board for our users.
 
 
-
 # 6 Connecting Users to Containers
 At this point, we've successfully built our collaborative REPL and isolated complete instances of our application in containers. Now, we need to evaluate how we can connect clients to their associated container on the server, as well as allowing a user to invite other users to collaborate in their session.
 
-## 6.1 Port Forwarding
-Currently, each container on our server will have an IP address and port number associated with it. The naive approach that we've started with is to use port forwarding, which takes the initial HTTP request from the client and forwards it to the address and port number of a ready-to-use container.
+## 6.1 Naive Approach: Port Forwarding
+Each container will have a unique IP address and port number associated with it, and the question becomes how we can route a user's request for a session to a container and form a connection. We first considered using port forwarding, which takes the initial HTTP request from the client and forwards it to the address and port number of a ready-to-use container.
 
-This technique is simple since it's a direct mapping of the client to the container destination. However, this technique is flawed by being a security risk since the port numbers are pre-determined. By running a port scanner to probe for open ports, any user could access any session. This leads to a complete lack of privacy for our users who wish to collaborate only with the people they invite to join their session.
+This technique is simple since it's a direct mapping of a client to a container destination. However, this technique is flawed by being a security risk since the port numbers are pre-determined. By running a port scanner to probe for open ports, a user could potentially access any session. This leads to a complete lack of privacy for our users who wish to collaborate only with the people they invite to join their session.
 
 We need a better approach that can protect our users' privacy and mask the connections to our containers. Thankfully, this can be achieved with a reverse proxy.
 
 ## 6.2 Solution: A Reverse Proxy
-The idea behind a reverse proxy is that there is some middleware that sits between our clients and our server which acts as an intermediary between the two. When a client sends an HTTP request to our server, a reverse proxy will receive that request and communicate with our server for the necessary information. The server will respond to the reverse proxy, which will then forward the server response to the client.
+The idea behind a reverse proxy is that there is some middleware that sits between our clients and our server which serves as an intermediary between the two. When a client sends an HTTP request to our server, a reverse proxy will receive that request and communicate with our server for the necessary information. The server will respond to the reverse proxy with the container's IP address and port number, which will then take that information and forward the client's request to that container for connection. Thus, our reverse proxy will handle all the traffic between our clients and server.
 
 ![reverse proxy](https://imgur.com/eIBtN6g.png)
 
@@ -346,49 +340,49 @@ While this may sound like a roundabout way of handling a request and response, t
 
 Furthermore, our proxy server can assign random URLs to created sessions, thereby preventing other unwanted users from gaining access to a current session through port sniffing or guessing pre-determined URLs. We will detail how this works in the following section.
 
-In our application, the reverse proxy will handle the initial HTTP handshake that is needed to connect a client with a container for their session. Once this handshake is complete, a WebSockets connection is created between the client and container that will persist for the entirety of the session.
+In our application, the reverse proxy will handle the initial HTTP handshake that is needed to connect a client with a container for their session. Once this handshake is complete, a WebSockets connection is created between the client and container that will persist for the remainder of the session until all connected clients disconnect.
 
 ![websockets](https://i.imgur.com/rjdOm1W.png)
 
-Along with solving our privacy concerns, a reverse proxy provides us our application with greater scalability as our user base grows. It can serve as a load balancer as we add more servers and it can provide content caching to reduce latency for particular content outside of establishing the client-container connection.
+Along with solving our privacy concerns, a reverse proxy provides our application with greater scalability as our user base grows. It can serve as a load balancer as we add more servers and it can provide content caching to reduce latency for particular content outside of establishing the client-container connection.
 
 ## 6.3 Session Management
 In order to connect different groups of users to different sessions, our reverse proxy server is also responsible for:
-- initializing a session 
+- initializing a session within a new container
 - forwarding requests to the appropriate container
-- destroying a session
+- destroying a session and it's container
 
 In order to customize a reverse proxy to fit our use case, we built our reverse proxy from scratch using mostly VanillaJS, aside from using a few essential libraries to help us get started.
 
 ### 6.3.1 Session Initialization
 To initialize a session, we need to:
-1. generate a unique URL for every session created
+1. generate a unique URL for every session we create
 2. instantiate a container to start an instance of our application
 3. map the generated URL to the newly created container's private IP and port number
 
-#### Generating Unique URL
+#### 6.3.1.1 Generating Unique URL
 The basic idea behind preventing users from being able to guess a URL is by randomizing it with a sufficiently large number generator. For this, we utilized a UUID generator to generate our session ID. At our current scale, the first 6 digits of the UUID is sufficient, as it already provides 16,777,216 possibilities.
 
-#### Path-based URL forwarding
+#### 6.3.1.2 Path-based URL forwarding
 
-The initial approach is to attach the generated session ID to the path of the URL. For example, we assign the session ID of `123456` to the URL `spacecraft-repl.com/123456`. With this, every session can be identified by their path name. However, the problem is that assets that are requested via the root path will not automatically receive the session ID as part of its path name. For instance, a client's request to fetch `/main.js` will not contain the session ID, and since it does not match `/123456`, the request will fail.
+Our initial approach is to attach the generated session ID to the path of the URL. For example, we assign a session ID of `123456` to the URL `spacecraft-repl.com/123456`. With this, every session can be identified by their path name. However, the problem is that assets like JavaScript or CSS files that are requested via the root path will not automatically receive the session ID as part of its path name. For instance, a client's request to fetch `/main.js` will not contain the session ID, and since it does not match `/123456`, the request will fail.
 
 ![path forwarding](https://docs.google.com/drawings/d/e/2PACX-1vSXRH02roO9RBQITOtlheiN8qaanmQx-IPmv6ThmfzAB6-eRcTPobjm0UGARUUORfb27TdBeXcKYf78/pub?w=1440&h=810)
 > An absence of session ID following the root path leads to confusion in our reverse proxy
 
 There are certainly ways to get around this issue. The first solution is to add some client-side logic to modify requests to include the session ID. For example, changing the request of `/main.js` to `/123456/main.js` enables our reverse proxy to capture the session ID and to forward it accordingly. The second solution is to read the `Referer` header of each request to obtain the previous URL that includes the session ID. With the session ID obtained, our reverse proxy server can forward the request to its destination container.
 
-However, we chose not to go with this approach as it leads to unnecessary complexity in the client-side code. Furthermore, the `Referer` header may not always give us the expected URL that contains the session ID, particularly when working with Socket.io. Since directly solving those problem require some degree of request manipulation, we opt for the following approach due to its simplicity.
+However, we chose not to go with this approach as it leads to unnecessary complexity in the client-side code. Furthermore, the `Referer` header may not always give us the expected URL that contains the session ID, particularly when working with Socket.io. Since directly solving these problems require some degree of request manipulation, we opt for the approach of subdomain forwarding due to its simplicity.
 
-#### Subdomain forwarding
-To get around this issue, we decide to work with subdomains instead. Essentially, the session ID will be a part of the hostname instead of the path. For instance, a session ID of `123456` forms a subdomain URL of `123456.spacecraft-repl.com`. This ensures that the session ID can be read from the hostname, preventing any path changes from confusing our reverse proxy server.
+#### 6.3.1.3 Subdomain forwarding
+To get around this issue, we decide to work with subdomains instead. Essentially, the session ID will be a part of the hostname instead of the path. For instance, a session ID of `123456` forms a subdomain URL of `123456.spacecraft-repl.com`. This ensures that the session ID can be read from the hostname, preventing any path changes from confusing our reverse proxy server like `123456.spacecraft-repl.com/main.js`.
 
 ![subdomain forwarding](https://docs.google.com/drawings/d/e/2PACX-1vTcPVwBQa001D2GXjI30Xf0J5I9lTFS5_-i3wjumIieVXpWjwC6u8Qt_3zA6eDJufH00NCk3jyOUMGz/pub?w=1440&h=810)
 > With subdomains, the session ID is always read from the hostname, and it is never lost even if the path changes
 
-The trade-off with using subdomains is that it may be potentially confusing to users, since subdomains are generally used to create different sites using the same domain name.
+The trade-off with using subdomains is that it may potentially be confusing to users, since subdomains are generally used to create different sites using the same domain name.
 
-#### URL Mapping to Designated Container
+#### 6.3.1.4 URL Mapping to Designated Container
 With our URL generated, we can then map the URL to a designated container via its private IP address and port number. The flow of events are as follows:
 1. A container is created (with our application running)
 2. The URL is saved as a key in the hash table
@@ -410,17 +404,21 @@ sessions = {
 4. With the hash table in place, we can retrieve the designated container's IP in O(1) time given the hostname of a request.
 
 ### 6.3.2 Destroying a Session
-To initiate the tear down process, we need to determine if an application instance has no clients connected to it after a certain timeout. While it is easy to detect that within our application server, how do we notify our reverse proxy server when this happens? To do this, we'll have our application server communicate with our reverse proxy through HTTP requests. The diagram below illustrates the flow of events during a teardown.
+With our session initialization process complete, we now need to consider the session teardown process. Once all clients have left a session, we want to start breaking down the remaining container so that we can free up the allocated resources for new sessions. This is preferred over connecting new users to a used container since there may be some remaining artifacts leftover in the session from the previous users, and we instead want to present a clean slate for new users.
+
+To initiate the tear down process, we need to determine if an application instance has no clients connected to it. We can easily tell if a client has disconnected from a session with WebSockets since Socket.io provides a disconnect event that fires upon client disconnection. But what happens if a client leaves their session before completing their connection to a container, like in the case of closing their browser early?
+
+To handle this case, we can check whether there are any connected clients to a container after a certain timeout. While it is easy to detect that within our application server, how do we notify our reverse proxy server? To do this, we'll have our application server communicate with our reverse proxy through HTTP requests. The diagram below illustrates the flow of events during a teardown.
 
 ![destroy session](https://docs.google.com/drawings/d/e/2PACX-1vTHvG1C5YQke_0kwYAKCy3nVea_iqqXv5uXVh9bWTQgMqfQzhwoLj4yUS3RIIlFMf6i2E9MhqLXOIkw/pub?w=1440&h=810)
 
-1. A session is initialized with a running container
-2. Our reverse proxy server submits a POST request to the newly created container along with the `sessionURL` as the request body. The `sessionURL` is saved within our application server
-3. We set up a heartbeat mechanism in our application server to continuously detect the number of connected clients. In any 10 seconds interval that no client is connected to our application server, it will submit a DELETE request to the `sessionURL`
-4. Our reverse proxy receives the DELETE request and stops the container that is associated with the `sessionURL` to free up resources
-5. The session is removed from the hash table
+1. A session is initialized with a running container.
+2. Our reverse proxy server submits a POST request to the newly created container along with the `sessionURL` as the request body. The `sessionURL` is saved within a hash table to ensure there is no attempt to assign a `sessionURL` that is in use.
+3. We set up a heartbeat mechanism in our application server to continuously detect the number of connected clients. In any 10 seconds interval that no client is connected to our application server, it will submit a DELETE request to the `sessionURL`.
+4. Our reverse proxy receives the DELETE request and stops the container that is associated with the `sessionURL` to free up resources.
+5. The `sessionURL` is removed from the hash table.
 
-# 7 Optimizations
+# 7 Benchmark and Analysis
 
 ## 7.1 Streaming vs. Buffering Outputs
 A REPL program sends outputs in the form of chunks of data. For each evaluation, our application would receive several to many smaller chunks of output data.
@@ -461,33 +459,38 @@ After buffering output, it would look something like:
 
 The advantage to this in our use case is that we can easily parse out the current prompt depending on the current runtime (`>` for Node.js, `irb(main):XXX:0>` for Ruby and `>>>` for Python) on the client-side. The prompt is useful for re-writing the entire terminal line when syncing with other clients.
 
-However, buffering outputs cost additional processing time. Since chunks of data arrive in different intervals (around 1-4 ms in between), we would set a maximum wait time of 5 ms every time a new data chunk is received. If no new data is received within the 5 ms, we conclude that the output is finished and we can send the complete buffered output to the client.
+Since chunks of data arrive in different intervals (around 1-4 ms in between), we would set a maximum wait time of 5 ms every time a new data chunk is received. If no new data is received within the 5 ms, we conclude that the output is finished and send the complete buffered output to the client.
+The trade-off here is that the buffering costs additional wait time.
 
 ### 7.3 Streaming Outputs
-Our initial approach of buffering outputs seem to work fine. However, we found out that we could parse out the prompt on the server-side instead by caching the last chunk of data received. An example data chunk would be `=> 123\r\nirb(main):003:0> `, by caching this data chunk, we can easily parse out the `irb(main):003:0> ` prompt.
+Our initial approach of buffering outputs seem to work fine. Nonetheless, we found out that we could parse out the prompt on the server-side instead by caching the last chunk of data received. An example data chunk would be `=> 123\r\nirb(main):003:0> `, by caching this data chunk, we can easily parse out the `irb(main):003:0> ` prompt.
 With this, it is no longer necessary to buffer outputs. Instead, we could stream the outputs as-is to the client. The benefit of this is that it not only removes any additional processing, but also simplifies our code logic by avoiding any use of `setTimeouts` or `setIntervals`.
 
-With these two approaches in mind, we decided to run some benchmarking to confirm that streaming is the better approach. We utilized Artillery, a load testing toolkit to measure the performance of both approaches.
+With these two approaches in mind, we decided to run some benchmarking so that we can compare the performance between them. We utilized Artillery, a load testing toolkit to measure the performance of both approaches.
 
 Our benchmarking setup involves connecting 20 virtual users one at a time to our server, with each submitting 5 evaluation requests, thereby totaling 100 requests per test.
 
-The results clearly show that the streaming approach is the winner:
+The results show that streaming has a slightly lower latency, due to the fact that no wait time is necessary before sending the first output:
 
-| Server Location  |  Median Latency with Buffering Enabled (ms)  | Median Latency without Buffering (ms) | Difference |
+| Server Location  |  Median Latency with Buffering Enabled (ms)  | Median Latency with Streaming (ms) | Difference |
 | --- | --- | --- | --- |
 | localhost |  12.3 | 2.1 | 10.2 |
 | remote, near (NYC to NYC) | 21.3 |  15.2 | 6.1 |
 | remote, far (NYC to SF) | 89.3 | 78.9 | 10.4 |
 
-Our goal here is to minimize the latency to maintain a real-time experience for users, and while a 10 ms improvement in latency may not seem like a huge difference, it nevertheless represents more than 10% of the total latency time for connections within the U.S. Therefore, it makes sense to stream outputs instead of buffering outputs.
+The results provide some perspectives on further optimizations that we can make. For example, if we require some heavy string processing on the client-side, then it make sense to employ the buffering approach since sacrificing a ~10 ms wait time would not be much of an issue. However, in our use case, we employ the streaming approach since it is acceptable to display output data to the client without any pre-processing. With this, we can reduce latency while simplifying our code logic.
 
 # 8 Future Work
 
 ## 8.1 Improve User Experiences
 Currently, when multiple users write code in our text editor on the front-end there is no distinction between user cursors. This can make it difficult to see the location of all the cursors or to tell which cursor belongs to which user as they type. To improve the collaboration experience, we want to assign each cursor a unique color and name, similar to a small tooltip icon. This will make it easier to distinguish where each cursor is located in the editor and who is writing what.
 
-## 8.2 Support Low-Level Languages
-While SpaceCraft supports Ruby, JavaScript, and Python, we would like to expand our list of supported languages to include low-level languages like Rust, Go, C/C++, or Java. The process to support these languages will be more involved than higher-level languages since we will need to:
+## 8.2 Allow Code Upload and Download
+There may be instances in which a user needs to leave their session but would like to download and save their code onto their local machine. Additionally, some users may have written code in their code editor and would like to upload it into their session of SpaceCraft. To accomodate these use cases, we'd like to add the ability for users to click a button and download the code from our text editor to be saved on their local machine. We'd also like to add a second button which upon being clicked will allow users to choose a file on their local machine and upload it's contents into our text editor.
+
+## 8.3 Support Low-Level Languages
+While SpaceCraft supports Ruby, JavaScript, and Python, we would like to expand our list of supported languages to include low-level languages like Rust, Go, Crystal, or C/C++. The process to support these languages will be more involved than higher-level languages since we will need to:
+
 - Take the user's input and write it as a file in our backend.
 - Have the low-level language runtime compile the code in the file and save the result as a separate file.
 - Parse the contents of the result file and stream it as output to the user.
@@ -504,7 +507,7 @@ However, we believe this is an acceptable consequence since the part of our appl
 
 
 # 9 About the Team
-Our team of three software developers built SpaceCraft remotely, working together across the United States. Please feel free to contact us if you'd like to talk software engineering, containers, or the web. We're always open to learning about new opportunities.
+Our team of three software developers built SpaceCraft remotely, working together across the United States. Please feel free to contact us if you'd like to talk about software engineering, containers, or the web. We're all open to learning about new opportunities!
 
 <!-- Place our pictures here with names, titles, location, and link to personal websites. -->
 
