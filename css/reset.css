@@ -47,6 +47,7 @@ table {
   border-spacing: 0;
 }
 button {
+  cursor: pointer;
   background: none;
   border: none;
 }

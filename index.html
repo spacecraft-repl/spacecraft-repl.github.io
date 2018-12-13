@@ -5,75 +5,10 @@
   <meta charset="UTF-8">
   <title>SpaceCraft: A Real-Time, Collaborative REPL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,900" rel="stylesheet">
   <link rel="shortcut icon" type="image/png" href="/favicon.png" />
   <link rel="stylesheet" href="/css/reset.css" />
-
-  <style>
-    body {
-      font-family: Roboto, Arial, sans-serif;
-    }
-
-    header {
-      min-height: 600px;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      background: #ffc022;
-    }
-
-    nav {
-      align-self: flex-start;
-      height: 125px;
-      padding: 20px 30px;
-    }
-
-    nav img {
-      height: 100%;
-    }
-
-    #hamburger {
-      cursor: pointer;
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 120px;
-      width: 120px;
-      border-bottom-left-radius: 100%;
-      background: #ed663e;
-    }
-
-    #hamburger:hover {
-      background: #d85030;
-    }
-
-    #hamburger img {
-      position: relative;
-      left: 10px;
-      bottom: 10px;
-      height: 40%;
-    }
-
-    #splash {
-      align-self: center;
-      width: 75%;
-      max-width: 1200px;
-    }
-
-    #scroll {
-      font-family: "Roboto Mono", monospace;
-      color: #ffffff;
-    }
-
-    #scroll .line {
-      height: 75px;
-      width: 1px;
-      margin: 10px auto 30px auto;
-      background: #ffffff;
-    }
-  </style>
+  <link rel="stylesheet" href="/css/main.css" />
 </head>
 
 <body>
@@ -96,8 +31,21 @@
     </div>
   </header>
 
-  <section>
+  <section class="intro">
+    <img src="images/logo.png" />
 
+    <article>
+      <h2>What is SpaceCraft?</h2>
+
+      <p>
+        SpaceCraft is an open source REPL (Read-Eval-Print-Loop) that enables real-time collaboration between users.
+        It enables pair-programming without any additional setup, by providing a platform for users to execute code in the browser for Ruby, JavaScript, and Python.
+      </p>
+    </article>
+
+    <button class="action">
+      Read our case study
+    </button>
   </section>
 
   <footer>
