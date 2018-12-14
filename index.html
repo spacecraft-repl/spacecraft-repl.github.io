@@ -16,6 +16,19 @@
     <img src="/images/hamburger.png" />
   </button>
 
+  <button class="hidden" id="x">
+    <img src="images/x.png" />
+  </button>
+
+  <nav class="menu hidden">
+    <ul>
+      <li><a href="/whitepaper">Case Study</a></li>
+      <li><a href="/team">The Team</a></li>
+      <li><a href="https://github.com/spacecraft-repl/SpaceCraft">Github</a></li>
+      <li><a href="http://repl.space" target="_blank">Try It Out</a></li>
+    </ul>
+  </nav>
+
 
   <header>
     <nav>
@@ -25,6 +38,7 @@
     </nav>
 
     <img id="splash" src="/images/splash.gif" />
+    <img id="splash-stacked" class="hidden" src="/images/splash-stacked.gif" />
 
     <div id="scroll">
       <p>scroll</p>
@@ -41,7 +55,7 @@
 
       <p>
         SpaceCraft is an open source REPL (Read-Eval-Print-Loop) that enables real-time collaboration between users.
-        It enables pair-programming without any additional setup, by providing a platform for users to execute code in the browser for Ruby, JavaScript, and Python.
+        It encourages pair-programming without any additional setup, by providing a platform for users to execute code in the browser for Ruby, JavaScript, and Python.
       </p>
     </article>
 
@@ -71,5 +85,38 @@
       Design by <i>linzimurray.creative</i>
     </a>
   </footer>
+
+  <script>
+    const $ = (cssSelector) => document.querySelector(cssSelector);
+
+    const hamburgerImg = $('#hamburger img');
+    const hamburger = $('#hamburger');
+    const xButton = $('#x');
+    const menu = $('.menu');
+
+    const toggleExpand = (element) => element.classList.toggle("expand");
+    const hide = (element) => element.classList.add("hidden");
+    const show = (element) => element.classList.remove("hidden");
+
+    document.addEventListener('DOMContentLoaded', () => {
+      $('#hamburger').onclick = (e) => {
+        const button = e.currentTarget;
+        toggleExpand(button);
+        hide(hamburgerImg);
+        show(xButton);
+        setTimeout(() => {
+          toggleExpand(button);
+          show(menu)
+        }, 300);
+      }
+
+      $('#x').onclick = (e) => {
+        const xButton = e.currentTarget;
+        hide(xButton);
+        hide(menu);
+        show(hamburgerImg);
+      }
+    });
+  </script>
 </body>
 </html>
