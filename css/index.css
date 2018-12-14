@@ -233,6 +233,7 @@ nav.team {
 
 .menu a:hover {
   color: #ffc022;
+  border-bottom: 0.5px solid #dfe8f5;
 }
 
 /* === Media Queries === */
