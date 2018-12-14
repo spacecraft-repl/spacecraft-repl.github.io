@@ -43,12 +43,17 @@ article p {
   line-height: 32px;
 }
 
+small {
+  font-size: 16px;
+}
+
 .hidden {
   display: none;
 }
 
 /* === Hamburger === */
 #hamburger {
+  z-index: 1;
   position: fixed;
   top: 0;
   right: 0;
@@ -72,8 +77,8 @@ article p {
   from {}
 
   to {
-    height: 160vw;
-    width: 160vw;
+    height: 200vw;
+    width: 200vw;
   }
 }
 
@@ -136,11 +141,31 @@ button.action:hover {
   background: #435169;
 }
 
-.app-overview img {
-  width: 75%;
-  max-width: 900px;
+.container {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.container > img {
+  display: block;
+}
+
+#app-window {
+  margin: 0 auto;
+  width: 80%;
   border-radius: 16px;
   box-shadow: 5px 5px 30px rgba(0, 0, 0, .5);
+}
+
+#labels {
+  width: 100%;
+  top: -15%;
+  position: absolute;
+}
+
+#labels-small {
+  display: none;
 }
 
 /* === Footer === */
@@ -191,7 +216,7 @@ nav.team {
 }
 
 .designer-link i:hover {
-  border-bottom: 0.5px solid #FF7850;
+  border-bottom: 0.5px solid #dfe8f5;
 }
 
 /* === Pop-up Menu === */
@@ -221,6 +246,7 @@ nav.team {
 }
 
 .menu li {
+  padding: 8px 0;
   text-align: right;
 }
 
@@ -233,7 +259,6 @@ nav.team {
 
 .menu a:hover {
   color: #ffc022;
-  border-bottom: 0.5px solid #dfe8f5;
 }
 
 /* === Media Queries === */
@@ -247,15 +272,111 @@ nav.team {
   footer > * {
     padding: 12px 0;
   }
+
+  .menu a {
+    font-size: 80px;
+  }
 }
 
 @media screen and (max-width: 480px) {
+  header > nav {
+    height: 100px;
+    padding: 15px;
+  }
+
+  .intro img {
+    width: 50%;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  article {
+    padding: 30px 25px;
+    text-align: justify;
+  }
+
+  footer {
+    padding: 25px;
+  }
+
+  nav.team {
+    flex-direction: column;
+  }
+
+  .team a {
+    margin: 5px 0;
+    border-bottom: 2px dashed #b9c1cb;
+  }
+
+  .title {
+    width: 160px;
+  }
+
+  small {
+    font-size: 14px;
+  }
+
+  #hamburger {
+    height: 85px;
+    width: 85px;
+  }
+
+  #hamburger.expand {
+    animation-duration: 0.4s;
+  }
+
+  .menu {
+    padding: 0;
+  }
+
+  .menu ul {
+    width: 95%;
+  }
+
+  .menu li {
+    text-align: center;
+    padding: 8px 0;
+  }
+
+  .menu a {
+    font-size: 55px;
+  }
+
   #splash {
     display: none;
   }
 
   #splash-stacked {
     display: block;
-    width: 90vw;
+    width: 80%;
+  }
+
+  .app-overview .container {
+    width: 100%;
+  }
+
+  #app-window {
+    width: 95%;
+    border-radius: 5px;
+  }
+
+  #labels {
+    display: none;
+  }
+
+  #labels-small {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
   }
 }
