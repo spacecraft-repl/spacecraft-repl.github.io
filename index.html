@@ -41,7 +41,7 @@
     <img id="splash-stacked" class="hidden" src="/images/splash-stacked.gif" />
 
     <div id="scroll">
-      <p>scroll</p>
+      <small>scroll</small>
       <div class="line"></div>
     </div>
   </header>
@@ -55,7 +55,7 @@
 
       <p>
         SpaceCraft is an open source REPL (Read-Eval-Print-Loop) that enables real-time collaboration between users.
-        It encourages pair-programming without any additional setup, by providing a platform for users to execute code in the browser for Ruby, JavaScript, and Python.
+        It encourages pair-programming without any additional setup and allows users to execute code in the browser for Ruby, JavaScript, and Python.
       </p>
     </article>
 
@@ -66,15 +66,18 @@
 
 
   <section class="app-overview">
-    <img src="images/app.png" />
+    <div class="container">
+      <img id="labels-small" src="images/labels-small.png" />      
+      <img id="app-window" src="images/app.png" />
+      <img id="labels" src="images/labels.png" />
+    </div>
   </section>
 
   <footer>
     <img class="title" src="images/title.png" />
 
     <nav class="team">
-      <h3>The Team</h3>
-      <span>//</span>
+      <h3>The Team <span>//</span></h3>
 
       <a href="/">Ying Chyi Gooi</a>
       <a href="/">Julius Zerwick</a>
@@ -107,7 +110,7 @@
         setTimeout(() => {
           toggleExpand(button);
           show(menu)
-        }, 300);
+        }, 250);
       }
 
       $('#x').onclick = (e) => {
