@@ -47,14 +47,20 @@ table {
   border-spacing: 0;
 }
 button {
+  font-family: inherit;
+  cursor: pointer;
   background: none;
   border: none;
 }
-button:focus {
-  outline:0;
+*:focus {
+  outline: 0;
 }
 *, 
 *:before,
 *:after {
   box-sizing: border-box;
+}
+a {
+  color: inherit;
+  text-decoration: none;
 }
