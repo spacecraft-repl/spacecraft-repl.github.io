@@ -128,6 +128,39 @@ small {
   color: #ffc022;
 }
 
+@media screen and (max-width: 480px) {
+  #hamburger {
+    height: 70px;
+    width: 70px;
+  }
+
+  #hamburger.expand {
+    animation-duration: 0.4s;
+  }
+
+  #x {
+    top: 10px;
+    right: 8px;
+  }
+
+  .menu {
+    padding: 0 !important;
+  }
+
+  .menu ul {
+    width: 95% !important;
+  }
+
+  .menu li {
+    text-align: center !important;
+    padding: 8px 0 !important;
+  }
+
+  .menu a {
+    font-size: 55px !important;
+  }
+}
+
 /* === Footer === */
 footer {
   padding: 36px;

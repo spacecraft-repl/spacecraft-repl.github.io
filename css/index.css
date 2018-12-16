@@ -120,6 +120,23 @@ button.action:hover {
     text-align: left;
   }
 
+  footer {
+    padding: 25px;
+  }
+
+  nav.team {
+    flex-direction: column;
+  }
+
+  .team a {
+    margin: 5px 0;
+    border-bottom: 2px dashed #b9c1cb;
+  }
+
+  .title {
+    width: 160px;
+  }
+
   small {
     font-size: 14px;
   }
