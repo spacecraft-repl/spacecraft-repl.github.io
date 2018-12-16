@@ -50,7 +50,11 @@ small {
 
 /* === Hamburger === */
 #hamburger {
-  z-index: 1;
+  cursor: pointer;
+  z-index: 1;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   top: 0;
   right: 0;

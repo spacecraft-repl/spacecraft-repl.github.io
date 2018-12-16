@@ -94,15 +94,6 @@ button.action:hover {
 }
 
 @media screen and (max-width: 480px) {
-  header > nav {
-    height: 100px;
-    padding: 15px;
-  }
-
-  .intro img {
-    width: 50%;
-  }
-
   h2 {
     font-size: 32px;
   }
