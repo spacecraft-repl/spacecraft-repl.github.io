@@ -119,7 +119,7 @@ small {
 
 .menu a {
   font-weight: 900;
-  font-size: 120px;
+  font-size: 110px;
   text-transform: uppercase;
   color: #ffffff;
 }
@@ -189,9 +189,22 @@ nav.team {
   footer > * {
     padding: 12px 0;
   }
+
+  .menu a {
+    font-size: 80px;
+  }
 }
 
 @media screen and (max-width: 480px) {
+  header > nav {
+    height: 100px;
+    padding: 15px;
+  }
+
+  .intro img {
+    width: 50%;
+  }
+
   #hamburger {
     height: 70px;
     width: 70px;
@@ -220,17 +233,16 @@ nav.team {
   }
 
   .menu a {
-    font-size: 55px !important;
+    font-size: 56px !important;
   }
 
   footer {
     padding: 25px;
-    align-items: center;    
   }
 
   nav.team {
     margin-top: 20px;
-    flex-direction: column;
+    flex-direction: column;    
   }
 
   .team a {

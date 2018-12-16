@@ -11,6 +11,10 @@ header {
   height: 420px;
 }
 
+.flex-placeholder {
+  height: 100px;
+}
+
 .page-title {
   text-align: center;
 }
@@ -50,6 +54,7 @@ h1 {
   font-size: 2.4em;
   border-bottom: 1px solid #b9c1cb;
   padding-bottom: 10px;
+  margin-top: 80px;
   margin-bottom: 20px;  
 }
 
@@ -186,6 +191,77 @@ pre.highlight {
   margin-bottom: 20px;
 }
 
+@media screen and (max-width: 1200px) {
+  .page-title h1 {
+    font-size: 80px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 20px;
+  }
+
+  header {
+    height: 100vh;
+  }
+
+  .page-title h1 {
+    margin: 0;
+    font-size: 68px;
+    letter-spacing: -1px;
+  }
+
+  .page-title p {
+    font-size: 14px;
+    letter-spacing: -0.6px;
+    padding: 0 15px;
+    margin: 0;
+  }
+
+  main {
+    padding: 16px;
+    padding-bottom: 100px;
+  }
+
+  main h1 {
+    font-size: 2em;
+  }
+
+  main h1:first-of-type {
+    margin-top: 0;
+  }
+
+  main h2 {
+    font-size: 1.25em;
+    line-height: 1.3em;
+  }
+
+  main h3 {
+    font-size: 1em;
+    line-height: 1.25em;
+  }
+
+  main h4 {
+    font-size: 1em;
+    line-height: 1em;
+  }
+
+  main img,
+  table {
+    margin: 0 -16px;
+    width: 96vw;
+  }
+
+  th, td {
+    padding: 12px;
+  }
+
+  li img {
+    margin: 0 -60px;
+  }
+}
+
 /* Syntax Highlights */
 
 .highlight table td { padding: 5px; }
@@ -315,52 +391,3 @@ pre.highlight {
 .highlight .nx { color: #b9c1cb; }
 
 .highlight .p { color: #b9c1cb; }
-
-@media screen and (max-width: 480px) {
-  .page-title h1 {
-    font-size: 70px;
-  }
-
-  .page-title p {
-    font-size: 14px;
-    letter-spacing: -0.6px;
-  }
-
-  main {
-    padding: 16px;
-    padding-bottom: 100px;
-  }
-
-  main h1 {
-    font-size: 2em;
-  }
-
-  main h2 {
-    font-size: 1.25em;
-    line-height: 1.3em;
-  }
-
-  main h3 {
-    font-size: 1em;
-    line-height: 1.25em;
-  }
-
-  main h4 {
-    font-size: 0.8em;
-    line-height: 1em;
-  }
-
-  main img,
-  table {
-    margin: 0 -16px;
-    width: 96vw;
-  }
-
-  th, td {
-    padding: 12px;
-  }
-
-  li img {
-    margin: 0 -60px;
-  }
-}
