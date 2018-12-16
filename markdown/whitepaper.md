@@ -190,8 +190,7 @@ To synchronize outputs, our application server broadcasts the evaluation outputs
 3. Application server sends the line of code to the pseudoterminal that is connected to the REPL program.
 4. The REPL program evaluates the line of code and sends the appropriate output data to the pseudoterminal.
 5. Application server reads the evaluation outputs from the pseudoterminal.
-
-![output sync broadcast](https://docs.google.com/drawings/d/e/2PACX-1vT1eaaey9-P8vNXGVRrCeTvEr1lMDlr8OrHSZZAHfjNMT9mb3CfQtCqR7neKcKu-nXjqAN0A3R5SBgQ/pub?w=1440)
+  ![output sync broadcast](https://docs.google.com/drawings/d/e/2PACX-1vT1eaaey9-P8vNXGVRrCeTvEr1lMDlr8OrHSZZAHfjNMT9mb3CfQtCqR7neKcKu-nXjqAN0A3R5SBgQ/pub?w=1440)
 
 6. Application server broadcasts and streams the outputs to all connected clients.
 7. Clients receive the outputs and display them on the front-end terminal.
@@ -206,8 +205,7 @@ Our input-syncing mechanism consists of the following steps:
 1. The state of the input line before any changes.
 2. The user presses a key on the REPL front-end terminal. The state is updated in the user's client.
 3. The user's client sends a message with the current input line to inform the application server that the current line has been changed.
-
-![input sync broadcast](https://docs.google.com/drawings/d/e/2PACX-1vTbNvqeH7bv8wC0VfljTRm3PSQxhyRBvdKdaQlcpR-PpHeiIpyYiOiUH9UINaafsSfpiJwM3LcH9cFH/pub?w=1305&h=624)
+  ![input sync broadcast](https://docs.google.com/drawings/d/e/2PACX-1vTbNvqeH7bv8wC0VfljTRm3PSQxhyRBvdKdaQlcpR-PpHeiIpyYiOiUH9UINaafsSfpiJwM3LcH9cFH/pub?w=1305&h=624)
 
 4. Our application server broadcasts a message that includes the current line and prompt to other clients. The prompt is retrieved from the most recent output cache. It is used to rewrite the entire terminal line in the following step.
 
@@ -508,8 +506,11 @@ To prevent this from occurring, we aim to implement a request queue which will t
 However, we believe this is an acceptable consequence since the part of our application with the greatest performance and lowest latency should be the actual REPL and editor. Once the user is connected to their container, the experienced latency for writing and evaluating code is significantly small with no noticeable lag.
 
 
-# 9 About the Team
-Our team of three software developers built SpaceCraft remotely, working together across the United States. Please feel free to contact us if you'd like to talk about software engineering, containers, or the web. We're all open to learning about new opportunities!
+# About the Team
+
+**[View team page](/team)**
+
+Our team of three software developers built SpaceCraft remotely, working together across the United States. Please feel free to [contact us](/team) if you'd like to talk about software engineering, containers, or the web. We're all open to learning about new opportunities!
 
 <!-- Place our pictures here with names, titles, location, and link to personal websites. -->
 

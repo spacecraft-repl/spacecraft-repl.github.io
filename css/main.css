@@ -160,3 +160,54 @@ small {
     font-size: 55px !important;
   }
 }
+
+/* === Footer === */
+footer {
+  padding: 36px;
+  flex-direction: row;
+  justify-content: space-between;
+  background: #b9c1cb;
+}
+
+.title {
+  image-rendering: crisp-edges;
+  max-width: 210px;
+}
+
+nav.team {
+  color: #435169;
+  display: flex;
+}
+
+.team h3 {
+  font-weight: 700;  
+  text-transform: uppercase;
+}
+
+.team span {
+  font-weight: 700;
+  padding: 0 6px;
+  color: #dfe8f5;
+}
+
+.team a {
+  font-family: Roboto Mono, monospace;
+  font-size: 18px;
+  margin: 0 20px;
+}
+
+.team a:hover {
+  border-bottom: 2px solid #435169;
+}
+
+.designer-link {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 18px;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+}
+
+.designer-link i:hover {
+  border-bottom: 0.5px solid #dfe8f5;
+}
