@@ -16,6 +16,7 @@ header {
 }
 
 .page-title h1 {
+  margin: 0;
   font-size: 110px;
   color: #d85030;
   border-bottom: none;
@@ -31,8 +32,13 @@ header {
 
 main {
   padding: 40px;
+  padding-bottom: 140px;
   margin: 0 auto;
   max-width: 900px;
+}
+
+main h1:first-of-type {
+  margin-top: 10px;
 }
 
 main img {
@@ -49,6 +55,7 @@ h1 {
   font-size: 2.4em;
   border-bottom: 1px solid #b9c1cb;
   padding-bottom: 10px;
+  margin-top: 80px;
   margin-bottom: 20px;  
 }
 
@@ -135,6 +142,7 @@ code {
   font-size: 18px;
   padding: 0 5px;
   font-family: Roboto Mono, monospace;
+  overflow: scroll;
 }
 
 table { 
@@ -167,6 +175,8 @@ thead tr {
 pre.highlight {
   padding: 25px;
   border-radius: 5px;
+  overflow: scroll;
+  overflow-y: hidden;  
 }
 
 .highlight code {
@@ -180,6 +190,81 @@ pre.highlight {
   border-radius: 5px;
   background-color: #282C35;
   margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .page-title h1 {
+    font-size: 80px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 20px;
+  }
+
+  header {
+    height: 100vh;
+  }
+
+  .page-title h1 {
+    margin: 0;
+    font-size: 68px;
+    letter-spacing: -1px;
+  }
+
+  .page-title p {
+    font-size: 14px;
+    letter-spacing: -0.6px;
+    padding: 0 15px;
+    margin: 0;
+  }
+
+  .flex-placeholder {
+    height: 100px;
+  }  
+
+  main {
+    padding: 16px;
+    padding-bottom: 100px;
+  }
+
+  main h1 {
+    font-size: 2em;
+  }
+
+  main h1:first-of-type {
+    margin-top: 0;
+  }
+
+  main h2 {
+    font-size: 1.25em;
+    line-height: 1.3em;
+  }
+
+  main h3 {
+    font-size: 1em;
+    line-height: 1.25em;
+  }
+
+  main h4 {
+    font-size: 1em;
+    line-height: 1em;
+  }
+
+  main img,
+  table {
+    margin: 0 -16px;
+    width: 96vw;
+  }
+
+  th, td {
+    padding: 12px;
+  }
+
+  li img {
+    margin: 0 -60px;
+  }
 }
 
 /* Syntax Highlights */
