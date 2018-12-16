@@ -171,7 +171,6 @@ thead tr {
   background: #ffffff !important;
 }
 
-
 pre.highlight {
   padding: 25px;
   border-radius: 5px;
@@ -204,7 +203,7 @@ pre.highlight {
   }
 
   header {
-    height: 100vh;
+    height: 400px;
   }
 
   .page-title h1 {
@@ -219,10 +218,6 @@ pre.highlight {
     padding: 0 15px;
     margin: 0;
   }
-
-  .flex-placeholder {
-    height: 100px;
-  }  
 
   main {
     padding: 16px;
