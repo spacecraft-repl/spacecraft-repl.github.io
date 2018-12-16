@@ -1,5 +1,3 @@
-<!-- Insert SpaceCraft logo either above, below, or next to title -->
-# SpaceCraft: A Real-Time, Collaborative REPL
 
 # 1 Introduction
 SpaceCraft is an open-source, real-time collaborative REPL (Read-Eval-Print-Loop) that allows users to write and execute code in the browser for Ruby, JavaScript, and Python. We built this project using Node.js and deployed via Docker, with the a client-server network architecture that communicates over WebSockets.
@@ -136,7 +134,11 @@ There are two possible reasons as to why this may occur.
 
 First, streams may be blocked when we try to read from the standard output. One problem is that the standard input may not send any data to the REPL process for evaluation until the input stream is closed. <sup>[[1]](https://stackoverflow.com/questions/9818534/why-is-it-necessary-to-close-standard-input-output-error-when-writing-a-daemon "Stack Overflow: 'Why is it necessary to close standard input/output/error when writing a daemon?'")</sup>
 
-Second, interpreted languages are usually written in lower-level languages, and due to how the language interacts with the standard stream, it may be a cause of hanging outputs. For example, the C implementation of `read()` [function](https://linux.die.net/man/3/read) would hang when we try to read from an output stream, until new data is being written to the corresponding input stream.
+Second, interpreted languages are usually written in lower-level languages, and due to how the language interacts with the standard stream, it may be a cause of hanging outputs. For example, the C implementation of `read()` function would hang when we try to read from an output stream, until new data is being written to the corresponding input stream.
+
+> If some process has the pipe open for writing and O_NONBLOCK is clear, `read()` shall block the calling thread until some data is written or the pipe is closed by all processes that had the pipe open for writing.
+
+-- [read(3)Linux man page](https://linux.die.net/man/3/read)
 
 ![streams blocking](https://docs.google.com/drawings/d/e/2PACX-1vR4hvoZaifOI5Xh_BkDWiGcKP28pu8DCevtEJKMsi08O0fIaNozngsKoWNItFskmBjBMN8OURK9oOpP/pub?w=1440)
 
@@ -236,7 +238,7 @@ Now that we've handled the REPL input and output synchronization, let's turn to 
 - duplicated delete operations are only applied once to produce the same result
 
 ![conflict in concurrent edit](https://docs.google.com/drawings/d/e/2PACX-1vQkm0mEhBrkFW1rqPl6ZAu7UJCQ_5Q0IUazA5lxt3JtZxWDCJgbhUHB1OVr_dh_3LLxAMlFeUPG29p2/pub?w=1305&h=594)
-> Simultaneous insertion and deletion produce different results. Source: [Conclave: A Real-Time Collaborative Text Editor](https://conclave-team.github.io/conclave-site/)
+> Simultaneous insertion and deletion produce different results. Source: [Conclave](https://conclave-team.github.io/conclave-site/)
 
 To solve this issue, we utilized [Yjs](https://github.com/y-js/yjs), a shared editing framework that utilizes Conflict-Free Replicated Data Type (CRDT) for conflict resolution. We also chose Yjs because of its WebSockets adapter that integrates nicely into our application.
 

@@ -1,1 +1,133 @@
 @import url("main.css");
+
+body {
+  font-weight: 300;  
+  /*color: #435169;*/
+  color: #282C35;
+}
+
+header {
+  align-items: center;
+  height: 420px;
+}
+
+.page-title {
+  text-align: center;
+}
+
+.page-title h1 {
+  font-size: 110px;
+  color: #d85030;
+  border-bottom: none;
+}
+
+.page-title p {
+  color: #282C35;
+  font-family: Roboto Mono;
+  font-size: 16px;
+  max-width: 600px;
+  text-align: center;
+}
+
+main {
+  padding: 40px;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+main img {
+  width: 100%;
+}
+
+h1, h2, h3, h4 {
+  color: #282C35;
+  font-weight: 900;
+  margin-bottom: 16px;    
+}
+
+h1 {
+  font-size: 2.4em;
+  border-bottom: 1px solid #b9c1cb;
+  padding-bottom: 10px;
+  margin-bottom: 20px;  
+}
+
+h2 {
+  font-size: 1.7em;
+  border-bottom: 1px solid #b9c1cb;
+  padding-bottom: 5px;
+  margin-bottom: 16px;   
+}
+
+h3 {
+  font-size: 1.4em;
+}
+
+p {
+  line-height: 36px;
+  margin-bottom: 32px;
+}
+
+main img {
+  display: block;
+}
+
+p + ul {
+  margin-top: -20px;
+}
+
+ul {
+  margin-left: 40px;
+}
+
+
+ol {
+  margin-left: 24px;
+}
+
+ul + *,
+ol + * {
+  margin-top: 20px;
+}
+
+li {
+  line-height: 36px;
+  padding-left: 16px;  
+  margin-bottom: 5px;  
+}
+
+ul > li {
+  list-style: disc;
+}
+
+ol > li {
+  list-style: decimal;
+}
+
+sup {
+  font-family: Roboto Mono, monospace;
+  vertical-align: super;
+  color: #1D315D;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+blockquote p {
+  text-align: center;
+  font-size: 18px;
+  color: #818181
+}
+
+a {
+  color: #022C86;
+}
+
+a:hover {
+  color: #285BCA;
+}
+
+code {
+  background: #dfe8f5;
+  padding: 0 5px;
+  font-family: Roboto Mono, monospace;
+}

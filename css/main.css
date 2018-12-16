@@ -10,11 +10,8 @@ header, section, footer, .menu {
 }
 
 header {
-  min-height: 500px;
-  height: 100vh;
   display: flex;
   justify-content: space-between;
-  background: #ffc022;
 }
 
 header > nav {
@@ -57,9 +54,9 @@ small {
   position: fixed;
   top: 0;
   right: 0;
-  height: 90px;
-  width: 90px;
-  border-bottom-left-radius: 98%;
+  height: 80px;
+  width: 80px;
+  border-bottom-left-radius: 100%;
   background: #ed663e;
 }
 
@@ -86,7 +83,7 @@ small {
   position: relative;
   left: 6px;
   bottom: 6px;
-  height: 50%;
+  width: 36px;
 }
 
 /* === Pop-up Menu === */
@@ -103,12 +100,12 @@ small {
 #x {
   z-index: 2;
   position: fixed;
-  top: 22px;
-  right: 22px;
+  top: 16px;
+  right: 12px;
 }
 
 #x img {
-  width: 35px;
+  width: 32px;
 }
 
 .menu ul {
@@ -129,4 +126,37 @@ small {
 
 .menu a:hover {
   color: #ffc022;
+}
+
+@media screen and (max-width: 480px) {
+  #hamburger {
+    height: 70px;
+    width: 70px;
+  }
+
+  #hamburger.expand {
+    animation-duration: 0.4s;
+  }
+
+  #x {
+    top: 10px;
+    right: 8px;
+  }
+
+  .menu {
+    padding: 0 !important;
+  }
+
+  .menu ul {
+    width: 95% !important;
+  }
+
+  .menu li {
+    text-align: center !important;
+    padding: 8px 0 !important;
+  }
+
+  .menu a {
+    font-size: 55px !important;
+  }
 }

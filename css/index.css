@@ -1,5 +1,10 @@
 @import url("main.css");
 
+header {
+  min-height: 500px;
+  height: 100vh;
+  background: #ffc022;  
+}
 /* === Splash === */
 
 #splash {
@@ -173,7 +178,7 @@ nav.team {
 
   article {
     padding: 30px 25px;
-    text-align: justify;
+    text-align: left;
   }
 
   footer {
@@ -195,32 +200,6 @@ nav.team {
 
   small {
     font-size: 14px;
-  }
-
-  #hamburger {
-    height: 85px;
-    width: 85px;
-  }
-
-  #hamburger.expand {
-    animation-duration: 0.4s;
-  }
-
-  .menu {
-    padding: 0;
-  }
-
-  .menu ul {
-    width: 95%;
-  }
-
-  .menu li {
-    text-align: center;
-    padding: 8px 0;
-  }
-
-  .menu a {
-    font-size: 55px;
   }
 
   #splash {
