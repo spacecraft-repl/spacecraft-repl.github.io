@@ -10,9 +10,9 @@ const hide = (element) => element.classList.add("hidden");
 const show = (element) => element.classList.remove("hidden");
 
 document.addEventListener('DOMContentLoaded', () => {
-  $('#hamburger').onclick = (e) => {
+  $('#hamburger').onmouseup = (e) => {
     hide(hamburgerImg);
-    toggleExpand(hamburger);
+    setTimeout(() => toggleExpand(hamburger), 20);
     show(xButton);    
     setTimeout(() => {
       toggleExpand(hamburger);

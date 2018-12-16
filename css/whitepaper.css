@@ -26,8 +26,9 @@ header {
   color: #282C35;
   font-family: Roboto Mono;
   font-size: 16px;
-  max-width: 600px;
+  max-width: 550px;
   text-align: center;
+  line-height: 24px;
 }
 
 main {
@@ -46,13 +47,13 @@ main img {
 }
 
 h1, h2, main h3, h4 {
-  color: #282C35;
+  color: #435169;
   font-weight: 900;
   margin-bottom: 16px;    
 }
 
 h1 {
-  font-size: 2.4em;
+  font-size: 2.2em;
   border-bottom: 1px solid #b9c1cb;
   padding-bottom: 10px;
   margin-top: 80px;
@@ -94,13 +95,18 @@ main ol {
 
 main ul + *,
 main ol + * {
+  margin-top: 40px;
+}
+
+main ul + p,
+main ol + p {
   margin-top: 20px;
 }
 
 main li {
   line-height: 36px;
   padding-left: 16px;  
-  margin-bottom: 5px;  
+  margin-bottom: 10px;  
 }
 
 main ul > li {
@@ -202,6 +208,18 @@ pre.highlight {
     font-size: 20px;
   }
 
+  p {
+    line-height: 32px;
+  }
+
+  blockquote p {
+    line-height: 28px;
+  }
+
+  main li {
+    line-height: 30px !important;
+  }
+
   header {
     height: 400px;
   }
@@ -253,8 +271,8 @@ pre.highlight {
 
   main img,
   table {
-    margin: 0 -14px;
-    width: 99vw;
+    margin: 0 -16px;
+    width: 100vw;
   }
 
   th, td {
