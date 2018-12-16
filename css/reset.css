@@ -52,8 +52,9 @@ button {
   background: none;
   border: none;
 }
-*:focus {
+button:focus {
   outline: 0;
+  background: none;
 }
 *, 
 *:before,

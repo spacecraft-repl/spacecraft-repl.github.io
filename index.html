@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html>
 
@@ -59,9 +61,9 @@
       </p>
     </article>
 
-    <button class="action">
-      Read our case study
-    </button>
+    <a href="/whitepaper">
+      <button class="action">Read our case study</button>
+    </a>
   </section>
 
 
@@ -74,52 +76,9 @@
   </section>
 
   <footer>
-    <img class="title" src="images/title.png" />
-
-    <nav class="team">
-      <h3>The Team <span>//</span></h3>
-
-      <a href="/">Ying Chyi Gooi</a>
-      <a href="/">Julius Zerwick</a>
-      <a href="/">Nick Johnson</a>
-    </nav>
-
-    <a class="designer-link" href="https://www.instagram.com/linzimurray.creative/">
-      Design by <i>linzimurray.creative</i>
-    </a>
+    {% include footer.html %}
   </footer>
 
-  <script>
-    const $ = (cssSelector) => document.querySelector(cssSelector);
-
-    const hamburgerImg = $('#hamburger img');
-    const hamburger = $('#hamburger');
-    const xButton = $('#x');
-    const menu = $('.menu');
-
-    const toggleExpand = (element) => element.classList.toggle("expand");
-    const hide = (element) => element.classList.add("hidden");
-    const show = (element) => element.classList.remove("hidden");
-
-    document.addEventListener('DOMContentLoaded', () => {
-      $('#hamburger').onclick = (e) => {
-        const button = e.currentTarget;
-        toggleExpand(button);
-        hide(hamburgerImg);
-        show(xButton);
-        setTimeout(() => {
-          toggleExpand(button);
-          show(menu)
-        }, 250);
-      }
-
-      $('#x').onclick = (e) => {
-        const xButton = e.currentTarget;
-        hide(xButton);
-        hide(menu);
-        show(hamburgerImg);
-      }
-    });
-  </script>
+  <script src="javascript/menu.js"></script>
 </body>
 </html>

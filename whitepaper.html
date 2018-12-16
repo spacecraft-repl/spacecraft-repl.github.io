@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html>
 
@@ -5,16 +7,56 @@
   <meta charset="UTF-8">
   <title>Case Study | SpaceCraft: A Real-Time, Collaborative REPL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400,900" rel="stylesheet">  
   <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
   <link rel="stylesheet" href="/css/reset.css" />
   <link rel="stylesheet" href="/css/whitepaper.css" />
 </head>
 
 <body>
+  <button id="hamburger">
+    <img src="/images/hamburger.png" />
+  </button>
 
+  <button class="hidden" id="x">
+    <img src="images/x.png" />
+  </button>
+
+  <nav class="menu hidden">
+    <ul>
+      <li><a href="/whitepaper">Case Study</a></li>
+      <li><a href="/team">The Team</a></li>
+      <li><a href="https://github.com/spacecraft-repl/SpaceCraft">Github</a></li>
+      <li><a href="http://repl.space" target="_blank">Try It Out</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <nav>
+      <a href="/">
+        <img src="/images/logo.png" />
+      </a>
+    </nav>
+
+    <div class="page-title">
+      <h1>Case Study</h1>
+      <p>How we built SpaceCraft, the challenges we encountered, and the solutions that made it possible</p>
+    </div>
+
+    <div class="flex-placeholder"></div>
+  </header>  
+
+  <main>
+    {% capture markdown %}
+      {% include_relative markdown/whitepaper.md %}
+    {% endcapture %}  
+    {{ markdown | markdownify }}
+  </main>
 
   <footer>
-
+    {% include footer.html %}
   </footer>
+
+  <script src="javascript/menu.js"></script>
 </body>
 </html>
