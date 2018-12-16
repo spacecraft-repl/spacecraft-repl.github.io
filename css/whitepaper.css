@@ -31,6 +31,7 @@ header {
 
 main {
   padding: 40px;
+  padding-bottom: 140px;
   margin: 0 auto;
   max-width: 900px;
 }
@@ -135,6 +136,7 @@ code {
   font-size: 18px;
   padding: 0 5px;
   font-family: Roboto Mono, monospace;
+  overflow: scroll;
 }
 
 table { 
@@ -167,6 +169,8 @@ thead tr {
 pre.highlight {
   padding: 25px;
   border-radius: 5px;
+  overflow: scroll;
+  overflow-y: hidden;  
 }
 
 .highlight code {
@@ -311,3 +315,52 @@ pre.highlight {
 .highlight .nx { color: #b9c1cb; }
 
 .highlight .p { color: #b9c1cb; }
+
+@media screen and (max-width: 480px) {
+  .page-title h1 {
+    font-size: 70px;
+  }
+
+  .page-title p {
+    font-size: 14px;
+    letter-spacing: -0.6px;
+  }
+
+  main {
+    padding: 16px;
+    padding-bottom: 100px;
+  }
+
+  main h1 {
+    font-size: 2em;
+  }
+
+  main h2 {
+    font-size: 1.25em;
+    line-height: 1.3em;
+  }
+
+  main h3 {
+    font-size: 1em;
+    line-height: 1.25em;
+  }
+
+  main h4 {
+    font-size: 0.8em;
+    line-height: 1em;
+  }
+
+  main img,
+  table {
+    margin: 0 -16px;
+    width: 96vw;
+  }
+
+  th, td {
+    padding: 12px;
+  }
+
+  li img {
+    margin: 0 -60px;
+  }
+}
