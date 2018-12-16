@@ -11,15 +11,12 @@ header {
   height: 420px;
 }
 
-.flex-placeholder {
-  height: 100px;
-}
-
 .page-title {
   text-align: center;
 }
 
 .page-title h1 {
+  margin: 0;
   font-size: 110px;
   color: #d85030;
   border-bottom: none;
@@ -38,6 +35,10 @@ main {
   padding-bottom: 140px;
   margin: 0 auto;
   max-width: 900px;
+}
+
+main h1:first-of-type {
+  margin-top: 10px;
 }
 
 main img {
@@ -218,6 +219,10 @@ pre.highlight {
     padding: 0 15px;
     margin: 0;
   }
+
+  .flex-placeholder {
+    height: 100px;
+  }  
 
   main {
     padding: 16px;
