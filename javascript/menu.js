@@ -11,12 +11,11 @@ const show = (element) => element.classList.remove("hidden");
 
 document.addEventListener('DOMContentLoaded', () => {
   $('#hamburger').onclick = (e) => {
-    const button = e.currentTarget;
-    toggleExpand(button);
     hide(hamburgerImg);
-    show(xButton);
+    toggleExpand(hamburger);
+    show(xButton);    
     setTimeout(() => {
-      toggleExpand(button);
+      toggleExpand(hamburger);
       show(menu)
     }, 250);
   }
