@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html>
 
@@ -12,23 +14,7 @@
 </head>
 
 <body>
-  <button id="hamburger">
-    <img src="/images/hamburger.png" />
-  </button>
-
-  <button class="hidden" id="x">
-    <img src="images/x.png" />
-  </button>
-
-  <nav class="menu hidden">
-    <ul>
-      <li><a href="/whitepaper">Case Study</a></li>
-      <li><a href="/team">The Team</a></li>
-      <li><a href="https://github.com/spacecraft-repl/SpaceCraft">Github</a></li>
-      <li><a href="http://repl.space" target="_blank">Try It Out</a></li>
-    </ul>
-  </nav>
-
+  {% include menu.html %}
 
   <header>
     <nav>
@@ -41,7 +27,7 @@
     <img id="splash-stacked" class="hidden" src="/images/splash-stacked.gif" />
 
     <div id="scroll">
-      <p>scroll</p>
+      <small>scroll</small>
       <div class="line"></div>
     </div>
   </header>
@@ -55,68 +41,28 @@
 
       <p>
         SpaceCraft is an open source REPL (Read-Eval-Print-Loop) that enables real-time collaboration between users.
-        It encourages pair-programming without any additional setup, by providing a platform for users to execute code in the browser for Ruby, JavaScript, and Python.
+        It encourages pair-programming without any additional setup and allows users to execute code in the browser for Ruby, JavaScript, and Python.
       </p>
     </article>
 
-    <button class="action">
-      Read our case study
-    </button>
+    <a href="/whitepaper">
+      <button class="action">Read our case study</button>
+    </a>
   </section>
 
 
   <section class="app-overview">
-    <img src="images/app.png" />
+    <div class="container">
+      <img id="labels-small" src="images/labels-small.png" />      
+      <img id="app-window" src="images/app.png" />
+      <img id="labels" src="images/labels.png" />
+    </div>
   </section>
 
   <footer>
-    <img class="title" src="images/title.png" />
-
-    <nav class="team">
-      <h3>The Team</h3>
-      <span>//</span>
-
-      <a href="/">Ying Chyi Gooi</a>
-      <a href="/">Julius Zerwick</a>
-      <a href="/">Nick Johnson</a>
-    </nav>
-
-    <a class="designer-link" href="https://www.instagram.com/linzimurray.creative/">
-      Design by <i>linzimurray.creative</i>
-    </a>
+    {% include footer.html %}
   </footer>
 
-  <script>
-    const $ = (cssSelector) => document.querySelector(cssSelector);
-
-    const hamburgerImg = $('#hamburger img');
-    const hamburger = $('#hamburger');
-    const xButton = $('#x');
-    const menu = $('.menu');
-
-    const toggleExpand = (element) => element.classList.toggle("expand");
-    const hide = (element) => element.classList.add("hidden");
-    const show = (element) => element.classList.remove("hidden");
-
-    document.addEventListener('DOMContentLoaded', () => {
-      $('#hamburger').onclick = (e) => {
-        const button = e.currentTarget;
-        toggleExpand(button);
-        hide(hamburgerImg);
-        show(xButton);
-        setTimeout(() => {
-          toggleExpand(button);
-          show(menu)
-        }, 300);
-      }
-
-      $('#x').onclick = (e) => {
-        const xButton = e.currentTarget;
-        hide(xButton);
-        hide(menu);
-        show(hamburgerImg);
-      }
-    });
-  </script>
+  <script src="javascript/menu.js"></script>
 </body>
 </html>

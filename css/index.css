@@ -1,88 +1,11 @@
-body {
-  font-family: Roboto, Arial, sans-serif;
-  font-size: 22px;
-}
-
-header, section, footer, .menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+@import url("main.css");
 
 header {
   min-height: 500px;
   height: 100vh;
-  display: flex;
-  justify-content: space-between;
-  background: #ffc022;
+  background: #ffc022;  
 }
-
-header > nav {
-  align-self: flex-start;
-  height: 125px;
-  padding: 20px 30px;
-}
-
-nav img {
-  height: 100%;
-}
-
-h2 {
-  padding: 16px 0;
-  font-size: 40px;
-  font-weight: 900;
-}
-
-article {
-  max-width: 1120px;
-  padding: 30px 60px;
-  text-align: center;
-}
-
-article p {
-  line-height: 32px;
-}
-
-.hidden {
-  display: none;
-}
-
-/* === Hamburger === */
-#hamburger {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 90px;
-  width: 90px;
-  border-bottom-left-radius: 98%;
-  background: #ed663e;
-}
-
-#hamburger:hover {
-  background: #F96D44;
-}
-
-#hamburger.expand {
-  background: #ed663e;
-  animation-duration: 0.6s;
-  animation-name: expand;
-}
-
-@keyframes expand {
-  from {}
-
-  to {
-    height: 160vw;
-    width: 160vw;
-  }
-}
-
-#hamburger img {
-  position: relative;
-  left: 6px;
-  bottom: 6px;
-  height: 50%;
-}
+/* === Splash === */
 
 #splash {
   align-self: center;
@@ -136,126 +59,104 @@ button.action:hover {
   background: #435169;
 }
 
-.app-overview img {
-  width: 75%;
-  max-width: 900px;
+.container {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.container > img {
+  display: block;
+}
+
+#app-window {
+  margin: 0 auto;
+  width: 80%;
   border-radius: 16px;
   box-shadow: 5px 5px 30px rgba(0, 0, 0, .5);
 }
 
-/* === Footer === */
-footer {
-  padding: 36px;
-  flex-direction: row;
-  justify-content: space-between;
-  background: #b9c1cb;
+#labels {
+  width: 100%;
+  top: -15%;
+  position: absolute;
 }
 
-.title {
-  image-rendering: crisp-edges;
-  max-width: 210px;
-}
-
-nav.team {
-  color: #435169;
-  display: flex;
-}
-
-.team h3 {
-  font-weight: 700;  
-  text-transform: uppercase;
-}
-
-.team span {
-  font-weight: 700;
-  padding: 0 6px;
-  color: #dfe8f5;
-}
-
-.team a {
-  font-family: Roboto Mono, monospace;
-  font-size: 18px;
-  margin: 0 20px;
-}
-
-.team a:hover {
-  border-bottom: 2px solid #435169;
-}
-
-.designer-link {
-  font-size: 12px;
-  font-weight: 300;
-  line-height: 18px;
-  letter-spacing: 0.5px;
-  color: #ffffff;
-}
-
-.designer-link i:hover {
-  border-bottom: 0.5px solid #FF7850;
-}
-
-/* === Pop-up Menu === */
-
-.menu {
-  z-index: 1;
-  position: fixed;
-  justify-content: space-around;
-  background: #ed663e;
-  height: 100vh;
-  width: 100vw;
-}
-
-#x {
-  z-index: 2;
-  position: fixed;
-  top: 22px;
-  right: 22px;
-}
-
-#x img {
-  width: 35px;
-}
-
-.menu ul {
-  width: 75%;
-}
-
-.menu li {
-  text-align: right;
-}
-
-.menu a {
-  font-weight: 900;
-  font-size: 120px;
-  text-transform: uppercase;
-  color: #ffffff;
-}
-
-.menu a:hover {
-  color: #ffc022;
-  border-bottom: 0.5px solid #dfe8f5;
+#labels-small {
+  display: none;
 }
 
 /* === Media Queries === */
 @media screen and (max-width: 1200px) {
-  footer {
-    padding: 20px 40px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  footer > * {
-    padding: 12px 0;
+  .menu a {
+    font-size: 80px;
   }
 }
 
 @media screen and (max-width: 480px) {
+  h2 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  article {
+    padding: 30px 25px;
+    text-align: left;
+  }
+
+  footer {
+    padding: 25px;
+  }
+
+  nav.team {
+    flex-direction: column;
+  }
+
+  .team a {
+    margin: 5px 0;
+    border-bottom: 2px dashed #b9c1cb;
+  }
+
+  .title {
+    width: 160px;
+  }
+
+  small {
+    font-size: 14px;
+  }
+
   #splash {
     display: none;
   }
 
   #splash-stacked {
     display: block;
-    width: 90vw;
+    width: 80%;
+  }
+
+  .app-overview .container {
+    width: 100%;
+  }
+
+  #app-window {
+    width: 95%;
+    border-radius: 5px;
+  }
+
+  #labels {
+    display: none;
+  }
+
+  #labels-small {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
   }
 }

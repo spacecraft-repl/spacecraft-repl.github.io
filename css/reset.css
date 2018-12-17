@@ -51,9 +51,11 @@ button {
   cursor: pointer;
   background: none;
   border: none;
+  -webkit-tap-highlight-color: transparent;
 }
-*:focus {
+button:focus {
   outline: 0;
+  background: none;
 }
 *, 
 *:before,
