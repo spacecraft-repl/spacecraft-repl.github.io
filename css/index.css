@@ -55,8 +55,12 @@ button.action:hover {
 
 /* === App overview section === */
 .app-overview {
-  padding: 140px 0;
+  padding: 140px 0 100px 0;
   background: #435169;
+}
+
+.app-overview .action {
+  margin-top: 60px;
 }
 
 .container {
@@ -94,6 +98,10 @@ button.action:hover {
 }
 
 @media screen and (max-width: 480px) {
+  .intro img {
+    width: 60%;
+  }
+
   h2 {
     font-size: 32px;
   }
