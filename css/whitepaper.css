@@ -86,7 +86,7 @@ p + ul {
 
 main ul {
   margin-left: 40px;
-}
+} 
 
 
 main ol {
@@ -125,8 +125,8 @@ sup {
   font-weight: 900;
 }
 
-strong {
-  font-weight: 900;
+strong a {
+  font-weight: 900 !important;
 }
 
 blockquote p {
@@ -136,6 +136,7 @@ blockquote p {
 }
 
 main a {
+  font-weight: 400;
   color: #022C86;
 }
 
@@ -221,7 +222,7 @@ pre.highlight {
   }
 
   header {
-    height: 400px;
+    height: 500px !important;
   }
 
   .page-title h1 {
@@ -238,7 +239,7 @@ pre.highlight {
   }
 
   .flex-placeholder {
-    height: 100px;
+    height: 20px;
   }  
 
   main {
