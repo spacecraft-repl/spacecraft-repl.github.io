@@ -498,7 +498,7 @@ While SpaceCraft supports Ruby, JavaScript, and Python, we would like to expand 
 
 This is process is a fair bit more complicated than how we've supported our current list of languages, and we're excited to tackle the challenge to expand the capabilities of SpaceCraft!
 
-## 8.3 Implement a Request Queue
+## 8.4 Implement a Request Queue
 Currently, our system architecture has a reverse proxy handling all user requests and forwarding them to the appropriate containers. However, we’ve noticed that when a large number of users submit a request at the same time, our reverse proxy can struggle to handle the load and fail.
 
 To prevent this from occurring, we aim to implement a request queue which will take each HTTP request and store it until our reverse proxy is ready to handle the request. While this will reduce the load on our reverse proxy, our users will likely experience a greater latency between requesting to connect to our application and actually connecting to their container.
