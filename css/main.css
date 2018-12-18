@@ -184,6 +184,7 @@ nav.team {
 }
 
 .team h3 a {
+  margin: 0;
   font-family: Roboto;
   font-size: 20px;
   font-weight: 900;
