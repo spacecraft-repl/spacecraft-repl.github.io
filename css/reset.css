@@ -53,6 +53,9 @@ button {
   border: none;
   -webkit-tap-highlight-color: transparent;
 }
+a {
+  -webkit-tap-highlight-color: transparent;
+}
 button:focus {
   outline: 0;
   background: none;

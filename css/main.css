@@ -183,8 +183,10 @@ nav.team {
   display: flex;
 }
 
-.team h3 {
-  font-weight: 700;  
+.team h3 a {
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
