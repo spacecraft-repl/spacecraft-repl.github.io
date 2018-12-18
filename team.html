@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html>
 
@@ -5,14 +7,126 @@
   <meta charset="UTF-8">
   <title>SpaceCraft: A Real-Time, Collaborative REPL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400,900" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/team.css" />
 </head>
 
 <body>
+  {% include menu.html %}
 
+  <header>
+    <nav>
+      <a href="/">
+        <img src="/images/logo.png" />
+      </a>
+    </nav>
+
+    <div class="page-title">
+      <h1>Meet the Team</h1>
+      <p>
+        Our team of three built SpaceCraft by working together remotely across the United States. We are looking for our next opportunities! Click on our profiles to get in touch!
+      </p>
+    </div>
+
+    <div class="flex-placeholder"></div>
+  </header>
+
+  <main>
+    <ul class="profiles">
+      <li>
+        <section>
+          <a class="profile" href="/">
+            <img src="images/gooi.jpg" />
+            <h2>Ying Chyi Gooi</h2>
+            <p><em>Software Engineer</em></p>
+            <div class="dash"></div>
+            <p>Brooklyn, NY</p>            
+          </a>
+
+          <div class="social-links">
+            <a class="email" href="mailto:gooiyingchyi@gmail.com" title="gooiyingchyi@gmail.com"></a>
+            <a class="website" href="/"></a>
+            <a class="linkedin" href="https://www.linkedin.com/in/ying-chyi-gooi-89ba5095/"></a>
+          </div>
+        </section>
+
+        <article>
+          <h3>Area of Interest:</h3>
+          <p>
+            Full-stack development, client-server state synchronization, container-based deployment and reverse proxies. I am also interested in decentralized and open blockchain systems.
+          </p>
+
+          <h3>Fun Fact:</h3>
+          <p>
+            I am able to solve a Rubik's cube in 30 seconds and I love to play board games.
+          </p>
+        </article>
+      </li>
+
+      <li>
+        <section>
+          <a class="profile" href="/">          
+            <img src="images/julius.jpg" />
+            <h2>Julius Zerwick</h2>
+            <p><em>Software Engineer</em></p>
+            <div class="dash"></div>
+            <p>Brooklyn, NY</p>
+          </a>
+
+          <div class="social-links">
+            <a class="email" href="mailto:jrzerwick@gmail.com" title="jrzerwick@gmail.com"></a>
+            <a class="website" href="/"></a>
+            <a class="linkedin" href="https://www.linkedin.com/in/julius-zerwick-842000b2/"></a>
+          </div>          
+        </section>
+
+        <article>
+          <h3>Area of Interest:</h3>
+          <p>
+            Full-stack development, devops, infrastructure and decentralized systems.
+          </p>
+
+          <h3>Fun Fact:</h3>
+          <p>
+            In 2013, I cycled from Austin, TX to Anchorage AK to fundraise for cancer research as part of <a href="https://www.texas4000.org">Texas 4000</a>. I also love the outdoors, cooking and board games.
+          </p>
+        </article>
+      </li>
+
+      <li>
+        <section>
+          <a class="profile" href="/">          
+            <img src="images/nick.jpg" />
+            <h2>Nick Johnson</h2>
+            <p><em>Software Engineer</em></p>
+            <div class="dash"></div>
+            <p>San Francisco, CA</p>
+          </a>
+
+          <div class="social-links">
+            <a class="email" href="mailto:njohnson7@pm.me" title="njohnson7@pm.me"></a>
+            <a class="website" href="/"></a>
+            <a class="linkedin" href="https://www.linkedin.com/in/nick-johnson-6565837a/"></a>
+          </div>
+        </section>
+        
+        <article>
+          <h3>Area of Interest:</h3>
+          <p>Backend development, linux, shell scripting, decentralized systems, containerization, security, devops, algorithms</p>
+
+          <h3>Fun Fact:</h3>
+          <p>I love to travel, and I have lived in California, Canada and Japan (as an exchange-student).</p>
+        </article>
+      </li>
+    </ul>
+  </main>
 
   <footer>
-
+    {% include footer.html %}
   </footer>
+
+  <script src="javascript/menu.js"></script>
 </body>
 </html>

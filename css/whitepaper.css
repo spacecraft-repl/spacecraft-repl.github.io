@@ -181,8 +181,7 @@ thead tr {
 pre.highlight {
   padding: 25px;
   border-radius: 5px;
-  overflow: scroll;
-  overflow-y: hidden;  
+  overflow: hidden;
 }
 
 .highlight code {

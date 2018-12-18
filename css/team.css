@@ -1,0 +1,121 @@
+@import url("main.css");
+
+body {
+  background: #dfe8f5;
+}
+
+header {
+  align-items: center;
+  height: 500px;
+}
+
+.page-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.page-title h1 {
+  margin: 0;
+  font-weight: 900;
+  font-size: 110px;
+  color: #d85030;
+  border-bottom: none;
+}
+
+.page-title p {
+  margin-top: 20px;
+  color: #282C35;
+  font-family: Roboto Mono;
+  font-size: 16px;
+  max-width: 750px;
+  text-align: center;
+  line-height: 24px;
+  padding: 0 20px;
+}
+
+.flex-placeholder {
+  height: 20%;
+}
+
+.profiles {
+  margin: 0 40px;
+  display: flex;
+  justify-content: space-between;  
+}
+
+.profiles img {
+  width: 75%;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+a.profile {
+  text-align: center;
+}
+
+main h2 {
+  margin-top: 30px;
+  font-size: 1.7em;
+  color: #435169;
+}
+
+main p {
+  font-weight: 300;
+}
+
+main em {
+  font-style: italic;
+}
+
+main li {
+  max-width: 320px;
+}
+
+article {
+  background: #435169;
+  border-radius: 10px;
+  padding: 40px;
+}
+
+article p,
+article h3 {
+  color: #dfe8f5;
+}
+
+article p:first-of-type {
+  margin-bottom: 40px;
+}
+
+article h3 {
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+section img {
+  border-radius: 100%;
+}
+
+.dash:before {
+  display: block;
+  font-weight: 400;
+  content: "\2014";
+  padding: 10px 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .page-title h1 {
+    font-size: 90px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .page-title h1 {
+    font-size: 60px;
+    letter-spacing: -1px;
+  }
+}
