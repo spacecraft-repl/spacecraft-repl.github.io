@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     hide(hamburgerImg);
     toggleExpand(hamburger);
     show(xButton);
-    fixPosition(headerLogo);
     setTimeout(() => {
+      fixPosition(headerLogo);      
       toggleExpand(hamburger);
       show(menu)
     }, 250);
