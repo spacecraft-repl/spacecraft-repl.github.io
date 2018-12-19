@@ -4,16 +4,24 @@ const hamburgerImg = $('#hamburger img');
 const hamburger = $('#hamburger');
 const xButton = $('#x');
 const menu = $('.menu');
+const headerLogo = $('header > nav a');
 
-const toggleExpand = (element) => element.classList.toggle("expand");
-const hide = (element) => element.classList.add("hidden");
-const show = (element) => element.classList.remove("hidden");
+const toggleExpand = (element) => element.classList.toggle('expand');
+const hide = (element) => element.classList.add('hidden');
+const show = (element) => element.classList.remove('hidden');
+const fixPosition = (element) => element.style.position = 'fixed';
+const absPosition = (element) => element.style.position = 'absolute';
 
 document.addEventListener('DOMContentLoaded', () => {
+  window.onresize = () => {
+    if (window.innerWidth < 1200) absPosition(headerLogo);
+  }
+
   $('#hamburger').onclick = (e) => {
     hide(hamburgerImg);
     toggleExpand(hamburger);
-    show(xButton);    
+    show(xButton);
+    fixPosition(headerLogo);
     setTimeout(() => {
       toggleExpand(hamburger);
       show(menu)
@@ -24,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const xButton = e.currentTarget;
     hide(xButton);
     hide(menu);
+    if (window.innerWidth < 1200) absPosition(headerLogo);    
     show(hamburgerImg);
   }
 });
