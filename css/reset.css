@@ -53,7 +53,7 @@ button {
   border: none;
   -webkit-tap-highlight-color: transparent;
 }
-a {
+a, div {
   -webkit-tap-highlight-color: transparent;
 }
 button:focus {

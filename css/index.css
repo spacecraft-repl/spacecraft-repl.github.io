@@ -14,6 +14,7 @@ header {
 }
 
 #scroll {
+  cursor: pointer;
   font-family: "Roboto Mono", monospace;
   color: #ffffff;
 }
@@ -164,7 +165,10 @@ button.action:hover {
 
   #labels-small {
     display: block;
-    width: 100%;
+    position: absolute;
+    left: 5%;
+    top: -30%;
+    width: 90%;
     margin-bottom: 10px;
   }
 }
