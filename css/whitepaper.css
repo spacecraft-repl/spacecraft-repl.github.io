@@ -145,7 +145,6 @@ main a:hover {
 }
 
 code {
-  color: #d85030;
   background: #F2F2F2;
   font-size: 18px;
   padding: 0 5px;
@@ -155,6 +154,7 @@ code {
 
 p > code,
 li > code {
+  color: #d85030;  
   border: 1px solid #b9c1cb;
   border-radius: 3px;
 }
