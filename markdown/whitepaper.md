@@ -362,7 +362,7 @@ In our application, the reverse proxy will handle the initial HTTP handshake tha
 
 Along with solving our privacy concerns, a reverse proxy provides our application with greater scalability as our user base grows. It can serve as a load balancer as we add more servers and it can provide content caching to reduce latency for particular content outside of establishing the client-container connection.
 
-## 6.3 Session Management
+# 7 Session Management
 In order to connect different groups of users to different sessions, our reverse proxy server must also be responsible to:
 - initialize a session and start a new container
 - forward requests to the appropriate container
@@ -372,16 +372,18 @@ Since implementing the above features requires flexibility and customization, we
 - [node-http-proxy](https://github.com/nodejitsu/node-http-proxy) to forward both HTTP and WebSocket requests
 - [Dockerode](https://github.com/apocas/dockerode), a Node.js Docker API to work with containers
 
-### 6.3.1 Session Initialization
-To initialize a session, we need to:
-1. generate a unique URL for every session we create
-2. instantiate a container to start an instance of our application
-3. map the generated URL to the newly created container's private IP and port number
+The idea behind session initialization is that we need to:
+1. Generate a unique URL for every session we create
+2. Instantiate a container to start an instance of our application
+3. Map the generated URL to the newly created container's private IP and port number
+4. Forward clients' requests based on URL to the associated container destination
 
-#### 6.3.1.1 Generating Unique URL
-The basic idea behind preventing users from being able to guess a URL is by randomizing it with a sufficiently large number generator. For this, we utilized a UUID generator to generate our session ID. At our current scale, the first 6 digits of the UUID is sufficient, as it already provides 16,777,216 possibilities.
+We will detail the interesting challenges that we face from building a reverse proxy server that has the above features.
 
-#### 6.3.1.2 Path-based URL forwarding
+## 7.1 Generating Unique URL
+The basic idea behind preventing users from being able to guess a URL is by randomizing it with a sufficiently large number generator. For this, we utilized a UUID generator to generate our session ID. At our current scale, the first 6 digits of the UUID is sufficient, as it already provides 16,777,216 possibilities. With our random number in place, we are ready to generate the full URL.
+
+### 7.1.2 Path-based URL forwarding
 
 Our initial approach is to attach the generated session ID to the path of the URL. For example, we assign a session ID of `123456` to the URL `domain.com/123456`. With this, every session can be identified by their path name. However, the problem is that assets like JavaScript, CSS files or Socket.io connections that are requested via the root path will not automatically receive the session ID as part of its path name. For instance, a client's request to fetch `domain.com/main.js` will cause our reverse proxy to assume `"main.js"` as the session ID, thus the request will fail. The following explanation illustrates how this happens:
 
@@ -399,8 +401,8 @@ The second solution is to read the `Referer` header of each request to obtain th
 
 However, we chose not to go with this approach as it leads to unnecessary complexity in the client-side code. Furthermore, the `Referer` header may not always give us the expected URL that contains the session ID, particularly when working with Socket.io. Since directly solving these problems require some degree of request manipulation, we opt for the approach of subdomain forwarding due to its simplicity.
 
-#### 6.3.1.3 Subdomain forwarding
-Through the use of subdomains, the session ID will be a part of the hostname instead of the path. For instance, a session ID of `123456` forms a subdomain URL of `123456.domain.com`. This ensures that the session ID can be read from the hostname, preventing any path changes from confusing our reverse proxy server like `123456.domain.com/main.js`.
+### 7.1.3 Subdomain forwarding
+Through the use of subdomains, the session ID will be a part of the hostname instead of the path. For instance, a session ID of `123456` forms a subdomain URL of `123456.domain.com`. This ensures that the session ID can be read from the hostname, regardless of any change in the path name such as `123456.domain.com/main.js`. The following breakdown explains how this is handled:
 
 ![subdomain forwarding](https://docs.google.com/drawings/d/e/2PACX-1vTcPVwBQa001D2GXjI30Xf0J5I9lTFS5_-i3wjumIieVXpWjwC6u8Qt_3zA6eDJufH00NCk3jyOUMGz/pub?w=1440&h=810)
 > With subdomains, the session ID is always read from the hostname regardless of any change in the path name
@@ -409,13 +411,15 @@ Through the use of subdomains, the session ID will be a part of the hostname ins
 2. Our reverse proxy forwards the request to the appropriate container destination based on the session ID of `123456`
 3. Our containerized application responds with `index.html`
 4. Client requests to fetch `123456.domain.com/main.js`
-5. Our reverse proxy forwards the request appropriately by retrieving the session ID from the host name
-6. The container responds with the asset requested
+5. Our reverse proxy forwards the request appropriately by retrieving the session ID `123456` from the host name
+6. The container responds with the requested asset
 
 The trade-off with using subdomains it may be confusing in terms of user experience, since subdomains are generally used to create different sites based on different business needs.
 
-#### 6.3.1.4 URL Mapping to Designated Container
-With our URL generated, we can then map the URL to a designated container via its private IP address and port number. The flow of events are as follows:
+## 7.2 URL Mapping to Designated Container
+With our URL generated, we then have to start a Docker container with our running application instance. This is achieved by using the Dockerode API to interact with Docker directly.
+
+Once the container is started, we can then inspect the container to retrieve its IP address. We can then map the URL to a designated container via its IP address and port number. The port number is always the listening port on our Node.js application server. The flow of events are as follows:
 1. The URL is saved as a key in the hash table
 2. The container's IP address and ID are saved as an object. The object is then assigned as the corresponding property value.
 
@@ -432,9 +436,11 @@ sessions = {
 }
 ```
 
-With the hash table in place, we can retrieve the designated container's IP in O(1) time given the hostname of a request.
+3.   With the hash table in place, we can retrieve the designated container's IP in O(1) time given the hostname of a request.
 
-### 6.3.2 Destroying a Session
+Now, we can finally forward clients' requests to the appropriate container.
+
+## 7.3 Destroying a Session
 With our session initialization process complete, we now need to consider the session teardown process. Once all clients have left a session, we want to start breaking down the remaining container so that we can free up the allocated resources for new sessions. This is preferred over connecting new users to a used container since there may be some remaining artifacts leftover in the session from the previous users, and we instead want to present a clean slate for new users.
 
 To initiate the tear down process, we need to determine if an application instance has no clients connected to it. We can easily tell if a client has disconnected from a session with WebSockets since Socket.io provides a disconnect event that fires upon client disconnection. But what happens if a client leaves their session before completing their connection to a container, like in the case of closing their browser early?
@@ -449,9 +455,7 @@ To handle this case, we can check whether there are any connected clients to a c
 4. Our reverse proxy receives the DELETE request and stops the container that is associated with the `sessionURL` to free up resources.
 5. The `sessionURL` is removed from the hash table.
 
-# 7 Benchmark and Analysis
-
-## 7.1 Streaming vs. Buffering Outputs
+# 8 Performance Benchmarking: Streaming vs. Buffering Outputs
 A REPL program sends outputs in the form of chunks of data. For each evaluation, our application would receive several to many smaller chunks of output data.
 
 To demonstrate this, let's evaluate the code `[1,2,3].map(String)` on the Node.js REPL. We can reasonably expect the final output to be:
@@ -479,7 +483,7 @@ ng
 >       # final chunk of data
 ```
 
-### 7.2 Buffering Outputs
+## 8.1 Buffering Outputs
 With this effect, it makes sense to concatenate all chunks before sending it as a complete response. This is known as [output buffering](http://web.archive.org/web/20101216035343/http://dev-tips.com/featured/output-buffering-for-web-developers-a-beginners-guide).
 
 After buffering output, it would look something like:
@@ -493,10 +497,11 @@ The advantage to this in our use case is that we can easily parse out the curren
 Since chunks of data arrive in different intervals (around 1-4 ms in between), we would set a maximum wait time of 5 ms every time a new data chunk is received. If no new data is received within the 5 ms, we conclude that the output is finished and send the complete buffered output to the client.
 The trade-off here is that the buffering costs additional wait time.
 
-### 7.3 Streaming Outputs
+## 8.2 Streaming Outputs
 Our initial approach of buffering outputs seem to work fine. Nonetheless, we found out that we could parse out the prompt on the server-side instead by caching the last chunk of data received. An example data chunk would be `=> 123\r\nirb(main):003:0> `, by caching this data chunk, we can easily parse out the `irb(main):003:0> ` prompt.
-With this, it is no longer necessary to buffer outputs. Instead, we could stream the outputs as-is to the client. The benefit of this is that it not only removes any additional processing, but also simplifies our code logic by avoiding any use of `setTimeouts` or `setIntervals`.
+With this, it is no longer necessary to buffer outputs. Instead, we could stream the outputs as-is to the client. The benefit of this is that it not only removes any additional processing, but also simplifies our code logic by avoiding any use of `setTimeout` or `setInterval`.
 
+## 8.3 Results and Analysis
 With these two approaches in mind, we decided to run some benchmarking so that we can compare the performance between them. We utilized Artillery, a load testing toolkit to measure the performance of both approaches.
 
 Our benchmarking setup involves connecting 20 virtual users one at a time to our server, with each submitting 5 evaluation requests, thereby totaling 100 requests per test.
@@ -511,15 +516,15 @@ The results show that streaming has a slightly lower latency, due to the fact th
 
 The results provide some perspectives on further optimizations that we can make. For example, if we require some heavy string processing on the client-side, then it make sense to employ the buffering approach since sacrificing a ~10 ms wait time would not be much of an issue. However, in our use case, we employ the streaming approach since it is acceptable to display output data to the client without any pre-processing. With this, we can reduce latency while simplifying our code logic.
 
-# 8 Future Work
+# 9 Future Work
 
-## 8.1 Improve User Experiences
+## 9.1 Improve User Experiences
 Currently, when multiple users write code in our text editor on the front-end there is no distinction between user cursors. This can make it difficult to see the location of all the cursors or to tell which cursor belongs to which user as they type. To improve the collaboration experience, we want to assign each cursor a unique color and name, similar to a small tooltip icon. This will make it easier to distinguish where each cursor is located in the editor and who is writing what.
 
-## 8.2 Allow Code Upload and Download
+## 9.2 Allow Code Upload and Download
 There may be instances in which a user needs to leave their session but would like to download and save their code onto their local machine. Additionally, some users may have written code in their code editor and would like to upload it into their session of SpaceCraft. To accomodate these use cases, we'd like to add the ability for users to click a button and download the code from our text editor to be saved on their local machine. We'd also like to add a second button which upon being clicked will allow users to choose a file on their local machine and upload it's contents into our text editor.
 
-## 8.3 Support Low-Level Languages
+## 9.3 Support Low-Level Languages
 While SpaceCraft supports Ruby, JavaScript, and Python, we would like to expand our list of supported languages to include low-level languages like Rust, Go, Crystal, or C/C++. The process to support these languages will be more involved than higher-level languages since we will need to:
 
 - Take the user's input and write it as a file in our backend.
@@ -529,7 +534,7 @@ While SpaceCraft supports Ruby, JavaScript, and Python, we would like to expand 
 
 This is process is a fair bit more complicated than how we've supported our current list of languages, and we're excited to tackle the challenge to expand the capabilities of SpaceCraft!
 
-## 8.4 Implement a Request Queue
+## 9.4 Implement a Request Queue
 Currently, our system architecture has a reverse proxy handling all user requests and forwarding them to the appropriate containers. However, we’ve noticed that when a large number of users submit a request at the same time, our reverse proxy can struggle to handle the load and fail.
 
 To prevent this from occurring, we aim to implement a request queue which will take each HTTP request and store it until our reverse proxy is ready to handle the request. While this will reduce the load on our reverse proxy, our users will likely experience a greater latency between requesting to connect to our application and actually connecting to their container.

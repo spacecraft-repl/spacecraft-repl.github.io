@@ -2,7 +2,7 @@
 
 body {
   font-weight: 400;
-  font-size: 22px;
+  font-size: 20px;
   /*color: #435169;*/
   color: #282C35;
 }
@@ -217,20 +217,27 @@ pre.highlight {
 
 @media screen and (max-width: 480px) {
   body {
-    font-size: 18px;
-  }
-
-  p {
-    line-height: 32px;
-  }
-
-  blockquote p {
+    font-size: 16px;
     line-height: 28px;
   }
 
+  p {
+    line-height: 28px;
+    margin-bottom: 20px;
+  }
+
+  blockquote p {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  main h1 {
+    margin-top: 36px;
+  }
+
   main li {
-    font-size: 18px;
-    line-height: 30px !important;
+    font-size: 16px;
+    line-height: 28px !important;
   }
 
   main ul {
@@ -285,8 +292,12 @@ pre.highlight {
     margin-bottom: 12px;
   }
 
+  main code {
+    font-size: 14px;
+  }
+
   .highlight code {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   pre.highlight {
