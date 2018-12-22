@@ -94,7 +94,7 @@ In SpaceCraft, a user makes a language selection from a drop-down menu which wil
 When code is submitted for evaluation, our app will take the code as input and send it to our server for evaluation. Once this is complete, our server will send the result as output to the client, which is displayed in the user's REPL.
 
 ## 3.1 Creating the User Interface
-SpaceCraft's user interface is created with [Xterm.js](https://github.com/xtermjs/xterm.js/) and [CodeMirror](https://codemirror.net/). Xterm is a terminal front-end component written in JavaScript that creates an emulated terminal for our REPL in which users can write their code and submit for evaluation. When a user hits Enter in the RPL, their code is sent as input to our server for evaluation, and the result is then sent back to be displayed in the REPL.
+SpaceCraft's user interface is created with [Xterm.js](https://github.com/xtermjs/xterm.js/) and [CodeMirror](https://codemirror.net/). Xterm is a terminal front-end component written in JavaScript that creates an emulated terminal for our REPL in which users can write their code and submit for evaluation. When a user hits Enter in the REPL, their code is sent as input to our server for evaluation, and the result is then sent back to be displayed in the REPL.
 
 ![front-end UI](https://docs.google.com/drawings/d/e/2PACX-1vT218z12UgSMqH_Yqbn-d-ZqFIhVvESDv5-8HeZebQsOoRhCxK6bjw7OYP0a9fiQWPzhiVBSWMob0l6/pub?w=1440)
 
