@@ -605,7 +605,7 @@ Advanced Programming in the UNIX Environment, W. Richard Stevens, Addison-Wesley
 
 [Port Forwarding](https://en.wikipedia.org/wiki/Port_forwarding)
 
-[Reverse Proxy](https://www.incapsula.com/cdn-guide/glossary/reverse-proxy.html)
+[What is Reverse Proxy Server](https://www.incapsula.com/cdn-guide/glossary/reverse-proxy.html)
 
 
 ## Books
@@ -614,5 +614,5 @@ Advanced Programming in the UNIX Environment, W. Richard Stevens, Addison-Wesley
 
 Advanced Programming in the UNIX Environment, W. Richard Stevens
 
-The Linux Programming Interface, Michael Kerrisk, Chapter 64: Pseudoterminals
+The Linux Programming Interface, Michael Kerrisk
 
