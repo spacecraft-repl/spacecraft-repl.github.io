@@ -1,7 +1,8 @@
 @import url("main.css");
 
 body {
-  font-weight: 400;  
+  font-weight: 400;
+  font-size: 22px;
   /*color: #435169;*/
   color: #282C35;
 }
