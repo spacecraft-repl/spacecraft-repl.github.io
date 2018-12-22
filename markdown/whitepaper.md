@@ -548,3 +548,140 @@ Our team of three software developers built SpaceCraft remotely, working togethe
 # References
 If you're interested in building your own REPL, learning about containers, or trying our WebSockets, we recommend that you checkout out the resources below. They have been invaluable to our research and development.
 
+## Collaborative REPL/Editors
+
+[A simple approach to building a real-time collaborative editor](http://digitalfreepen.com/2017/10/06/simple-real-time-collaborative-text-editor.html)
+
+[CodeMirror: Javascript Plugin for pretty code formatting](http://codemirror.net)
+
+[CodeMirror 6: prototype of next-gen Codemirror](https://github.com/codemirror/codemirror.next)
+	[- architecture/design doc](https://codemirror.net/6/design.html)
+
+[Ace embeddable code editor](https://ace.c9.io )
+
+[Repl.It](https://repl.it/)
+
+[CoderPad](https://coderpad.io/)
+
+[Yjs: a framework for offline-first p2p collaborative editing](https://github.com/y-js/yjs)
+
+[Yjs CRDT Paper](https://github.com/y-js/yjs/files/1752526/YjsPaper.pdf)
+
+[Comparison of JS editors](https://en.wikipedia.org/wiki/Comparison_of_JavaScript-based_source_code_editors)
+
+[PeerPad: decentralized collaborative in-browser editor](https://github.com/ipfs-shipyard/peer-pad)
+
+[Teletype: WebRTC collaboration for Atom](https://github.com/atom/teletype)
+
+[TryRuby: REPL for Ruby](https://ruby.github.io/TryRuby/)
+
+[TryRuby Source Code](https://github.com/easydatawarehousing/tryruby)
+
+[Opal: Ruby in the Browser: a Ruby to JavaScript source-to-source compiler used in TryRuby](https://opalrb.com/)
+
+[Lessons Learned From Creating a Rich Text Editor with Real Time Collaboration](https://ckeditor.com/blog/Lessons-learned-from-creating-a-rich-text-editor-with-real-time-collaboration/)
+
+[React Ace](https://github.com/securingsincity/react-ace)
+
+[Firepad: real-time collaborative code editor with no server dependencies and Operational Transform (OT) merging/conflict resolution](https://firepad.io/)
+
+[Collaborative editor framework in real time – project writeup from G4G](https://www.geeksforgeeks.org/project-idea-collaborative-editor-framework-real-time/)
+
+[CodeInterview Clone of coderpad](https://codeinterview.io/)
+
+[CodeBunk Yet another clone of coderpad](https://codebunk.com/)
+
+[ProseMirror: in-browser semantic rich text editor with Codemirror support for code editing](https://github.com/prosemirror)
+
+[Collaborative Editing in ProseMirror](http://marijnhaverbeke.nl/blog/collaborative-editing.html)
+
+[Using locking mechanism to prevent conflicts between edits. “Collaborative Real Time Coding or How to Avoid the Dreaded Merge”](https://arxiv.org/pdf/1504.06741.pdf)
+
+[Performance comparison of XHR polling, Long polling, Server sent events and Websockets](http://www.diva-portal.se/smash/get/diva2:1133465/FULLTEXT01.pd)
+
+[Marijn Haverbeke: Salvaging contentEditable: Building a Robust WYSIWYG Editor | JSConf EU 2015](https://www.youtube.com/watch?v=EEF2DlOUkag)
+
+[Xterm.js is a terminal front-end component written in JavaScript that works in the browser](https://github.com/xtermjs/xterm.js/)
+
+[In-browser implementation of Python](http://www.skulpt.org/#)
+
+
+## HTTP vs. WebSockets
+
+[A comparison between WebSockets, server-sent events, and polling](https://medium.com/dailyjs/a-comparison-between-websockets-server-sent-events-and-polling-7a27c98cb1e3)
+
+[HTTP vs. WebSockets: A performance comparison](https://blog.feathersjs.com/http-vs-websockets-a-performance-comparison-da2533f13a77)
+
+[Socket.io](https://socket.io/)
+
+[Do you really need WebSockets?](https://blog.stanko.io/do-you-really-need-websockets-343aed40aa9b)
+
+[WebSockets vs. Server-Sent Events/EventSource](https://stackoverflow.com/questions/5195452/websockets-vs-server-sent-events-eventsource)
+
+[A Beginner’s Guide to HTTP/2 and its Importance](https://www.advancedwebranking.com/blog/beginners-guide-to-http2/)
+
+
+## Containers
+
+[Docker](https://www.docker.com/)
+
+[Docker Security Best-Practices](https://dev.to/petermbenjamin/docker-security-best-practices-45ih)
+
+[Gvisor: A Sandboxed Container Runtime](https://cloud.google.com/blog/products/gcp/open-sourcing-gvisor-a-sandboxed-container-runtime)
+
+[Open-sourcing gVisor, a sandboxed container runtime](https://cloud.google.com/blog/products/gcp/open-sourcing-gvisor-a-sandboxed-container-runtime)
+
+[Run Multiple Services in a Container](https://docs.docker.com/config/containers/multi-service_container/)
+
+[Weighing the pros and cons of application containers](https://searchservervirtualization.techtarget.com/tip/Weighing-the-pros-and-cons-of-application-containers)
+
+[Why it is recommended to run only one process in a container?](https://devops.stackexchange.com/questions/447/why-it-is-recommended-to-run-only-one-process-in-a-container)
+
+[Security and Virtual Machines](https://pubs.vmware.com/vsphere-4-esx-vcenter/index.jsp?topic=/com.vmware.vsphere.server_configclassic.doc_40/esx_server_config/security_for_esx_systems/c_security_and_virtual_machines.html)
+
+[Processes In Containers Should Not Run As Root](https://medium.com/@mccode/processes-in-containers-should-not-run-as-root-2feae3f0df3b)
+
+
+## Psuedoterminals, Shell Processes
+
+[Node.js Child Processes: Everything you need to know](https://medium.freecodecamp.org/node-js-child-processes-everything-you-need-to-know-e69498fe970a)
+
+[Node-Pty](https://github.com/Microsoft/node-pty)
+
+[How do you pipe input and output to and from an interactive shell?](https://stackoverflow.com/questions/16502170/how-do-you-pipe-input-and-output-to-and-from-an-interactive-shell?rq=1)
+
+[Linux Programmer's Manual  - pty(7)](http://man7.org/linux/man-pages/man7/pty.7.html)
+
+[REPL Node API Docs](https://nodejs.org/api/repl.html#repl_repl)
+
+Non blocking reading from a subprocess output stream in Python http://eyalarubas.com/python-subproc-nonblock.html
+
+[read(3) - Linux man page](https://linux.die.net/man/3/read)
+
+Advanced Programming in the UNIX Environment", W. Richard Stevens, Addison-Wesley, 18th Printing, 1999, page 417
+[36.9. pty — Pseudo-terminal utilities](https://docs.python.org/2/library/pty.html)
+
+
+## Reverse Proxy
+
+[Reverse Proxy and HTTP Redirects](https://docs.trafficserver.apache.org/en/4.2.x/admin/reverse-proxy-http-redirects.en.html)
+
+[Port Forwarding](https://en.wikipedia.org/wiki/Port_forwarding)
+
+[What is a Reverse Proxy?](https://www.quora.com/What-is-a-Reverse-Proxy-1)
+
+[Reverse Proxy](https://www.incapsula.com/cdn-guide/glossary/reverse-proxy.html)
+
+[What is a reverse proxy in web development?](https://www.quora.com/What-is-a-proxy-and-reverse-proxy-server-in-web-development)
+
+[What a reverse proxy in layman's terms?](https://www.quora.com/What-is-a-reverse-proxy-in-laymans-terms)
+
+
+## Books
+
+[High Performance Browser Networking](https://hpbn.co/)
+
+Advanced Programming in the UNIX Environment
+
+The Linux Programming Interface
+
