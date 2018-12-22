@@ -318,7 +318,7 @@ Now that we've tackled the security issues of using containers, we need to turn 
 
 For example, a user in one container may write a program that requires a large amount of mathematical calculations, string processing, or infinite loops that cause a spike in CPU usage which causes a drop in performance for other containers. Or a user may input large amounts of data into the text editor that eat away at the available memory in our host server and leave little remaining for other users. To combat these issues and ensure that each container only uses a reasonable amount of resources, we can use Docker's cgroups (control groups) to place a resource limit on each container.
 
-At its core, a cgroup is simply a limitation placed on an application or container to a specific set of resources. By specifying this limitation when creating a container, we can easily set the max CPU or memory allowed for use by a container. So if we want to spin up a container that can only use 20% of our total CPU and 100MBs of our total memory, all we need to do is include ` --memory=100m -it --cpus=".2"` within our `docker run` command. And just like that, we've handled any potential hogging of resources by a single container and ensured stable performance across the board for our users.
+At its core, a cgroup is simply a limitation placed on an application or container to a specific set of resources. By specifying this limitation when creating a container, we can easily set the max CPU or memory allowed for use by a container. So if we want to spin up a container that can only use 20% of our total CPU and 100MBs of our total memory, all we need to do is include `--memory=100m -it --cpus=".2"` within our `docker run` command. And just like that, we've handled any potential hogging of resources by a single container and ensured stable performance across the board for our users.
 
 
 # 6 Connecting Users to Containers
@@ -326,6 +326,14 @@ At this point, we've successfully built our collaborative REPL and isolated comp
 
 ## 6.1 Naive Approach: Port Forwarding
 Each container will have a unique IP address and port number associated with it, and the question becomes how we can route a user's request for a session to a container and form a connection. We first considered using port forwarding, which takes the initial HTTP request from the client and forwards it to the address and port number of a ready-to-use container.
+
+| Session | Open Port on Host | Container's IP & port |
+| -------- | -------- | -------- |
+| 1     | `domain.com:5000`     | `172.17.0.2:3000`     |
+| 2 | `domain.com:5001` | `172.17.0.3:3000` |
+| 3 | `domain.com:5002` | `172.17.0.4:3000` |
+
+> Mapping multiple open ports to container destinations
 
 This technique is simple since it's a direct mapping of a client to a container destination. However, this technique is flawed by being a security risk since the port numbers are pre-determined. By running a port scanner to probe for open ports, a user could potentially access any session. This leads to a complete lack of privacy for our users who wish to collaborate only with the people they invite to join their session.
 
@@ -336,9 +344,16 @@ The idea behind a reverse proxy is that there is some middleware that sits betwe
 
 ![reverse proxy](https://imgur.com/eIBtN6g.png)
 
-While this may sound like a roundabout way of handling a request and response, the benefit is that we can abstract away the connection of addresses and ports to ensure the privacy of our sessions. From the client's perspective, they are connected to the appropriate container and don't know the exact IP address or port number of the container or our host system. 
+While this may sound like a roundabout way of handling a request and response, the benefit is that we can abstract away the connection of addresses and ports to ensure the privacy of our sessions. From the client's perspective, they are connected to the appropriate container and don't know the exact IP address or port number of the container or our host system.
 
 Furthermore, our proxy server can assign random URLs to created sessions, thereby preventing other unwanted users from gaining access to a current session through port sniffing or guessing pre-determined URLs. We will detail how this works in the following section.
+
+| Session | Generated URL | Container's IP & port |
+| -------- | -------- | -------- |
+| 1     | `a9ca01.domain.com`     | `172.17.0.2:3000`     |
+| 2 | `6d9e89.domain.com` | `172.17.0.3:3000` |
+| 3 | `71b7e0.domain.com` | `172.17.0.4:3000` |
+> Mapping multiple randomly generated URLs to container destinations ensures privacy of sessions. Read [more](#6312-path-based-url-forwarding) about why we chose subdomains instead of paths.
 
 In our application, the reverse proxy will handle the initial HTTP handshake that is needed to connect a client with a container for their session. Once this handshake is complete, a WebSockets connection is created between the client and container that will persist for the remainder of the session until all connected clients disconnect.
 
@@ -347,12 +362,14 @@ In our application, the reverse proxy will handle the initial HTTP handshake tha
 Along with solving our privacy concerns, a reverse proxy provides our application with greater scalability as our user base grows. It can serve as a load balancer as we add more servers and it can provide content caching to reduce latency for particular content outside of establishing the client-container connection.
 
 ## 6.3 Session Management
-In order to connect different groups of users to different sessions, our reverse proxy server is also responsible for:
-- initializing a session within a new container
-- forwarding requests to the appropriate container
-- destroying a session and it's container
+In order to connect different groups of users to different sessions, our reverse proxy server must also be responsible to:
+- initialize a session within a new container
+- forward requests to the appropriate container
+- destroy a session and its container
 
-In order to customize a reverse proxy to fit our use case, we built our reverse proxy from scratch using mostly VanillaJS, aside from using a few essential libraries to help us get started.
+Since implementing the above features requires flexibility and customization, we opted out of using an established proxy server such as Nginx. Instead, we chose to built our reverse proxy from scratch using VanillaJS, with only the following essential libraries to help us get started:
+- [node-http-proxy](https://github.com/nodejitsu/node-http-proxy) to forward both HTTP and WebSocket requests
+- [Dockerode](https://github.com/apocas/dockerode), a Node.js Docker API to work with containers
 
 ### 6.3.1 Session Initialization
 To initialize a session, we need to:
@@ -365,17 +382,19 @@ The basic idea behind preventing users from being able to guess a URL is by rand
 
 #### 6.3.1.2 Path-based URL forwarding
 
-Our initial approach is to attach the generated session ID to the path of the URL. For example, we assign a session ID of `123456` to the URL `spacecraft-repl.com/123456`. With this, every session can be identified by their path name. However, the problem is that assets like JavaScript or CSS files that are requested via the root path will not automatically receive the session ID as part of its path name. For instance, a client's request to fetch `/main.js` will not contain the session ID, and since it does not match `/123456`, the request will fail.
+Our initial approach is to attach the generated session ID to the path of the URL. For example, we assign a session ID of `123456` to the URL `domain.com/123456`. With this, every session can be identified by their path name. However, the problem is that assets like JavaScript, CSS files or Socket.io connections that are requested via the root path will not automatically receive the session ID as part of its path name. For instance, a client's request to fetch `/main.js` will omit the session ID, so our reverse proxy will be confused as to which session that has an ID of `"main.js"`, thus the request will fail.
 
 ![path forwarding](https://docs.google.com/drawings/d/e/2PACX-1vSXRH02roO9RBQITOtlheiN8qaanmQx-IPmv6ThmfzAB6-eRcTPobjm0UGARUUORfb27TdBeXcKYf78/pub?w=1440&h=810)
 > An absence of session ID following the root path leads to confusion in our reverse proxy
 
-There are certainly ways to get around this issue. The first solution is to add some client-side logic to modify requests to include the session ID. For example, changing the request of `/main.js` to `/123456/main.js` enables our reverse proxy to capture the session ID and to forward it accordingly. The second solution is to read the `Referer` header of each request to obtain the previous URL that includes the session ID. With the session ID obtained, our reverse proxy server can forward the request to its destination container.
+In fact, there are ways to get around this issue. The first solution is to add some client-side logic to modify requests to include the session ID. For example, changing the request of `/main.js` to `/123456/main.js` enables our reverse proxy to capture the session ID and to forward it accordingly. 
+
+The second solution is to read the `Referer` header of each request to obtain the previous URL that includes the session ID. With the session ID obtained, our reverse proxy server can forward the request to the appropriate destination container.
 
 However, we chose not to go with this approach as it leads to unnecessary complexity in the client-side code. Furthermore, the `Referer` header may not always give us the expected URL that contains the session ID, particularly when working with Socket.io. Since directly solving these problems require some degree of request manipulation, we opt for the approach of subdomain forwarding due to its simplicity.
 
 #### 6.3.1.3 Subdomain forwarding
-To get around this issue, we decide to work with subdomains instead. Essentially, the session ID will be a part of the hostname instead of the path. For instance, a session ID of `123456` forms a subdomain URL of `123456.spacecraft-repl.com`. This ensures that the session ID can be read from the hostname, preventing any path changes from confusing our reverse proxy server like `123456.spacecraft-repl.com/main.js`.
+Through the use of subdomains, the session ID will be a part of the hostname instead of the path. For instance, a session ID of `123456` forms a subdomain URL of `123456.domain.com`. This ensures that the session ID can be read from the hostname, preventing any path changes from confusing our reverse proxy server like `123456.domain.com/main.js`.
 
 ![subdomain forwarding](https://docs.google.com/drawings/d/e/2PACX-1vTcPVwBQa001D2GXjI30Xf0J5I9lTFS5_-i3wjumIieVXpWjwC6u8Qt_3zA6eDJufH00NCk3jyOUMGz/pub?w=1440&h=810)
 > With subdomains, the session ID is always read from the hostname, and it is never lost even if the path changes
@@ -510,7 +529,7 @@ However, we believe this is an acceptable consequence since the part of our appl
 
 **[View team page](/team)**
 
-Our team of three software developers built SpaceCraft remotely, working together across the United States. Please feel free to [contact us](/team) if you'd like to talk about software engineering, containers, or the web. We're all open to learning about new opportunities!
+Our team of three software developers built SpaceCraft remotely, working together across the United States. Please feel free to [connect with us](/team) if you'd like to talk about software engineering, containers, or the web. We're all open to learning about new opportunities!
 
 <!-- Place our pictures here with names, titles, location, and link to personal websites. -->
 
