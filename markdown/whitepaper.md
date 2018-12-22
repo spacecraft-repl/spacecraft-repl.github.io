@@ -49,10 +49,10 @@ We initially started with using HTTP to have clients communicate with our server
 While it is possible to improve the above issues with HTTP server-sent events, it does not address the case where a client decides to send data frequently, for which regular HTTP requests have to be made. To fully address the problems mentioned above, we need an alternative that could provide bidirectional communication between a client and server, that could also detect client disconnections and have a smaller overhead. The best solution that we found was WebSockets.
 
 ## 2.2 WebSockets
-We used the popular library [Socket.io](https://socket.io/) to leverage WebSockets in SpaceCraft. The major benefit of using WebSockets is that it provides a bidirectional communication between the client and server over a single TCP connection. After an initial HTTP handshake to establish the TCP connection, our client and server will then be connected through WebSockets for further communication. This ensures that either the client or server can send information to the other when needed with an additional overhead of only ~10 bytes per message <sup>[[1]](http://www.diva-portal.se/smash/get/diva2:1133465/FULLTEXT01.pdf "Performance comparison of XHR polling,
+We used the popular library [Socket.io](https://socket.io/) to leverage WebSockets in SpaceCraft. The major benefit of using WebSockets is that it provides a bidirectional communication between the client and server over a single TCP connection. After an initial HTTP handshake to establish the TCP connection, our client and server will then be connected through WebSockets for further communication. This ensures that either the client or server can send information to the other when needed with an additional overhead of only [~10 bytes per message](http://www.diva-portal.se/smash/get/diva2:1133465/FULLTEXT01.pdf "Performance comparison of XHR polling,
 Long polling, Server sent events and
 Websockets by Rasmus Appelqvist,
-Oliver Örnmyr")</sup>. This is a ~95% decrease from using HTTP, and particularly useful in our case where we continuously stream data from the server to the clients.
+Oliver Örnmyr"). This is a ~95% decrease from using HTTP, and particularly useful in our case where we continuously stream data from the server to the clients.
 
 ![http vs websockets](https://docs.google.com/drawings/d/e/2PACX-1vQAdYwKH7kjzDDQv9GF-tpR9d2ZRK_vA661f2x3JPdTrPcE9c78WCl5rdyYW5XmyUy9wTYUlEZwQrEp/pub?w=1440)
 > A full duplex persistent connection is possible with WebSockets. The connection stays open until either the client or server disconnects. Reference: [WebSockets - A Conceptual Deep-Dive](https://www.ably.io/concepts/websockets)
@@ -132,7 +132,7 @@ We can naively think that writing into the standard input would produce a desire
 
 There are two possible reasons as to why this may occur.
 
-First, streams may be blocked when we try to read from the standard output. One problem is that the standard input may not send any data to the REPL process for evaluation until the input stream is closed. <sup>[[1]](https://stackoverflow.com/questions/9818534/why-is-it-necessary-to-close-standard-input-output-error-when-writing-a-daemon "Stack Overflow: 'Why is it necessary to close standard input/output/error when writing a daemon?'")</sup>
+First, streams may be blocked when we try to read from the standard output. One problem is that the standard input may not send any data to the REPL process for evaluation until the [input stream is closed](https://stackoverflow.com/questions/9818534/why-is-it-necessary-to-close-standard-input-output-error-when-writing-a-daemon "Stack Overflow: 'Why is it necessary to close standard input/output/error when writing a daemon?'").
 
 Second, interpreted languages are usually written in lower-level languages, and due to how the language interacts with the standard stream, it may be a cause of hanging outputs. For example, the C implementation of `read()` function would hang when we try to read from an output stream, until new data is being written to the corresponding input stream.
 

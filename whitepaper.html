@@ -43,5 +43,12 @@
   </footer>
 
   <script src="javascript/menu.js"></script>
+  <script>
+    const main = document.querySelector('main');
+    const mainLinks = main.getElementsByTagName('a');
+    for (i = 0; i < mainLinks.length; i++) { 
+      mainLinks[i].target = '_blank';
+    }
+  </script>
 </body>
 </html>

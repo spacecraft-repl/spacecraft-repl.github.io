@@ -68,5 +68,13 @@
   </footer>
 
   <script src="javascript/menu.js"></script>
+  <script>
+    document.querySelector('div#scroll').onclick = (e) => {
+      window.scroll({
+        top: window.innerHeight,
+        behavior: 'smooth'
+      });
+    }
+  </script>
 </body>
 </html>

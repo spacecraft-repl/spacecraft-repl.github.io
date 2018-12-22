@@ -5,7 +5,6 @@ const hamburger = $('#hamburger');
 const xButton = $('#x');
 const menu = $('.menu');
 const headerLogo = $('header > nav a');
-const scrollDiv = $('#scroll');
 
 const toggleExpand = (element) => element.classList.toggle('expand');
 const hide = (element) => element.classList.add('hidden');
@@ -35,12 +34,5 @@ document.addEventListener('DOMContentLoaded', () => {
     hide(menu);
     if (window.innerWidth < 1200) absPosition(headerLogo);    
     show(hamburgerImg);
-  }
-
-  scrollDiv.onclick = (e) => {
-    window.scroll({
-      top: window.innerHeight,
-      behavior: 'smooth'
-    });
   }
 });
