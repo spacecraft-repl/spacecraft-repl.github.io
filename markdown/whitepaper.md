@@ -550,69 +550,68 @@ If you're interested in building your own REPL, learning about containers, or tr
 
 ## Collaborative REPL/Editors
 
-[A simple approach to building a real-time collaborative editor](http://digitalfreepen.com/2017/10/06/simple-real-time-collaborative-text-editor.html)
+- [Conclave: A private and secure real-time collaborative text editor](https://conclave-team.github.io/conclave-site/)
 
-[Yjs: Near Real-Time Peer-to-Peer Shared Editing on Extensible
+- [Yjs: Near Real-Time Peer-to-Peer Shared Editing on Extensible
 Data Types](https://github.com/y-js/yjs/files/1752526/YjsPaper.pdf)
 
-[Opal: Ruby in the Browser: a Ruby to JavaScript source-to-source compiler used in TryRuby](https://opalrb.com/)
+- [A simple approach to building a real-time collaborative editor](http://digitalfreepen.com/2017/10/06/simple-real-time-collaborative-text-editor.html)
 
-[Using locking mechanism to prevent conflicts between edits. “Collaborative Real Time Coding or How to Avoid the Dreaded Merge”](https://arxiv.org/pdf/1504.06741.pdf)
+- [Using locking mechanism to prevent conflicts between edits. “Collaborative Real Time Coding or How to Avoid the Dreaded Merge”](https://arxiv.org/pdf/1504.06741.pdf)
 
-[Conclave: A private and secure real-time collaborative text editor](https://conclave-team.github.io/conclave-site/)
+- [Opal: Ruby in the Browser: a Ruby to JavaScript source-to-source compiler used in TryRuby](https://opalrb.com/)
 
 ## HTTP vs. WebSockets
-[Performance comparison of XHR polling, Long polling, Server sent events and Websockets](http://www.diva-portal.se/smash/get/diva2:1133465/FULLTEXT01.pd)
+- [Performance comparison of XHR polling, Long polling, Server sent events and Websockets](http://www.diva-portal.se/smash/get/diva2:1133465/FULLTEXT01.pd)
 
-[HTTP vs. WebSockets: A performance comparison](https://blog.feathersjs.com/http-vs-websockets-a-performance-comparison-da2533f13a77)
+- [HTTP vs. WebSockets: A performance comparison](https://blog.feathersjs.com/http-vs-websockets-a-performance-comparison-da2533f13a77)
 
-[Do you really need WebSockets?](https://blog.stanko.io/do-you-really-need-websockets-343aed40aa9b)
+- [Do you really need WebSockets?](https://blog.stanko.io/do-you-really-need-websockets-343aed40aa9b)
 
-[WebSockets vs. Server-Sent Events/EventSource](https://stackoverflow.com/questions/5195452/websockets-vs-server-sent-events-eventsource)
+- [WebSockets vs. Server-Sent Events/EventSource](https://stackoverflow.com/questions/5195452/websockets-vs-server-sent-events-eventsource)
 
-[A Beginner’s Guide to HTTP/2 and its Importance](https://www.advancedwebranking.com/blog/beginners-guide-to-http2/)
+- [A Beginner’s Guide to HTTP/2 and its Importance](https://www.advancedwebranking.com/blog/beginners-guide-to-http2/)
 
 
 ## Containers
 
-[Docker Security Best-Practices](https://dev.to/petermbenjamin/docker-security-best-practices-45ih)
+- [Docker Security Best-Practices](https://dev.to/petermbenjamin/docker-security-best-practices-45ih)
 
-[Open-sourcing gVisor, a sandboxed container runtime](https://cloud.google.com/blog/products/gcp/open-sourcing-gvisor-a-sandboxed-container-runtime)
+- [Open-sourcing gVisor, a sandboxed container runtime](https://cloud.google.com/blog/products/gcp/open-sourcing-gvisor-a-sandboxed-container-runtime)
 
-[Why it is recommended to run only one process in a container?](https://devops.stackexchange.com/questions/447/why-it-is-recommended-to-run-only-one-process-in-a-container)
+- [Why it is recommended to run only one process in a container?](https://devops.stackexchange.com/questions/447/why-it-is-recommended-to-run-only-one-process-in-a-container)
 
-[Security and Virtual Machines](https://pubs.vmware.com/vsphere-4-esx-vcenter/index.jsp?topic=/com.vmware.vsphere.server_configclassic.doc_40/esx_server_config/security_for_esx_systems/c_security_and_virtual_machines.html)
+- [Processes In Containers Should Not Run As Root](https://medium.com/@mccode/processes-in-containers-should-not-run-as-root-2feae3f0df3b)
 
-[Processes In Containers Should Not Run As Root](https://medium.com/@mccode/processes-in-containers-should-not-run-as-root-2feae3f0df3b)
-
-
-## Psuedoterminals, Shell Processes
-
-[Node.js Child Processes: Everything you need to know](https://medium.freecodecamp.org/node-js-child-processes-everything-you-need-to-know-e69498fe970a)
-
-[How do you pipe input and output to and from an interactive shell?](https://stackoverflow.com/questions/16502170/how-do-you-pipe-input-and-output-to-and-from-an-interactive-shell?rq=1)
-
-[Non blocking reading from a subprocess output stream in Python](http://eyalarubas.com/python-subproc-nonblock.html)
-
-[read(3) - Linux man page](https://linux.die.net/man/3/read)
-
-Advanced Programming in the UNIX Environment, W. Richard Stevens, Addison-Wesley, 18th Printing, 1999, page 417
+- [Security and Virtual Machines](https://pubs.vmware.com/vsphere-4-esx-vcenter/index.jsp?topic=/com.vmware.vsphere.server_configclassic.doc_40/esx_server_config/security_for_esx_systems/c_security_and_virtual_machines.html)
 
 
-## Reverse Proxy
+## Psuedoterminals and Shell Processes
 
-[Reverse Proxy and HTTP Redirects](https://docs.trafficserver.apache.org/en/4.2.x/admin/reverse-proxy-http-redirects.en.html)
+- [Node.js Child Processes: Everything you need to know](https://medium.freecodecamp.org/node-js-child-processes-everything-you-need-to-know-e69498fe970a)
 
-[Port Forwarding](https://en.wikipedia.org/wiki/Port_forwarding)
+- [How do you pipe input and output to and from an interactive shell?](https://stackoverflow.com/questions/16502170/how-do-you-pipe-input-and-output-to-and-from-an-interactive-shell?rq=1)
 
-[What is Reverse Proxy Server](https://www.incapsula.com/cdn-guide/glossary/reverse-proxy.html)
+- [Non blocking reading from a subprocess output stream in Python](http://eyalarubas.com/python-subproc-nonblock.html)
+
+- [read(3) - Linux man page](https://linux.die.net/man/3/read)
+
+- Advanced Programming in the UNIX Environment, W. Richard Stevens, Addison-Wesley, 18th Printing, 1999, page 417
+
+
+## Reverse Proxy and Port Forwarding
+- [Port Forwarding](https://en.wikipedia.org/wiki/Port_forwarding)
+
+- [Reverse Proxy and HTTP Redirects](https://docs.trafficserver.apache.org/en/4.2.x/admin/reverse-proxy-http-redirects.en.html)
+
+- [Reverse vs. Forward Proxy Server](https://www.incapsula.com/cdn-guide/glossary/reverse-proxy.html)
 
 
 ## Books
 
-[High Performance Browser Networking](https://hpbn.co/)
+- [High Performance Browser Networking](https://hpbn.co/)
 
-Advanced Programming in the UNIX Environment, W. Richard Stevens
+- Advanced Programming in the UNIX Environment, W. Richard Stevens
 
-The Linux Programming Interface, Michael Kerrisk
+- The Linux Programming Interface, Michael Kerrisk
 
