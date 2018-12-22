@@ -654,12 +654,13 @@ If you're interested in building your own REPL, learning about containers, or tr
 
 [REPL Node API Docs](https://nodejs.org/api/repl.html#repl_repl)
 
-Non blocking reading from a subprocess output stream in Python http://eyalarubas.com/python-subproc-nonblock.html
+[Non blocking reading from a subprocess output stream in Python](http://eyalarubas.com/python-subproc-nonblock.html)
 
 [read(3) - Linux man page](https://linux.die.net/man/3/read)
 
-Advanced Programming in the UNIX Environment", W. Richard Stevens, Addison-Wesley, 18th Printing, 1999, page 417
 [36.9. pty — Pseudo-terminal utilities](https://docs.python.org/2/library/pty.html)
+
+Advanced Programming in the UNIX Environment", W. Richard Stevens, Addison-Wesley, 18th Printing, 1999, page 417
 
 
 ## Reverse Proxy
