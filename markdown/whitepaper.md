@@ -1,6 +1,6 @@
 
 # 1 Introduction
-SpaceCraft is an open-source, real-time collaborative REPL (Read-Eval-Print-Loop) that allows users to write and execute code in the browser for Ruby, JavaScript, and Python. We built this project using Node.js and deployed via Docker, with the a client-server network architecture that communicates over WebSockets.
+SpaceCraft is an open-source, real-time collaborative REPL (Read-Eval-Print-Loop) that allows users to write and execute code in the browser for Ruby, JavaScript, and Python. We built this project using Node.js and deployed via Docker, with a client-server network architecture that communicates over WebSockets.
 
 ![demo](https://docs.google.com/drawings/d/e/2PACX-1vTnye5TTl38DZck_fV70plwTDrvrE5FfUqEO2kBCAvnb0fOOB9EGDcgRov10SZSdqLhJcZsA4TiCHHQ/pub?w=1440)
 
