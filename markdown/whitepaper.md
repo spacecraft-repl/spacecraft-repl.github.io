@@ -295,9 +295,9 @@ To achieve this, we can simply create a user with restricted permissions that wi
 ### 5.4.2 Strengthen Isolation with Container Runtime Sandbox
 While containers provide some isolation between our host system and application, containers [are not inherently a sandbox](https://cloud.google.com/blog/products/gcp/open-sourcing-gvisor-a-sandboxed-container-runtime). Applications that run in containers access system resources in the same way that non-containerized applications do, which is by making privileged system calls directly to the host kernel. What this means is that container escape is still possible with a successful privilege escalation attack. An example would be the [Dirty Cow](https://en.wikipedia.org/wiki/Dirty_COW) (copy-on-write) vulnerability that gives attackers write access to a read-only file, essentially giving them access to root.
 
-> Our current container architecture. Docker alone provides weak isolation, where all system calls made by our application are accepted by the host kernel
+![weak isolation](https://docs.google.com/drawings/d/e/2PACX-1vR-tTR66OqNAFUnZv7ulqSTCqI0RDZgIIkinKbuVXn0cb2O-wZscKZ6_7HRmkgXyWvYUdGbqJ96Wufm/pub?w=1306&h=659)
 
-![weak isolation](https://i.imgur.com/QdXUTH3.png)
+> Our current container architecture. Docker alone provides weak isolation, where all system calls made by our application are accepted by the host kernel
 
 While we can run containers within a virtual machine to provide strong isolation from the host system, it also means a larger resource footprint (gigabytes of disk space) and slower start-up times.
 
@@ -305,11 +305,18 @@ A container runtime sandbox provides similar level of isolation with virtual mac
 
 We chose to leverage gVisor, an open-sourced container runtime sandbox developed by Google, because it provides the security benefits mentioned above and integrates well with Docker.
 
+![givsor strong isolation](https://docs.google.com/drawings/d/e/2PACX-1vS8cMB6fkTIJYk1bVVIcqKC6fhCFEejAdtvQ4pMjBFiNO8fto76FhIadoxFpDaRXbR87k-gGlvEquj6/pub?w=1307&h=712)
+
 > Unprivileged access is enforced through the use of a container sandbox runtime, which provides a much stronger isolation between our application and the host kernel
 
-![givsor strong isolation](https://i.imgur.com/3PUBSki.png)
+The trade-offs of using such a container runtime sandbox however is that it significantly increases memory consumption, thus reducing the maximum number of containers that we can run per host system. Here are the results based on our testing:
 
-The trade-offs of using such a container runtime sandbox however, are reduced application compatibility and a higher per-system call overhead. Nevertheless, our application functions properly and there is no noticeable difference in performance even with gVisor enabled. Thus, using gVisor fits our use case.
+| RAM size (GB) | Default Docker runtime | gVisor runtime |
+| -------- | -------- | -------- |
+| 1     |   18 containers   | 14 containers     |
+| 4 | 103 containers | 50-60 containers |
+
+Nevertheless, gVisor greatly strengthens our security model, thus we are willing to sacrifice memory availability in favor of a stronger security.
 
 With these measures in place, we have effectively made a user profile that is incapable of accessing or changing the files in the container, along with making it a lot harder for users to submit malicious code.
 
@@ -354,11 +361,11 @@ Furthermore, our proxy server can assign random URLs to created sessions, thereb
 | 2 | `6d9e89.domain.com` | `172.17.0.3:3000` |
 | 3 | `71b7e0.domain.com` | `172.17.0.4:3000` |
 
-> Mapping multiple randomly generated URLs to container destinations ensures privacy of sessions. Read [more](#6312-path-based-url-forwarding) about why we chose subdomains instead of paths.
+> Mapping multiple randomly generated URLs to container destinations ensures privacy of sessions. [Read more about why we chose subdomains instead of paths](#712-path-based-url-forwarding).
 
 In our application, the reverse proxy will handle the initial HTTP handshake that is needed to connect a client with a container for their session. Once this handshake is complete, a WebSockets connection is created between the client and container that will persist for the remainder of the session until all connected clients disconnect.
 
-![websockets](https://i.imgur.com/rjdOm1W.png)
+<!-- ![websockets](https://i.imgur.com/rjdOm1W.png) -->
 
 Along with solving our privacy concerns, a reverse proxy provides our application with greater scalability as our user base grows. It can serve as a load balancer as we add more servers and it can provide content caching to reduce latency for particular content outside of establishing the client-container connection.
 
@@ -373,12 +380,17 @@ Since implementing the above features requires flexibility and customization, we
 - [Dockerode](https://github.com/apocas/dockerode), a Node.js Docker API to work with containers
 
 The idea behind session initialization is that we need to:
-1. Generate a unique URL for every session we create
+1. Generate a unique URL when client requests the root path
 2. Instantiate a container to start an instance of our application
 3. Map the generated URL to the newly created container's private IP and port number
-4. Forward clients' requests based on URL to the associated container destination
+4. Redirect client to the new URL
+5. Forward the client's requests to the associated container destination
 
-We will detail the interesting challenges that we face from building a reverse proxy server that has the above features.
+![session init](https://docs.google.com/drawings/d/e/2PACX-1vT08FXIXx9S2tGgcrvqFST81Hd9pseJEFt5TwVC4xomHkaOqanD-M6unI8pCIRO7X3RTJ0GA2V6mGj3/pub?w=1305&h=570)
+
+> A request to the root path will start a new container. The client is then redirected to the newly generated URL in order to access our application.
+
+We will detail the interesting challenges that we face from building such a reverse proxy server.
 
 ## 7.1 Generating Unique URL
 The basic idea behind preventing users from being able to guess a URL is by randomizing it with a sufficiently large number generator. For this, we utilized a UUID generator to generate our session ID. At our current scale, the first 6 digits of the UUID is sufficient, as it already provides 16,777,216 possibilities. With our random number in place, we are ready to generate the full URL.
