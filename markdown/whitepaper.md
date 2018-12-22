@@ -350,9 +350,10 @@ Furthermore, our proxy server can assign random URLs to created sessions, thereb
 
 | Session | Generated URL | Container's IP & port |
 | -------- | -------- | -------- |
-| 1     | `a9ca01.domain.com`     | `172.17.0.2:3000`     |
+| 1 | `a9ca01.domain.com` | `172.17.0.2:3000` |
 | 2 | `6d9e89.domain.com` | `172.17.0.3:3000` |
 | 3 | `71b7e0.domain.com` | `172.17.0.4:3000` |
+
 > Mapping multiple randomly generated URLs to container destinations ensures privacy of sessions. Read [more](#6312-path-based-url-forwarding) about why we chose subdomains instead of paths.
 
 In our application, the reverse proxy will handle the initial HTTP handshake that is needed to connect a client with a container for their session. Once this handshake is complete, a WebSockets connection is created between the client and container that will persist for the remainder of the session until all connected clients disconnect.
@@ -363,9 +364,9 @@ Along with solving our privacy concerns, a reverse proxy provides our applicatio
 
 ## 6.3 Session Management
 In order to connect different groups of users to different sessions, our reverse proxy server must also be responsible to:
-- initialize a session within a new container
+- initialize a session and start a new container
 - forward requests to the appropriate container
-- destroy a session and its container
+- destroy a session and its associated container
 
 Since implementing the above features requires flexibility and customization, we opted out of using an established proxy server such as Nginx. Instead, we chose to built our reverse proxy from scratch using VanillaJS, with only the following essential libraries to help us get started:
 - [node-http-proxy](https://github.com/nodejitsu/node-http-proxy) to forward both HTTP and WebSocket requests
@@ -382,12 +383,17 @@ The basic idea behind preventing users from being able to guess a URL is by rand
 
 #### 6.3.1.2 Path-based URL forwarding
 
-Our initial approach is to attach the generated session ID to the path of the URL. For example, we assign a session ID of `123456` to the URL `domain.com/123456`. With this, every session can be identified by their path name. However, the problem is that assets like JavaScript, CSS files or Socket.io connections that are requested via the root path will not automatically receive the session ID as part of its path name. For instance, a client's request to fetch `/main.js` will omit the session ID, so our reverse proxy will be confused as to which session that has an ID of `"main.js"`, thus the request will fail.
+Our initial approach is to attach the generated session ID to the path of the URL. For example, we assign a session ID of `123456` to the URL `domain.com/123456`. With this, every session can be identified by their path name. However, the problem is that assets like JavaScript, CSS files or Socket.io connections that are requested via the root path will not automatically receive the session ID as part of its path name. For instance, a client's request to fetch `domain.com/main.js` will cause our reverse proxy to assume `"main.js"` as the session ID, thus the request will fail. The following explanation illustrates how this happens:
 
 ![path forwarding](https://docs.google.com/drawings/d/e/2PACX-1vSXRH02roO9RBQITOtlheiN8qaanmQx-IPmv6ThmfzAB6-eRcTPobjm0UGARUUORfb27TdBeXcKYf78/pub?w=1440&h=810)
-> An absence of session ID following the root path leads to confusion in our reverse proxy
 
-In fact, there are ways to get around this issue. The first solution is to add some client-side logic to modify requests to include the session ID. For example, changing the request of `/main.js` to `/123456/main.js` enables our reverse proxy to capture the session ID and to forward it accordingly. 
+1. Client requests `domain.com/123456`
+2. Our reverse proxy forwards the request to the appropriate container destination
+3. Our containerized application serves the first asset file: `index.html` - it contains a `<script>` tag that initiates the fetching of `/main.js`
+4. Our reverse proxy receives the request to GET `/main.js`
+5. Since there are no session associated with an ID of ``"main.js"``, our reverse proxy responds with a 404 status
+
+In fact, we explored ways to get around this issue. The first solution is to add some client-side logic to modify requests to include the session ID. For example, changing the request of `/main.js` to `/123456/main.js` enables our reverse proxy to capture the session ID and to forward it accordingly. 
 
 The second solution is to read the `Referer` header of each request to obtain the previous URL that includes the session ID. With the session ID obtained, our reverse proxy server can forward the request to the appropriate destination container.
 
@@ -397,15 +403,21 @@ However, we chose not to go with this approach as it leads to unnecessary comple
 Through the use of subdomains, the session ID will be a part of the hostname instead of the path. For instance, a session ID of `123456` forms a subdomain URL of `123456.domain.com`. This ensures that the session ID can be read from the hostname, preventing any path changes from confusing our reverse proxy server like `123456.domain.com/main.js`.
 
 ![subdomain forwarding](https://docs.google.com/drawings/d/e/2PACX-1vTcPVwBQa001D2GXjI30Xf0J5I9lTFS5_-i3wjumIieVXpWjwC6u8Qt_3zA6eDJufH00NCk3jyOUMGz/pub?w=1440&h=810)
-> With subdomains, the session ID is always read from the hostname, and it is never lost even if the path changes
+> With subdomains, the session ID is always read from the hostname regardless of any change in the path name
 
-The trade-off with using subdomains is that it may potentially be confusing to users, since subdomains are generally used to create different sites using the same domain name.
+1. Client requests the session through the URL `123456.domain.com`
+2. Our reverse proxy forwards the request to the appropriate container destination based on the session ID of `123456`
+3. Our containerized application responds with `index.html`
+4. Client requests to fetch `123456.domain.com/main.js`
+5. Our reverse proxy forwards the request appropriately by retrieving the session ID from the host name
+6. The container responds with the asset requested
+
+The trade-off with using subdomains it may be confusing in terms of user experience, since subdomains are generally used to create different sites based on different business needs.
 
 #### 6.3.1.4 URL Mapping to Designated Container
 With our URL generated, we can then map the URL to a designated container via its private IP address and port number. The flow of events are as follows:
-1. A container is created (with our application running)
-2. The URL is saved as a key in the hash table
-3. The container's IP address and ID are saved as an object. The object is then assigned as the corresponding property value.
+1. The URL is saved as a key in the hash table
+2. The container's IP address and ID are saved as an object. The object is then assigned as the corresponding property value.
 
 ```javascript
 sessions = {
@@ -420,7 +432,7 @@ sessions = {
 }
 ```
 
-4. With the hash table in place, we can retrieve the designated container's IP in O(1) time given the hostname of a request.
+With the hash table in place, we can retrieve the designated container's IP in O(1) time given the hostname of a request.
 
 ### 6.3.2 Destroying a Session
 With our session initialization process complete, we now need to consider the session teardown process. Once all clients have left a session, we want to start breaking down the remaining container so that we can free up the allocated resources for new sessions. This is preferred over connecting new users to a used container since there may be some remaining artifacts leftover in the session from the previous users, and we instead want to present a clean slate for new users.

@@ -178,6 +178,10 @@ thead tr {
   background: #ffffff !important;
 }
 
+table code {
+  background-color: transparent;
+}
+
 pre.highlight {
   padding: 25px;
   border-radius: 5px;
@@ -267,6 +271,10 @@ pre.highlight {
 
   li img {
     margin: 0 -60px;
+  }
+
+  table {
+    margin-bottom: 12px;
   }
 
   .highlight code {
