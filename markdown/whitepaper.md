@@ -152,7 +152,7 @@ The solution that we found to overcome this challenge is through the use of pseu
 ![remote interaction ?](https://docs.google.com/drawings/d/e/2PACX-1vSiAyIrp0gxipR4IAwjRFzwHDuBIMhNoM8Vzz9zEF2J0CsRviYUNhxP0kID5V-05NGp0cwsx6ZxP8Ik/pub?w=1440)
 > Providing communication over a network solves part of the problem, but it does not address the connection of standard input, output and error to a terminal-oriented program
 
-A terminal-oriented program expects a terminal to perform certain kinds of processing of its inputs and outputs. This is useful to prevent the default blocking of buffering during reads and writes from our application. The additional processing will also allow the generation of terminal-related signals (such as SIGINT) onto the program.<sup>[[1]](https://nostarch.com/tlpi "The Linux Programming Interface, Chapter 64, pages 1375-1377")</sup> In other words, the terminal appropriately translates inputs and outputs between our application and the REPL program.
+A terminal-oriented program expects a terminal to perform certain kinds of processing of its inputs and outputs. This is useful to prevent the default blocking of buffering during reads and writes from our application. The additional processing will also allow the generation of terminal-related signals (such as SIGINT) onto the program <sup>[[source]](https://www.oreilly.com/library/view/the-linux-programming/9781593272203/ch64.html "The Linux Programming Interface, Chapter 64, pages 1375-1377")</sup>. In other words, the terminal appropriately translates inputs and outputs between our application and the REPL program.
 
 A pseudoterminal provides this missing piece, which is a terminal device that connects to our REPL program. In doing so, it acts a communication channel between our application code and the underlying REPL program so that they may be able to speak to each other.
 
@@ -556,11 +556,9 @@ However, we believe this is an acceptable consequence since the part of our appl
 
 # About the Team
 
-**[View team page](/team)**
+[![team photos](/images/team-combined.jpg)](/team)
 
-Our team of three software developers built SpaceCraft remotely, working together across the United States. Please feel free to [connect with us](/team) if you'd like to talk about software engineering, containers, or the web. We're all open to learning about new opportunities!
-
-<!-- Place our pictures here with names, titles, location, and link to personal websites. -->
+**[Our team  of three](/team)** software developers built SpaceCraft remotely, working together across the United States. Please feel free to [contact us](/team) if you'd like to talk about software engineering, containers, or the web. We're all open to learning about new opportunities!
 
 # References
 If you're interested in building your own REPL, learning about containers, or trying our WebSockets, we recommend that you checkout out the resources below. They have been invaluable to our research and development.
@@ -610,6 +608,6 @@ Data Types](https://github.com/y-js/yjs/files/1752526/YjsPaper.pdf)
 
 ## Books
 
-- [High Performance Browser Networking](https://hpbn.co/)
-- Advanced Programming in the UNIX Environment, W. Richard Stevens
-- The Linux Programming Interface, Michael Kerrisk
+- [High Performance Browser Networking, Ilya Grigorik](https://hpbn.co/)
+- Advanced Programming in the UNIX Environment, W. Richard Stevens, Addison-Wesley, 18th Printing, 1999
+- [The Linux Programming Interface, Michael Kerrisk, October 2010](https://nostarch.com/tlpi)

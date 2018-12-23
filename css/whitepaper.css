@@ -119,7 +119,6 @@ main ol > li {
 }
 
 sup {
-  font-family: Roboto Mono, monospace;
   vertical-align: super;
   color: #1D315D;
   font-size: 14px;
