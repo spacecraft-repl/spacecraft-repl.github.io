@@ -297,17 +297,17 @@ While containers provide some isolation between our host system and application,
 
 ![weak isolation](https://docs.google.com/drawings/d/e/2PACX-1vR-tTR66OqNAFUnZv7ulqSTCqI0RDZgIIkinKbuVXn0cb2O-wZscKZ6_7HRmkgXyWvYUdGbqJ96Wufm/pub?w=1306&h=659)
 
-> Our current container architecture. Docker alone provides weak isolation, where all system calls made by our application are accepted by the host kernel
+> Our current container architecture. Docker alone provides weak isolation, where all system calls made by our application are accepted by the host kernel. Source: [gVisor Github](https://github.com/google/gvisor)
 
 While we can run containers within a virtual machine to provide strong isolation from the host system, it also means a larger resource footprint (gigabytes of disk space) and slower start-up times.
 
 A container runtime sandbox provides similar level of isolation with virtual machines while minimizing resource footprint. A runtime sandbox achieves this by intercepting application system calls and acts as the guest kernel. On top of that, it also employs rule-based execution to limit the application's access of resources. With this, any attempted privilege system calls will be intercepted, before it has a chance to reach our host system.
 
-We chose to leverage gVisor, an open-sourced container runtime sandbox developed by Google, because it provides the security benefits mentioned above and integrates well with Docker.
+We chose to leverage [gVisor](https://github.com/google/gvisor), an open-sourced container runtime sandbox developed by Google, because it provides the security benefits mentioned above and integrates well with Docker.
 
 ![givsor strong isolation](https://docs.google.com/drawings/d/e/2PACX-1vS8cMB6fkTIJYk1bVVIcqKC6fhCFEejAdtvQ4pMjBFiNO8fto76FhIadoxFpDaRXbR87k-gGlvEquj6/pub?w=1307&h=712)
 
-> Unprivileged access is enforced through the use of a container sandbox runtime, which provides a much stronger isolation between our application and the host kernel
+> Unprivileged access is enforced through the use of a container sandbox runtime, which provides a much stronger isolation between our application and the host kernel.
 
 The trade-offs of using such a container runtime sandbox however is that it significantly increases memory consumption, thus reducing the maximum number of containers that we can run per host system. Here are the results based on our testing:
 

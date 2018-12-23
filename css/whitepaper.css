@@ -179,11 +179,6 @@ th, td {
   border: 1px solid #b9c1cb; 
 }
 
-td:last-of-type {
-  width: 99%;
-  text-align: center;
-}
-
 tr:nth-child(odd) {
   background: #F2F2F2;
 }
