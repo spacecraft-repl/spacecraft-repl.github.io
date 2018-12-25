@@ -16,6 +16,10 @@
 <body>
   {% include menu.html %}
 
+  <nav id="toc">
+    <ul></ul>
+  </nav>
+
   <header>
     <nav>
       <a href="/">
@@ -44,11 +48,34 @@
 
   <script src="javascript/menu.js"></script>
   <script>
-    const main = document.querySelector('main');
-    const mainLinks = main.getElementsByTagName('a');
+    let titleInView = 0;
+    const main = (tagName) => $('main').getElementsByTagName(tagName);
+    const create = (tagName) => document.createElement(tagName);
+
+    const mainLinks = main('a');
     for (i = 0; i < mainLinks.length; i++) { 
       mainLinks[i].target = '_blank';
     }
+
+    const h1s = Array.from(main('h1'));
+    const toc = $('#toc ul');
+
+    h1s.forEach((h1, idx) => {
+      const li = create('li');
+      const a = create('a');
+      a.href = '#' + h1.id;
+
+      let title = h1.innerHTML;
+      a.innerHTML = title;
+      a.dataset.id = idx + 1;
+      li.appendChild(a);
+      toc.appendChild(li);
+    });
+
+    // window.onscroll = () => {
+    //   console.log(h1s[0].id, h1s[0].getBoundingClientRect());
+    //   console.log(h1s[1].id, h1s[1].getBoundingClientRect());
+    // }
   </script>
 </body>
 </html>

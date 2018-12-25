@@ -32,11 +32,34 @@ header {
   line-height: 24px;
 }
 
+/* table of contents */
+#toc {
+  color: #b9c1cb;
+  position: fixed;
+  top: 20%;
+  right: 20px;
+  font-size: 14px;
+}
+
+#toc ul {
+  max-width: 200px;
+}
+
+#toc li {
+  line-height: 18px;
+  list-style: none;
+  margin-bottom: 6px;
+}
+
+#toc a:hover {
+  color: #435169;
+}
+
 main {
   padding: 40px;
   padding-bottom: 140px;
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 800px;
 }
 
 main h1:first-of-type {
@@ -214,12 +237,20 @@ pre.highlight {
   .page-title h1 {
     font-size: 80px;
   }
+
+  #toc {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 480px) {
   body {
     font-size: 16px;
     line-height: 28px;
+  }
+
+  .page-title h1 {
+    padding-bottom: 28px;
   }
 
   p {
@@ -302,8 +333,6 @@ pre.highlight {
   }
 
   pre.highlight {
-    margin: 0 -16px;
-    padding: 16px 10px;
     overflow-x: scroll;
   }
 }
