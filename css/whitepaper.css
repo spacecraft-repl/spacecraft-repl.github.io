@@ -36,19 +36,19 @@ header {
 #toc {
   color: #b9c1cb;
   position: fixed;
-  top: 20%;
-  right: 20px;
+  top: 15%;
+  left: 80%;
   font-size: 14px;
 }
 
 #toc ul {
-  max-width: 200px;
+  max-width: 240px;
 }
 
 #toc li {
   line-height: 18px;
   list-style: none;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
 #toc a:hover {
