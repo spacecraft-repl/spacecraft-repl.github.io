@@ -161,11 +161,11 @@ blockquote p {
 
 main a {
   font-weight: 400;
-  color: #d85030;
+  color: #00358E;
 }
 
 main a:hover {
-  color: #ed663e;
+  color: #4271C1;
 }
 
 code {
