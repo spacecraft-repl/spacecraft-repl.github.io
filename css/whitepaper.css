@@ -161,11 +161,11 @@ blockquote p {
 
 main a {
   font-weight: 400;
-  color: #022C86;
+  color: #d85030;
 }
 
 main a:hover {
-  color: #285BCA;
+  color: #ed663e;
 }
 
 code {
@@ -231,6 +231,35 @@ pre.highlight {
   border-radius: 5px;
   background-color: #282C35;
   margin-bottom: 20px;
+}
+
+.fadein {
+  animation: fadeIn 0.5s forwards;
+}
+
+.fadeout {
+  animation: fadeOut 0.5s forwards;
+}
+
+.selected {
+  color: #435169;
+  font-weight: 900;
+}
+
+h1.placeholder {
+  margin: 0;
+  height: 0;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 @media screen and (max-width: 1200px) {

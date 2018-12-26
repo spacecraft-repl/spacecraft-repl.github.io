@@ -558,7 +558,7 @@ However, we believe this is an acceptable consequence since the part of our appl
 
 [![team photos](/images/team-combined.jpg)](/team)
 
-**[Our team  of three](/team)** software developers built SpaceCraft remotely, working together across the United States. Please feel free to [contact us](/team) if you'd like to talk about software engineering, containers, or the web. We're all open to learning about new opportunities!
+**[Our team](/team)** of three software developers built SpaceCraft remotely, working together across the United States. Please feel free to contact us if you'd like to talk about software engineering, containers, or the web. We're all open to learning about new opportunities!
 
 # References
 If you're interested in building your own REPL, learning about containers, or trying our WebSockets, we recommend that you checkout out the resources below. They have been invaluable to our research and development.
