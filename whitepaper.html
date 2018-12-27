@@ -40,6 +40,7 @@
       {% include_relative markdown/whitepaper.md %}
     {% endcapture %}  
     {{ markdown | markdownify }}
+    <h1 class="placeholder"></h1>
   </main>
 
   <footer>
@@ -48,10 +49,11 @@
 
   <script src="javascript/menu.js"></script>
   <script>
-    let titleInView = 0;
+    let inViewId = 1;
     const main = (tagName) => $('main').getElementsByTagName(tagName);
     const create = (tagName) => document.createElement(tagName);
     const yPos = (element) => element.getBoundingClientRect().y;
+    const getSelectedA = () => $(`a[data-id="${inViewId}"`);
 
     const mainLinks = main('a');
     for (i = 0; i < mainLinks.length; i++) { 
@@ -69,25 +71,42 @@
 
       let title = h1.innerHTML;
       a.innerHTML = title;
+      h1.dataset.id = idx + 1;      
       a.dataset.id = idx + 1;
       li.appendChild(a);
       toc.appendChild(li);
     });
 
     const toggleToc = () => {
-      if (yPos(firstH1) > 50) {
-        toc.classList.add('hidden');
+      if (yPos(firstH1) > 200) {
+        toc.classList.remove('fadein');        
+        toc.classList.add('fadeout');
       } else {
+        toc.classList.remove('fadeout');        
+        toc.classList.add('fadein');
         toc.classList.remove('hidden');
       }
     }
     toggleToc();    
 
+    let debounce = null;
+
     window.onscroll = () => {
-      toggleToc();
-      console.log(yPos(h1s[0]));
-      // console.log(h1s[0].id, h1s[0].getBoundingClientRect());
-      // console.log(h1s[1].id, h1s[1].getBoundingClientRect());
+      if (debounce) clearTimeout(debounce);
+      debounce = setTimeout(() => {
+        toggleToc();
+        for (let i = 0; i < h1s.length; i++) {
+          const h1 = h1s[i];
+
+          if (yPos(h1) > 200) {
+            const prevSelectedA = getSelectedA();
+            prevSelectedA && prevSelectedA.classList.remove('selected');
+            inViewId = h1.dataset.id - 1;
+            getSelectedA().classList.add('selected');
+            return;
+          }
+        }
+      }, 100);
     }
   </script>
 </body>
