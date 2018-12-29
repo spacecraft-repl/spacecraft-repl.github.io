@@ -43,7 +43,7 @@ A peer-to-peer architecture allows clients to directly communicate with one anot
 However, there are several disadvantages to a peer-to-peer architecture:
 - It requires significant coordination between clients for state-synchronization, since there is no centralized authority to determine the final source of truth.
 - REPL code evaluation has to be performed on the client-side, thereby increasing the overhead of clients. A client that has significant lower processing power may experience system overload and disconnect from its current session.
-- Each client carries a burden of downloading and storing multiple language runtimes for code execution, which defeats our goal of building a collaborative REPL that requires no setup. Furthermore, this approach is not very scalable, as we'll [explore more in the following section](#24-where-should-we-execute-the-code).
+- Each client carries a burden of downloading and storing multiple language runtimes for code execution, which defeats our goal of building a collaborative REPL that requires no setup. This approach is not very scalable, as we'll [explore more in the following section](#24-where-should-we-execute-the-code).
 
 With these disadvantages mentioned, we chose to employ a client-server architecture instead.
 
@@ -55,9 +55,10 @@ We chose a client-server architecture in which users connect to a central server
 - More readily scalable as all language runtimes can be managed and run in a single location
 - It is easier to isolate and contain our application to prevent malicious code from affecting the host system
 
-The trade-off a client-server architecture is that clients will not be able to communicate directly with one another. Since the communication has to be routed first through our server, a round-trip would be necessary for every client's request.
+The trade-off of using a client-server architecture is that clients will not be able to communicate directly with one another. Since the communication has to be routed first through our server, a round-trip would be necessary for every client's request. Nevertheless, this fits our use case due to the above benefits mentioned.
 
 ## 2.3 Network Protocol
+With our client-server architecture in mind, we have to decide on which network protocol that suits best for constructing a real-time collaborative environment.
 ### 2.3.1 HTTP
 We initially started with using HTTP to have clients communicate with our server, but quickly discovered some issues with this approach:
 - There is no way for our server to automatically detect a client disconnection. The server would need to send an HTTP request to ping the client and determine if a disconnection has occurred.
