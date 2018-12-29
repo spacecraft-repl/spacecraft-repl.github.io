@@ -53,7 +53,7 @@ With these disadvantages mentioned, we chose to employ a client-server architect
 We chose a client-server architecture in which users connect to a central server and start up a REPL session. Users who wish to collaborate can then connect to the same REPL session and have their input and output synchronized. A client-server architecture provides several benefits:
 - A centralized server provides a single source of authority, thereby conflicts that arise from simultaneous updates can be easily resolved
 - More readily scalable as all language runtimes can be managed and run in a single location
-- Easier to isolate an application instance to prevent malicious code from affecting the host system
+- It is easier to isolate and contain our application to prevent malicious code from affecting the host system
 
 The trade-off a client-server architecture is that clients will not be able to communicate directly with one another. Since the communication has to be routed first through our server, a round-trip would be necessary for every client's request.
 
