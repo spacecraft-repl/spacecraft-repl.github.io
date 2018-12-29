@@ -37,7 +37,7 @@ header {
   color: #b9c1cb;
   position: fixed;
   top: 15%;
-  left: 80%;
+  left: 82%;
   font-size: 14px;
 }
 
@@ -59,7 +59,7 @@ main {
   padding: 40px;
   padding-bottom: 140px;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 850px;
 }
 
 main h1:first-of-type {
