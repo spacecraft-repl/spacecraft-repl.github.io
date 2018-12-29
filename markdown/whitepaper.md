@@ -32,40 +32,61 @@ These are a lot of challenges to solve, and we need to start somewhere. Let's be
 In considering our network architecture, we need to make sure that our choice meets the following technical requirements:
 - Scalable: able to handle multiple language runtimes
 - Supports 3-5 users per session for collaboration
-- Detects when a client disconnects to free up resources for new users
-- Allows bidirectional communication to handle high volumes of traffic from both clients and servers
+- Detects when a client disconnects so that we can free up resources for new users
+- Allows bidirectional communication for clients to send and receive data from our server at any given time
 
-## 2.1 Client-server Architecture
+## 2.1 Problems with a Peer-to-peer Architecture
+![peer-to-peer](https://docs.google.com/drawings/d/e/2PACX-1vQZTrLn7Z1h4BdZdZ6NdfMX52AEn9N3wpWseWSdfjEJQVv7Z0Rj8jVkz3D8dmkIA9u1_YWtZ1CzY-HR/pub?w=1439&h=517)
 
+A peer-to-peer architecture allows clients to directly communicate with one another without having to go through a centralized server. The benefit of such a network architecture is that it enables decentralization of nodes, which removes a single point of failure and [shortens the distances between nodes](https://layr-team.github.io/layr-project/#decentralized-cloud-storage "Layr: A Decentralized Cloud Storage System"). With this, client connections will not require a full round-trip through a centralized server, thereby reducing the latency. Furthermore, since each client also acts as a server, and a single node's failure will not affect the entire system.
+
+However, there are several disadvantages to a peer-to-peer architecture:
+- It requires significant coordination between clients for state-synchronization, since there is no centralized authority to determine the final source of truth.
+- REPL code evaluation has to be performed on the client-side, thereby increasing the overhead of clients. A client that has significant lower processing power may experience system overload and disconnect from its current session.
+- Each client carries a burden of downloading and storing multiple language runtimes for code execution, which defeats our goal of building a collaborative REPL that requires no setup. Furthermore, this approach is not very scalable, as we'll [explore more in the following section](#24-where-should-we-execute-the-code).
+
+With these disadvantages mentioned, we chose to employ a client-server architecture instead.
+
+## 2.2 Client-server Architecture
 ![client-server](https://docs.google.com/drawings/d/e/2PACX-1vQo6W0USG30ETbTw7ztlMQ7Z24iQp9dT1-65CyZXbJdvZWflNiRAedbbhJyeArL40YQ7TNbIoEwN5at/pub?w=1440)
 
-We chose a client-server architecture in which users connect to a central server and start up a REPL session. Users who wish to collaborate can then connect to the same REPL session and have their input/output sync.
+We chose a client-server architecture in which users connect to a central server and start up a REPL session. Users who wish to collaborate can then connect to the same REPL session and have their input and output synchronized. A client-server architecture provides several benefits:
+- A centralized server provides a single source of authority, thereby conflicts that arise from simultaneous updates can be easily resolved
+- More readily scalable as all language runtimes can be managed and run in a single location
+- Easier to isolate an application instance to prevent malicious code from affecting the host system
 
+The trade-off a client-server architecture is that clients will not be able to communicate directly with one another. Since the communication has to be routed first through our server, a round-trip would be necessary for every client's request.
+
+## 2.3 Network Protocol
+### 2.3.1 HTTP
 We initially started with using HTTP to have clients communicate with our server, but quickly discovered some issues with this approach:
 - There is no way for our server to automatically detect a client disconnection. The server would need to send an HTTP request to ping the client and determine if a disconnection has occurred.
-- There is a significant amount of overhead (~200 bytes) with each HTTP request/response which adds up over time with multiple users collaborating in the same session.
+- There is a significant amount of overhead ([~200 bytes](http://www.diva-portal.se/smash/get/diva2:1133465/FULLTEXT01.pdf "Performance comparison of XHR polling,
+Long polling, Server sent events and
+Websockets by Rasmus Appelqvist,
+Oliver Örnmyr")) with each HTTP request/response which adds up over time with multiple users collaborating in the same session.
 - This overhead also adds up in the case of single users since our application sends a request to the server with each keypress as the user write code as part of our design to sync collaborating users.
 
 While it is possible to improve the above issues with HTTP server-sent events, it does not address the case where a client decides to send data frequently, for which regular HTTP requests have to be made. To fully address the problems mentioned above, we need an alternative that could provide bidirectional communication between a client and server, that could also detect client disconnections and have a smaller overhead. The best solution that we found was WebSockets.
 
-## 2.2 WebSockets
-We used the popular library [Socket.io](https://socket.io/) to leverage WebSockets in SpaceCraft. The major benefit of using WebSockets is that it provides a bidirectional communication between the client and server over a single TCP connection. After an initial HTTP handshake to establish the TCP connection, our client and server will then be connected through WebSockets for further communication. This ensures that either the client or server can send information to the other when needed with an additional overhead of only [~10 bytes per message](http://www.diva-portal.se/smash/get/diva2:1133465/FULLTEXT01.pdf "Performance comparison of XHR polling,
+### 2.3.2 WebSockets
+We used the library [Socket.io](https://socket.io/) to leverage WebSockets in SpaceCraft. The major benefit of using WebSockets is that it provides a bidirectional communication between the client and server over a single TCP connection. After an initial HTTP handshake to establish the TCP connection, our client and server will then be connected through WebSockets for further communication. This ensures that either the client or server can send information to the other when needed with an additional overhead of only [~10 bytes per message](http://www.diva-portal.se/smash/get/diva2:1133465/FULLTEXT01.pdf "Performance comparison of XHR polling,
 Long polling, Server sent events and
 Websockets by Rasmus Appelqvist,
-Oliver Örnmyr"). This is a ~95% decrease from using HTTP, and particularly useful in our case where we continuously stream data from the server to the clients.
+Oliver Örnmyr"). This is a ~95% decrease from using HTTP, and particularly useful in our case where we continuously [stream data](#8-performance-benchmarking-streaming-vs-buffering-outputs) from the server to the clients.
 
 ![http vs websockets](https://docs.google.com/drawings/d/e/2PACX-1vQAdYwKH7kjzDDQv9GF-tpR9d2ZRK_vA661f2x3JPdTrPcE9c78WCl5rdyYW5XmyUy9wTYUlEZwQrEp/pub?w=1440)
 > A full duplex persistent connection is possible with WebSockets. The connection stays open until either the client or server disconnects. Reference: [WebSockets - A Conceptual Deep-Dive](https://www.ably.io/concepts/websockets)
 
 Additionally, since the TCP connection over WebSockets remains open until either the client or server disconnects we can easily know when a user disconnects from out application. This enables us to efficiently begin the container teardown process and free up resources for new users. Finally, WebSockets allows us to maintain 1024 or more connections per server as opposed to ~6 connections per server with HTTP. This enables us to scale our application more efficiently as our user base grows.
 
-## 2.3 Where Should We Execute the Code?
+## 2.4 Where Should We Execute the Code?
 
 ![client-side server-side](https://docs.google.com/drawings/d/e/2PACX-1vSKVCKGZZHwgQFbXnMcyYpkhr4fJOUeeOxPp2zl1uLXM4nyxPOB7xT8gqMEkYZSlomKjDdk32voKaC6/pub?w=1440)
 
 Now that we've established our network architecture and communications, we need to decide where our code should be executed: on the client or on the server?
 
-### 2.3.1 Executing code on the client-side
+### 2.4.1 Executing code on the client-side
 Initially, we thought that we could execute on the client so that there is minimal latency between the user submitting code for evaluation and then receiving the result. Additionally, we could set-up a peer-to-peer architecture for collaborating users to sync input/output.
 
 However, there are several problems with this approach. First, we face the burden of running an in-browser compiler, which can be slow and even cause the browser to hang. Second, this is not scalable because we would be relying on the client's computer resources for handling and running the language runtimes.
@@ -77,7 +98,7 @@ Finally, not all languages come with an in-browser compiler and thus we would ne
 Vincent Woo, Founder of Coderpad.io, in one of his [interviews](http://codeinsider.us/i/5.html) mentioned:
 > “One day I sucked it up and I just realized that there was no way I could scale this completely in-browser execution out as far as I needed it to... What are you going to do, compile every programming runtime into JavaScript? Good luck.”
 
-### 2.3.2 Solution: Executing code on the server-side
+### 2.4.2 Solution: Executing code on the server-side
 For all these reasons, we will need to execute our code on the server-side. This ends up making it easier to manage multiple runtimes and easier to scale since we can upgrade our server resources and have our memory and CPU more readily available than a client's. Furthermore, by relying on a central server, we can more easily handle conflicts due to concurrent edits. 
 
 The tradeoff is that we will need to efficiently manager our server resources, along with facing increased latency and server costs. However, we feel that these tradeoffs are acceptable in order to meet our goals.
@@ -572,8 +593,9 @@ Data Types](https://github.com/y-js/yjs/files/1752526/YjsPaper.pdf)
 - [Using locking mechanism to prevent conflicts between edits. “Collaborative Real Time Coding or How to Avoid the Dreaded Merge”](https://arxiv.org/pdf/1504.06741.pdf)
 - [Opal: Ruby in the Browser: a Ruby to JavaScript source-to-source compiler used in TryRuby](https://opalrb.com/)
 
-## HTTP vs. WebSockets
+## HTTP vs. WebSockets & Network Architecture
 
+- [Layr: A Decentralized Cloud Storage System](https://layr-team.github.io/layr-project/)
 - [Performance comparison of XHR polling, Long polling, Server sent events and Websockets](http://www.diva-portal.se/smash/get/diva2:1133465/FULLTEXT01.pd)
 - [HTTP vs. WebSockets: A performance comparison](https://blog.feathersjs.com/http-vs-websockets-a-performance-comparison-da2533f13a77)
 - [Do you really need WebSockets?](https://blog.stanko.io/do-you-really-need-websockets-343aed40aa9b)
