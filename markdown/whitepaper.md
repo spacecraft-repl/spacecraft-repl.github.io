@@ -38,7 +38,7 @@ In considering our network architecture, we need to make sure that our choice me
 ## 2.1 Problems with a Peer-to-peer Architecture
 ![peer-to-peer](https://docs.google.com/drawings/d/e/2PACX-1vQZTrLn7Z1h4BdZdZ6NdfMX52AEn9N3wpWseWSdfjEJQVv7Z0Rj8jVkz3D8dmkIA9u1_YWtZ1CzY-HR/pub?w=1439&h=517)
 
-A peer-to-peer architecture allows clients to directly communicate with one another without having to go through a centralized server. The benefit of such a network architecture is that it enables decentralization of nodes, which removes a single point of failure and [shortens the distances between nodes](https://layr-team.github.io/layr-project/#decentralized-cloud-storage "Layr: A Decentralized Cloud Storage System"). With this, client connections will not require a full round-trip through a centralized server, thereby reducing the latency. Furthermore, since each client also acts as a server, and a single node's failure will not affect the entire system.
+A peer-to-peer architecture allows clients to directly communicate with one another without having to go through a centralized server. The benefit of such a network architecture is that it enables decentralization of nodes, which removes a single point of failure and [shortens the distances between nodes](https://layr-team.github.io/layr-project/#decentralized-cloud-storage "Layr: A Decentralized Cloud Storage System"). With this, client connections will not require a full round-trip through a centralized server, thereby reducing the latency.
 
 However, there are several disadvantages to a peer-to-peer architecture:
 - It requires significant coordination between clients for state-synchronization, since there is no centralized authority to determine the final source of truth.
