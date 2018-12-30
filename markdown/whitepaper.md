@@ -37,6 +37,7 @@ In considering our network architecture, we need to make sure that our choice me
 
 ## 2.1 Problems with a Peer-to-peer Architecture
 ![peer-to-peer](https://docs.google.com/drawings/d/e/2PACX-1vQZTrLn7Z1h4BdZdZ6NdfMX52AEn9N3wpWseWSdfjEJQVv7Z0Rj8jVkz3D8dmkIA9u1_YWtZ1CzY-HR/pub?w=1439&h=517)
+> A peer to peer network, where clients are connected directly to one another
 
 A peer-to-peer architecture allows clients to directly communicate with one another without having to go through a centralized server. The benefit of such a network architecture is that it enables decentralization of nodes, which removes a single point of failure and [shortens the distances between nodes](https://layr-team.github.io/layr-project/#decentralized-cloud-storage "Layr: A Decentralized Cloud Storage System"). With this, client connections will not require a full round-trip through a centralized server, thereby reducing the latency.
 
@@ -49,6 +50,7 @@ With these disadvantages mentioned, we chose to employ a client-server architect
 
 ## 2.2 Client-server Architecture
 ![client-server](https://docs.google.com/drawings/d/e/2PACX-1vQo6W0USG30ETbTw7ztlMQ7Z24iQp9dT1-65CyZXbJdvZWflNiRAedbbhJyeArL40YQ7TNbIoEwN5at/pub?w=1440)
+> A client-server architecture, where multiple clients are connected to a centralized server
 
 We chose a client-server architecture in which users connect to a central server and start up a REPL session. Users who wish to collaborate can then connect to the same REPL session and have their input and output synchronized. A client-server architecture provides several benefits:
 - A centralized server provides a single source of authority, thereby conflicts that arise from simultaneous updates can be easily resolved
