@@ -59,6 +59,11 @@ a.profile {
   text-align: center;
 }
 
+a.profile:hover {
+  color: #435169;
+  text-decoration: underline;
+}
+
 main h2 {
   margin-top: 30px;
   font-size: 1.7em;
