@@ -33,7 +33,7 @@ In considering our network architecture, we need to make sure that our choice me
 - Scalable: able to handle multiple language runtimes
 - Supports 3-5 users per session for collaboration
 - Detects when a client disconnects so that we can free up resources for new users
-- Allows bidirectional communication for clients to send and receive data from our server at any given time
+- Allows bidirectional communication for clients to send and receive data at any given time
 
 ## 2.1 Problems with a Peer-to-peer Architecture
 ![peer-to-peer](https://docs.google.com/drawings/d/e/2PACX-1vQZTrLn7Z1h4BdZdZ6NdfMX52AEn9N3wpWseWSdfjEJQVv7Z0Rj8jVkz3D8dmkIA9u1_YWtZ1CzY-HR/pub?w=1439&h=517)
