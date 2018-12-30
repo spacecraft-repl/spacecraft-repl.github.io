@@ -435,7 +435,7 @@ In fact, we explored ways to get around this issue. The first solution is to add
 
 The second solution is to read the `Referer` header of each request to obtain the previous URL that includes the session ID. With the session ID obtained, our reverse proxy server can forward the request to the appropriate destination container.
 
-However, we chose not to go with this approach as it leads to unnecessary complexity in the client-side code. Furthermore, the `Referer` header may not always give us the expected URL that contains the session ID, particularly when working with Socket.io. Since directly solving these problems require some degree of request manipulation, we opt for the approach of subdomain forwarding due to its simplicity.
+However, we chose not to go with these approaches as it leads to unnecessary complexity in the client-side code. Furthermore, the `Referer` header may not always give us the expected URL that contains the session ID, particularly when working with Socket.io. Since directly solving these problems require some degree of request manipulation while adding dependencies on the client-side, we opt for the approach of subdomain forwarding due to its simplicity.
 
 ### 7.1.3 Subdomain forwarding
 Through the use of subdomains, the session ID will be a part of the hostname instead of the path. For instance, a session ID of `123456` forms a subdomain URL of `123456.domain.com`. This ensures that the session ID can be read from the hostname, regardless of any change in the path name such as `123456.domain.com/main.js`. The following breakdown explains how this is handled:
