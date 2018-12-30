@@ -55,7 +55,7 @@ We chose a client-server architecture in which users connect to a central server
 - More readily scalable as all language runtimes can be managed and run in a single location
 - It is easier to isolate and contain our application to prevent malicious code from affecting the host system
 
-The trade-off of using a client-server architecture is that clients will not be able to communicate directly with one another. Since the communication has to be routed first through our server, a round-trip would be necessary for every client's request. Nevertheless, this fits our use case due to the above benefits mentioned.
+The trade-off of using a client-server architecture is that clients will not be able to communicate directly with one another. Since the communication has to be routed first through our server, a round-trip would be necessary for every client's request. Nevertheless, this fits our use case due to the benefits mentioned above.
 
 ## 2.3 Network Protocol
 With our client-server architecture in mind, we have to decide on which network protocol that suits best for constructing a real-time collaborative environment.
