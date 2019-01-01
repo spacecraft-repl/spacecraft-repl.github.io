@@ -132,10 +132,12 @@ Since we want provide users with the ability to submit code remotely for server-
 
 The above diagram shows that user inputs and outputs are handled by the terminal. The terminal then writes inputs to the REPL program and reads any evaluation output from it.
 
-For our project, since we are performing code evaluation entirely on the back end, our application server must be able to perform the above operations without a terminal. This means that the interaction between the user and the underlying REPL program will have to be manually set-up through our application logic. Moreover, we have to also consider the complexity that comes with interacting with REPLs of different languages.
+For our project, since we are performing code evaluation entirely on the back end, our application server must be able to perform the above operations without a terminal. This means that the interaction between the user and the underlying REPL program will have to be manually set-up through our application logic.
 
 ![simulated interaction](https://docs.google.com/drawings/d/e/2PACX-1vQ6MwTViENag3nS5sQ-cyiwE4lQbTO-oa8Dc5SMNRjqpDTejskWvnHRZOFTpp_whkr15GmjpjQ0gkX3/pub?w=1440)
 > Our application has to properly write inputs to the underlying REPL program and read outputs from it
+
+Moreover, we have to also consider the complexity that comes with interacting with REPLs of different languages.
 
 With this challenge in mind, we will explore three different approaches that can help set up our application to interact with the REPL program.
 
