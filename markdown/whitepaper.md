@@ -15,7 +15,7 @@ SpaceCraft's goals on the surface are simple. We aim to provide users with a cho
 
 ## 1.2 Challenges
 In setting the above goals, we've introduced several challenges in our project that we will need to solve.
-The biggest challenge is the security risk from providing users with a terminal-like REPL that directly connects to our back-end for code execution. This design opens the door for malicious code to be input by users directly into our system, making us vulnerable to a variety of exploits. 
+The biggest challenge is the security risk from providing users with a terminal-like REPL that directly connects to our back end for code execution. This design opens the door for malicious code to be input by users directly into our system, making us vulnerable to a variety of exploits. 
 
 There also comes the challenge of spreading our resources across multiple instances of our application. There is the chance that one user's code may require more resources than that of other users. If we don't account for this, then we may have a single instance hog resources away from other sessions and thus lower their performance.
 
@@ -124,13 +124,13 @@ SpaceCraft's user interface is created with [Xterm.js](https://github.com/xtermj
 
 CodeMirror is a versatile text editor implemented in JavaScript for the browser. It's specialized for writing and editing code and provides a familiar text editor experiences for developers. By leveraging Xterm.js and CodeMirror to create our user interface and receive input, our team was able to focus our efforts on developing a rich REPL experience for Ruby, JavaScript, and Python, along with a secure framework for handling malicious user input. So now we need to figure out how to handle a user's input and properly evaluate it on our backend.
 
-## 3.2 Interacting with the REPL program on the Back-end
+## 3.2 Interacting with the REPL program on the Back End
 Since we want provide users with the ability to submit code remotely for server-side evaluation, we have to simulate the entire interaction with the REPL program ourselves. This is fundamentally different from the regular experience with a REPL program in which a user directly inputs code into an interactive REPL console like *irb* or *node*.
 
 ![local interaction](https://docs.google.com/drawings/d/e/2PACX-1vQOAjlP1_EdFI1Jk_8rRaA_ExbLCtqczdL6rsAXwedI7OnYP4ovCn1Z12BXkEYk4UOa-Cy3aU3ue0sb/pub?w=1440)
 > A regular interaction between a user and a REPL program via a terminal
 
-For our project, the interaction between the user and the underlying REPL program will have to be manually set-up through our application logic. Our application must be able to send inputs to the REPL program on the back-end and read any outputs after an evaluation is completed. This means that we have to also consider the complexity that comes with interacting with REPLs of different languages.
+For our project, the interaction between the user and the underlying REPL program will have to be manually set-up through our application logic. Our application must be able to send inputs to the REPL program on the back end and read any outputs after an evaluation is completed. This means that we have to also consider the complexity that comes with interacting with REPLs of different languages.
 
 ![simulated interaction](https://docs.google.com/drawings/d/e/2PACX-1vQ6MwTViENag3nS5sQ-cyiwE4lQbTO-oa8Dc5SMNRjqpDTejskWvnHRZOFTpp_whkr15GmjpjQ0gkX3/pub?w=1440)
 > Our application has to properly write inputs to the underlying REPL program and read outputs from it
@@ -199,7 +199,7 @@ With these advantages mentioned, we can further reduce our code complexity since
 The trade-off of using a pseudoterminal is that there is a slight increase in overhead as we are adding an additional processing layer in between our application and the underlying REPL program. However, with all the benefits mentioned, this approach fits our use case.
 
 # 4 Collaboration with Multiple Users
-Now that we have built our REPL on the back-end, we need a way to synchronize the input and output of a session across collaborating users. This synchronization needs to occur for both the REPL and text editor components of the front-end.
+Now that we have built our REPL on the back end, we need a way to synchronize the input and output of a session across collaborating users. This synchronization needs to occur for both the REPL and text editor components of the front end.
 
 We'll first handle the REPL synchronization, for which there are two main components: the current line of REPL input and the result of code evaluation as output.While it is possible to utilize external libraries to manage the synchronization of REPL inputs and outputs for us, we chose to build this feature ourselves from scratch. Our reasoning is so that we can:
 - easily add new features that are not supported from the library, such as handling output overflow during an infinite loop
@@ -555,7 +555,7 @@ The results provide some perspectives on further optimizations that we can make.
 # 9 Future Work
 
 ## 9.1 Improve User Experiences
-Currently, when multiple users write code in our text editor on the front-end there is no distinction between user cursors. This can make it difficult to see the location of all the cursors or to tell which cursor belongs to which user as they type. To improve the collaboration experience, we want to assign each cursor a unique color and name, similar to a small tooltip icon. This will make it easier to distinguish where each cursor is located in the editor and who is writing what.
+Currently, when multiple users write code in our text editor on the front end there is no distinction between user cursors. This can make it difficult to see the location of all the cursors or to tell which cursor belongs to which user as they type. To improve the collaboration experience, we want to assign each cursor a unique color and name, similar to a small tooltip icon. This will make it easier to distinguish where each cursor is located in the editor and who is writing what.
 
 ## 9.2 Allow Code Upload and Download
 There may be instances in which a user needs to leave their session but would like to download and save their code onto their local machine. Additionally, some users may have written code in their code editor and would like to upload it into their session of SpaceCraft. To accomodate these use cases, we'd like to add the ability for users to click a button and download the code from our text editor to be saved on their local machine. We'd also like to add a second button which upon being clicked will allow users to choose a file on their local machine and upload it's contents into our text editor.
