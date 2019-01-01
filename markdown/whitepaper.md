@@ -139,7 +139,7 @@ For our project, since we are performing code evaluation entirely on the back en
 
 Moreover, we have to also consider the complexity that comes with interacting with REPLs of different languages.
 
-With this challenge in mind, we will explore three different approaches that can help set up our application to interact with the REPL program.
+With these challenges in mind, we will explore three different approaches that can help set up our application to interact with the REPL program.
 
 ### Approach #1: Interact with the language’s built-in REPL API library
 Many languages provide APIs to access and interact with its native REPL program. Node.js for example, provides the `repl` module that allows developers to work directly with its API from within the application code. 
@@ -148,7 +148,7 @@ The problem with using language-specific APIs, however, is that we would have to
 
 Thus, our goal of supporting three languages, and potentially more in the future, does not benefit from this approach.
 
-### Approach #2: Spawning a REPL Child Process and Interacting Directly with It
+### Approach #2: Spawn a REPL Child Process and Perform Read/Write on It
 We could also make use of APIs that enable us to access the standard streams of a REPL child process. In particular, we are going to access the standard input (a writable stream) as well as the standard output (a readable stream) of the REPL child process. More info on working with streams can be found here: [Node.js Streams](https://medium.freecodecamp.org/node-js-streams-everything-you-need-to-know-c9141306be93#4fc8).
 
 We can naively think that writing into the standard input would produce a desired output, however the output may hang. This can be seen in the gif below in which we are accessing the standard streams of a REPL process:
@@ -172,7 +172,7 @@ Second, interpreted languages are usually written in lower-level languages, and 
 
 Although there are [techniques](http://eyalarubas.com/python-subproc-nonblock.html) to unblock the processes for reading or writing from the streams, the techniques are not universal on all languages. If we were to implement various techniques to get around this issue, our application's code complexity would increase significantly. Thus, this approach does not fit our use case.
 
-### Approach #3 Interacting with a Pseudoterminal
+### Approach #3: Pseudoterminals
 The solution that we found to overcome this challenge is through the use of pseudoterminals. The basis of this approach is that REPL programs are inherently terminal-oriented programs, which means that they expect to connect and work with a terminal. The fundamental problem that we are trying to address here becomes:
 
 **How can we enable a user to interact with a terminal-oriented program on a remote host?**
