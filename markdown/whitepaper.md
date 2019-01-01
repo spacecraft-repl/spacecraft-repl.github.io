@@ -107,7 +107,7 @@ For all these reasons, we will need to execute our code on the server-side. This
 The tradeoff is that we will need to efficiently manager our server resources, along with facing increased latency and server costs. However, we feel that these tradeoffs are acceptable in order to meet our goals.
 
 # 3 Building a REPL
-Now that we've designed our architecture, our next task is to create a version of SpaceCraft that services a single user per session. Once that's complete, we can add mult-user collaboration. For now, we need to allow the user to:
+Now that we've designed our architecture, our next task is to create a version of SpaceCraft that services a single user per session. Once that's complete, we can add multi-user collaboration. For now, we need to allow the user to:
 - Select from a list of supported languages.
 - Write code in the REPL, submit for evaluation by hitting Enter, and receive the result as output.
 - Write code in the editor, submit for evaluation by clicking a Run button, and receive the result as output.
