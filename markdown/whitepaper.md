@@ -17,10 +17,10 @@ SpaceCraft's goals on the surface are simple. We aim to provide users with a cho
 In setting the above goals, we've introduced several challenges in our project that we will need to solve.
 The biggest challenge is the security risk from providing users with a terminal-like REPL that directly connects to our back-end for code execution. This design opens the door for malicious code to be input by users directly into our system, making us vulnerable to a variety of exploits. 
 
-There also comes the challenge of spreading our resources across many sessions. There is the chance that one user's code may require more resources than that of other users. If we don't account for this, then we may have a single session hog resources away from other sessions and thus lower their performance.
+There also comes the challenge of spreading our resources across multiple instances of our application. There is the chance that one user's code may require more resources than that of other users. If we don't account for this, then we may have a single instance hog resources away from other sessions and thus lower their performance.
 
 So, we will need to:
-- Isolate each user's session from the sessions of other users (non-collaborating users.)
+- Scale our application to handle multiple sessions and isolate each user's session from the sessions of other users
 - Prevent any malicious code from affecting our system.
 - Manage the usage of our server's resources for each session so that one user's code doesn't affect other users.
 
