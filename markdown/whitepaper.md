@@ -68,7 +68,7 @@ We initially started with using HTTP to have clients communicate with our server
 Long polling, Server sent events and
 Websockets by Rasmus Appelqvist,
 Oliver Örnmyr")) with each HTTP request/response which adds up over time with multiple users collaborating in the same session.
-- This overhead also adds up in the case of single users since our application sends a request to the server with each keypress as the user write code as part of our design to sync collaborating users.
+- This overhead also adds up in the case of a single user. A client sends a request to the server for each keypress when a user writes code. This is part of our design to sync collaborating users.
 
 While it is possible to improve the above issues with HTTP server-sent events, it does not address the case where a client decides to send data frequently, for which regular HTTP requests have to be made. To fully address the problems mentioned above, we need an alternative that could provide bidirectional communication between a client and server, that could also detect client disconnections and have a smaller overhead. The best solution that we found was WebSockets.
 
@@ -81,7 +81,7 @@ Oliver Örnmyr"). This is a ~95% decrease from using HTTP, and particularly usef
 ![http vs websockets](https://docs.google.com/drawings/d/e/2PACX-1vQAdYwKH7kjzDDQv9GF-tpR9d2ZRK_vA661f2x3JPdTrPcE9c78WCl5rdyYW5XmyUy9wTYUlEZwQrEp/pub?w=1440)
 > A full duplex persistent connection is possible with WebSockets. The connection stays open until either the client or server disconnects. Reference: [WebSockets - A Conceptual Deep-Dive](https://www.ably.io/concepts/websockets)
 
-Additionally, since the TCP connection over WebSockets remains open until either the client or server disconnects we can easily know when a user disconnects from out application. This enables us to efficiently begin the container teardown process and free up resources for new users. Finally, WebSockets allows us to maintain 1024 or more connections per server as opposed to ~6 connections per server with HTTP. This enables us to scale our application more efficiently as our user base grows.
+Additionally, since the TCP connection over WebSockets remains open until either the client or server disconnects we can easily know when a user disconnects from our application. This enables us to efficiently begin the container teardown process and free up resources for new users. Finally, WebSockets allows us to maintain 1024 or more connections per server as opposed to ~6 connections per server with HTTP. This enables us to scale our application more efficiently as our user base grows.
 
 ## 2.4 Where Should We Execute the Code?
 
