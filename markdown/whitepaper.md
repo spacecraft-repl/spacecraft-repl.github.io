@@ -329,7 +329,7 @@ While containers provide some isolation between our host system and application,
 
 While we can run containers within a virtual machine to provide strong isolation from the host system, it also means a larger resource footprint (gigabytes of disk space) and slower start-up times.
 
-A container runtime sandbox provides similar level of isolation with virtual machines while minimizing resource footprint. A runtime sandbox achieves this by intercepting application system calls and acts as the guest kernel. On top of that, it also employs rule-based execution to limit the application's access of resources. With this, any attempted privilege system calls will be intercepted, before it has a chance to reach our host system.
+A container runtime sandbox provides similar level of isolation with virtual machines while minimizing resource footprint. A runtime sandbox achieves this by intercepting application system calls and acts as the guest kernel. On top of that, it also employs rule-based execution to limit the application's access to resources. With this, any attempted privilege system calls will be intercepted, before it has a chance to reach our host system.
 
 We chose to leverage [gVisor](https://github.com/google/gvisor), an open-sourced container runtime sandbox developed by Google, because it provides the security benefits mentioned above and integrates well with Docker.
 
@@ -337,7 +337,7 @@ We chose to leverage [gVisor](https://github.com/google/gvisor), an open-sourced
 
 > Unprivileged access is enforced through the use of a container sandbox runtime, which provides a much stronger isolation between our application and the host kernel.
 
-The trade-offs of using such a container runtime sandbox however is that it significantly increases memory consumption, thus reducing the maximum number of containers that we can run per host system. Here are the results based on our testing:
+The trade-off of using such a container runtime sandbox however is that it significantly increases memory consumption, thus reducing the maximum number of containers that we can run per host system. Here are the results based on our testing:
 
 | RAM size (GB) | Default Docker runtime | gVisor runtime |
 | -------- | -------- | -------- |
@@ -403,7 +403,7 @@ In order to connect different groups of users to different sessions, our reverse
 - forward requests to the appropriate container
 - destroy a session and its associated container
 
-Since implementing the above features requires flexibility and customization, we opted out of using an established proxy server such as Nginx. Instead, we chose to built our reverse proxy from scratch using VanillaJS, with only the following essential libraries to help us get started:
+Since implementing the above features requires flexibility and customization, we opted out of using an established proxy server such as Nginx. Instead, we chose to build our reverse proxy from scratch using Vanilla JavaScript, with only the following essential libraries to help us get started:
 - [node-http-proxy](https://github.com/nodejitsu/node-http-proxy) to forward both HTTP and WebSocket requests
 - [Dockerode](https://github.com/apocas/dockerode), a Node.js Docker API to work with containers
 
@@ -476,9 +476,9 @@ sessions = {
 }
 ```
 
-3.   With the hash table in place, we can retrieve the designated container's IP in O(1) time given the hostname of a request.
+3.With the hash table in place, we can retrieve the designated container's IP in O(1) time given the hostname of a request.
 
-Now, we can finally forward clients' requests to the appropriate container.
+4.Now, we can finally forward clients' requests to the appropriate container with the help of node-http-proxy library.
 
 ## 7.3 Destroying a Session
 With our session initialization process complete, we now need to consider the session teardown process. Once all clients have left a session, we want to start breaking down the remaining container so that we can free up the allocated resources for new sessions. This is preferred over connecting new users to a used container since there may be some remaining artifacts leftover in the session from the previous users, and we instead want to present a clean slate for new users.
