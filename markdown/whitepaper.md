@@ -259,7 +259,7 @@ In our REPL terminal, we will rely on [eventual consistency](https://en.wikipedi
 We chose not to employ any Operational Transformation or Conflict-free Replicated Data Type (CRDT) techniques for resolving potential conflicts in our REPL terminal input, due to unnecessary code complexity as well as additional server overhead. Our reasoning is that we expect users to take turns instead of competing against each other when evaluating inputs in our REPL.
 
 ### 4.3.2 Conflict Resolution in Text Editor
-Now that we've handled the REPL input and output synchronization, let's turn to the text editor. The text editor component will allow multiple users to write code at the same time. We can expect there to be a higher likelihood that a conflict will occur in the editor because most people will write their code in the editor and then submit for evaluation. We can reasonably expect that both users will type at the same time, and if they happen to type into each other's code by accident, we would like to make sure that:
+Now that we had handled the REPL input and output synchronization, let's turn to the text editor. The text editor component will allow multiple users to write code at the same time. We can expect there to be a higher likelihood that a conflict will occur in the editor because most people will write their code in the editor and then submit for evaluation. We can reasonably expect that both users will type at the same time, and if they happen to type into each other's code by accident, we would like to make sure that:
 - concurrent insertion converge to the same result, regardless of order in which they are applied
 - duplicated delete operations are only applied once to produce the same result
 
@@ -360,7 +360,7 @@ At its core, a cgroup is simply a limitation placed on an application or contain
 At this point, we've successfully built our collaborative REPL and isolated complete instances of our application in containers. Now, we need to evaluate how we can connect clients to their associated container on the server, as well as allowing a user to invite other users to collaborate in their session.
 
 ## 6.1 Naive Approach: Port Forwarding
-Each container will have a unique IP address and port number associated with it, and the question becomes how we can route a user's request for a session to a container and form a connection. We first considered using port forwarding, which takes the initial HTTP request from the client and forwards it to the address and port number of a ready-to-use container.
+Each container has a unique IP address and port number associated with it, and the question becomes how we could route a user's request for a session to a container and form a connection. We first considered using port forwarding, which takes the initial HTTP request from the client and forwards it to the address and port number of a ready-to-use container.
 
 | Session | Open Port on Host | Container's IP & port |
 | -------- | -------- | -------- |
@@ -375,7 +375,7 @@ This technique is simple since it's a direct mapping of a client to a container 
 We need a better approach that can protect our users' privacy and mask the connections to our containers. Thankfully, this can be achieved with a reverse proxy.
 
 ## 6.2 Solution: A Reverse Proxy
-The idea behind a reverse proxy is that there is some middleware that sits between our clients and our server which serves as an intermediary between the two. When a client sends an HTTP request to our server, a reverse proxy will receive that request and communicate with our server for the necessary information. The server will respond to the reverse proxy with the container's IP address and port number, which will then take that information and forward the client's request to that container for connection. Thus, our reverse proxy will handle all the traffic between our clients and server.
+The idea behind a reverse proxy is that there is some middleware that sits between our clients and our server which acts as an intermediary between the two. When a client sends an HTTP request to our server, a reverse proxy will receive that request and communicate with our server for the necessary information. The server will respond to the reverse proxy with the container's IP address and port number, which will then take that information and forward the client's request to that container for connection. Thus, our reverse proxy will handle all the traffic between our clients and server.
 
 ![reverse proxy](https://imgur.com/eIBtN6g.png)
 
@@ -403,7 +403,7 @@ In order to connect different groups of users to different sessions, our reverse
 - forward requests to the appropriate container
 - destroy a session and its associated container
 
-Since implementing the above features requires flexibility and customization, we opted out of using an established proxy server such as Nginx. Instead, we chose to build our reverse proxy from scratch using Vanilla JavaScript, with only the following essential libraries to help us get started:
+Since implementing the above features requires flexibility and customization, we opted out of using an established proxy server such as Nginx. Instead, we chose to build our reverse proxy from scratch using Node.js, with only the following essential libraries to help us get started:
 - [node-http-proxy](https://github.com/nodejitsu/node-http-proxy) to forward both HTTP and WebSocket requests
 - [Dockerode](https://github.com/apocas/dockerode), a Node.js Docker API to work with containers
 
