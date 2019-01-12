@@ -311,6 +311,11 @@ nav.team {
     font-size: 56px !important;
   }
 
+  .menu a > img {
+    width: 80px;
+    padding: 10px;
+  }
+
   footer {
     padding: 25px;
   }
@@ -327,5 +332,5 @@ nav.team {
 
   .title {
     width: 160px;
-  }  
+  }
 }
