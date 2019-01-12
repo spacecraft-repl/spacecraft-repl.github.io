@@ -143,6 +143,20 @@ small {
   color: #ffc022;
 }
 
+img.white {
+  filter: brightness(500%);
+}
+
+.menu a > img {
+  width: 125px;
+  padding-left: 10px;
+  margin-top: 10px;
+}
+
+.menu a > img:hover {
+  filter: brightness(250%) saturate(220%) hue-rotate(350deg);
+}
+
 @media screen and (max-width: 480px) {
   #hamburger {
     height: 70px;
@@ -251,6 +265,10 @@ nav.team {
 
   header > nav a {
     position: absolute;
+  }
+
+  .menu a > img {
+    width: 90px;
   }
 }
 
