@@ -1,0 +1,1240 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/d0807887/
+#app-window	_site/css/index.css	/^  #app-window {$/;"	i
+#app-window	_site/css/index.css	/^#app-window {$/;"	i
+#app-window	css/index.css	/^  #app-window {$/;"	i
+#app-window	css/index.css	/^#app-window {$/;"	i
+#hamburger	_site/css/main.css	/^  #hamburger {$/;"	i
+#hamburger	_site/css/main.css	/^#hamburger {$/;"	i
+#hamburger	css/main.css	/^  #hamburger {$/;"	i
+#hamburger	css/main.css	/^#hamburger {$/;"	i
+#hamburger img	_site/css/main.css	/^#hamburger img {$/;"	s
+#hamburger img	css/main.css	/^#hamburger img {$/;"	s
+#hamburger.expand	_site/css/main.css	/^  #hamburger.expand {$/;"	c
+#hamburger.expand	_site/css/main.css	/^#hamburger.expand {$/;"	c
+#hamburger.expand	css/main.css	/^  #hamburger.expand {$/;"	c
+#hamburger.expand	css/main.css	/^#hamburger.expand {$/;"	c
+#hamburger:hover	_site/css/main.css	/^#hamburger:hover {$/;"	i
+#hamburger:hover	css/main.css	/^#hamburger:hover {$/;"	i
+#labels	_site/css/index.css	/^  #labels {$/;"	i
+#labels	_site/css/index.css	/^#labels {$/;"	i
+#labels	css/index.css	/^  #labels {$/;"	i
+#labels	css/index.css	/^#labels {$/;"	i
+#labels-small	_site/css/index.css	/^  #labels-small {$/;"	i
+#labels-small	_site/css/index.css	/^#labels-small {$/;"	i
+#labels-small	css/index.css	/^  #labels-small {$/;"	i
+#labels-small	css/index.css	/^#labels-small {$/;"	i
+#scroll	_site/css/index.css	/^#scroll {$/;"	i
+#scroll	css/index.css	/^#scroll {$/;"	i
+#scroll .line	_site/css/index.css	/^#scroll .line {$/;"	c
+#scroll .line	css/index.css	/^#scroll .line {$/;"	c
+#splash	_site/css/index.css	/^  #splash {$/;"	i
+#splash	_site/css/index.css	/^#splash {$/;"	i
+#splash	css/index.css	/^  #splash {$/;"	i
+#splash	css/index.css	/^#splash {$/;"	i
+#splash-stacked	_site/css/index.css	/^  #splash-stacked {$/;"	i
+#splash-stacked	css/index.css	/^  #splash-stacked {$/;"	i
+#toc	_site/css/whitepaper.css	/^  #toc {$/;"	i
+#toc	_site/css/whitepaper.css	/^#toc {$/;"	i
+#toc	css/whitepaper.css	/^  #toc {$/;"	i
+#toc	css/whitepaper.css	/^#toc {$/;"	i
+#toc a:hover	_site/css/whitepaper.css	/^#toc a:hover {$/;"	s
+#toc a:hover	css/whitepaper.css	/^#toc a:hover {$/;"	s
+#toc li	_site/css/whitepaper.css	/^#toc li {$/;"	s
+#toc li	css/whitepaper.css	/^#toc li {$/;"	s
+#toc ul	_site/css/whitepaper.css	/^#toc ul {$/;"	s
+#toc ul	css/whitepaper.css	/^#toc ul {$/;"	s
+#x	_site/css/main.css	/^  #x {$/;"	i
+#x	_site/css/main.css	/^#x {$/;"	i
+#x	css/main.css	/^  #x {$/;"	i
+#x	css/main.css	/^#x {$/;"	i
+#x img	_site/css/main.css	/^#x img {$/;"	s
+#x img	css/main.css	/^#x img {$/;"	s
+$	_site/javascript/menu.js	/^const $ = (cssSelector) => document.querySelector(cssSelector);$/;"	C
+$	javascript/menu.js	/^const $ = (cssSelector) => document.querySelector(cssSelector);$/;"	C
+*	_site/assets/css/style.css	/^* { box-sizing: border-box; }$/;"	s
+*	_site/css/reset.css	/^*, $/;"	s
+*	css/reset.css	/^*, $/;"	s
+*:after	_site/css/reset.css	/^*:after {$/;"	s
+*:after	css/reset.css	/^*:after {$/;"	s
+*:before	_site/css/reset.css	/^*:before,$/;"	s
+*:before	css/reset.css	/^*:before,$/;"	s
+.app-overview	_site/css/index.css	/^.app-overview {$/;"	c
+.app-overview	css/index.css	/^.app-overview {$/;"	c
+.app-overview .action	_site/css/index.css	/^.app-overview .action {$/;"	c
+.app-overview .action	css/index.css	/^.app-overview .action {$/;"	c
+.app-overview .container	_site/css/index.css	/^  .app-overview .container {$/;"	c
+.app-overview .container	css/index.css	/^  .app-overview .container {$/;"	c
+.btn	_site/assets/css/style.css	/^.btn { display: inline-block; margin-bottom: 1rem; color: rgba(255, 255, 255, 0.7); background-c/;"	c
+.btn	_site/assets/css/style.css	/^@media screen and (max-width: 42em) { .btn { display: block; width: 100%; padding: 0.75rem; font/;"	c
+.btn	_site/assets/css/style.css	/^@media screen and (min-width: 42em) and (max-width: 64em) { .btn { padding: 0.6rem 0.9rem; font-/;"	c
+.btn	_site/assets/css/style.css	/^@media screen and (min-width: 64em) { .btn { padding: 0.75rem 1rem; } }$/;"	c
+.btn + .btn	_site/assets/css/style.css	/^  .btn + .btn { margin-top: 1rem; margin-left: 0; } }$/;"	c
+.btn + .btn	_site/assets/css/style.css	/^.btn + .btn { margin-left: 1rem; }$/;"	c
+.btn:hover	_site/assets/css/style.css	/^.btn:hover { color: rgba(255, 255, 255, 0.8); text-decoration: none; background-color: rgba(255,/;"	c
+.container	_site/css/index.css	/^.container {$/;"	c
+.container	css/index.css	/^.container {$/;"	c
+.container > img	_site/css/index.css	/^.container > img {$/;"	s
+.container > img	css/index.css	/^.container > img {$/;"	s
+.dash:before	_site/css/team.css	/^.dash:before {$/;"	c
+.dash:before	css/team.css	/^.dash:before {$/;"	c
+.designer-link	_site/css/main.css	/^.designer-link {$/;"	c
+.designer-link	css/main.css	/^.designer-link {$/;"	c
+.designer-link i:hover	_site/css/main.css	/^.designer-link i:hover {$/;"	s
+.designer-link i:hover	css/main.css	/^.designer-link i:hover {$/;"	s
+.fadein	_site/css/whitepaper.css	/^.fadein {$/;"	c
+.fadein	css/whitepaper.css	/^.fadein {$/;"	c
+.fadeout	_site/css/whitepaper.css	/^.fadeout {$/;"	c
+.fadeout	css/whitepaper.css	/^.fadeout {$/;"	c
+.flex-placeholder	_site/css/team.css	/^.flex-placeholder {$/;"	c
+.flex-placeholder	_site/css/whitepaper.css	/^  .flex-placeholder {$/;"	c
+.flex-placeholder	css/team.css	/^.flex-placeholder {$/;"	c
+.flex-placeholder	css/whitepaper.css	/^  .flex-placeholder {$/;"	c
+.hidden	_site/css/main.css	/^.hidden {$/;"	c
+.hidden	css/main.css	/^.hidden {$/;"	c
+.highlight	_site/assets/css/style.css	/^.highlight { background-color: #f8f8f8; }$/;"	c
+.highlight	_site/css/whitepaper.css	/^.highlight {$/;"	c
+.highlight	css/whitepaper.css	/^.highlight {$/;"	c
+.highlight .bp	_site/assets/css/style.css	/^.highlight .bp { color: #999999; }$/;"	c
+.highlight .bp	_site/css/whitepaper.css	/^.highlight .bp { color: #999999; }$/;"	c
+.highlight .bp	css/whitepaper.css	/^.highlight .bp { color: #999999; }$/;"	c
+.highlight .c	_site/assets/css/style.css	/^.highlight .c, .highlight .cd { color: #999988; font-style: italic; }$/;"	c
+.highlight .c	_site/css/whitepaper.css	/^.highlight .c, .highlight .cd { color: #999988; font-style: italic; }$/;"	c
+.highlight .c	css/whitepaper.css	/^.highlight .c, .highlight .cd { color: #999988; font-style: italic; }$/;"	c
+.highlight .c1	_site/assets/css/style.css	/^.highlight .c1 { color: #999988; font-style: italic; }$/;"	c
+.highlight .c1	_site/css/whitepaper.css	/^.highlight .c1 { color: #999988; font-style: italic; }$/;"	c
+.highlight .c1	css/whitepaper.css	/^.highlight .c1 { color: #999988; font-style: italic; }$/;"	c
+.highlight .cd	_site/assets/css/style.css	/^.highlight .c, .highlight .cd { color: #999988; font-style: italic; }$/;"	c
+.highlight .cd	_site/css/whitepaper.css	/^.highlight .c, .highlight .cd { color: #999988; font-style: italic; }$/;"	c
+.highlight .cd	css/whitepaper.css	/^.highlight .c, .highlight .cd { color: #999988; font-style: italic; }$/;"	c
+.highlight .cm	_site/assets/css/style.css	/^.highlight .cm { color: #999988; font-style: italic; }$/;"	c
+.highlight .cm	_site/css/whitepaper.css	/^.highlight .cm { color: #999988; font-style: italic; }$/;"	c
+.highlight .cm	css/whitepaper.css	/^.highlight .cm { color: #999988; font-style: italic; }$/;"	c
+.highlight .cp	_site/assets/css/style.css	/^.highlight .cp { color: #999999; font-weight: bold; }$/;"	c
+.highlight .cp	_site/css/whitepaper.css	/^.highlight .cp { color: #999999; font-weight: bold; }$/;"	c
+.highlight .cp	css/whitepaper.css	/^.highlight .cp { color: #999999; font-weight: bold; }$/;"	c
+.highlight .cs	_site/assets/css/style.css	/^.highlight .cs { color: #999999; font-weight: bold; font-style: italic; }$/;"	c
+.highlight .cs	_site/css/whitepaper.css	/^.highlight .cs { color: #999999; font-weight: bold; font-style: italic; }$/;"	c
+.highlight .cs	css/whitepaper.css	/^.highlight .cs { color: #999999; font-weight: bold; font-style: italic; }$/;"	c
+.highlight .err	_site/assets/css/style.css	/^.highlight .err { color: #a61717; background-color: #e3d2d2; }$/;"	c
+.highlight .err	_site/css/whitepaper.css	/^.highlight .err { color: #a61717; background-color: #e3d2d2; }$/;"	c
+.highlight .err	css/whitepaper.css	/^.highlight .err { color: #a61717; background-color: #e3d2d2; }$/;"	c
+.highlight .gd	_site/assets/css/style.css	/^.highlight .gd { color: #000000; background-color: #ffdddd; }$/;"	c
+.highlight .gd	_site/css/whitepaper.css	/^.highlight .gd { color: #000000; background-color: #ffdddd; }$/;"	c
+.highlight .gd	css/whitepaper.css	/^.highlight .gd { color: #000000; background-color: #ffdddd; }$/;"	c
+.highlight .ge	_site/assets/css/style.css	/^.highlight .ge { color: #000000; font-style: italic; }$/;"	c
+.highlight .ge	_site/css/whitepaper.css	/^.highlight .ge { color: #000000; font-style: italic; }$/;"	c
+.highlight .ge	css/whitepaper.css	/^.highlight .ge { color: #000000; font-style: italic; }$/;"	c
+.highlight .gh	_site/assets/css/style.css	/^.highlight .gh { color: #999999; }$/;"	c
+.highlight .gh	_site/css/whitepaper.css	/^.highlight .gh { color: #999999; }$/;"	c
+.highlight .gh	css/whitepaper.css	/^.highlight .gh { color: #999999; }$/;"	c
+.highlight .gi	_site/assets/css/style.css	/^.highlight .gi { color: #000000; background-color: #ddffdd; }$/;"	c
+.highlight .gi	_site/css/whitepaper.css	/^.highlight .gi { color: #000000; background-color: #ddffdd; }$/;"	c
+.highlight .gi	css/whitepaper.css	/^.highlight .gi { color: #000000; background-color: #ddffdd; }$/;"	c
+.highlight .go	_site/assets/css/style.css	/^.highlight .go { color: #888888; }$/;"	c
+.highlight .go	_site/css/whitepaper.css	/^.highlight .go { color: #888888; }$/;"	c
+.highlight .go	css/whitepaper.css	/^.highlight .go { color: #888888; }$/;"	c
+.highlight .gp	_site/assets/css/style.css	/^.highlight .gp { color: #555555; }$/;"	c
+.highlight .gp	_site/css/whitepaper.css	/^.highlight .gp { color: #555555; }$/;"	c
+.highlight .gp	css/whitepaper.css	/^.highlight .gp { color: #555555; }$/;"	c
+.highlight .gr	_site/assets/css/style.css	/^.highlight .gr { color: #aa0000; }$/;"	c
+.highlight .gr	_site/css/whitepaper.css	/^.highlight .gr { color: #aa0000; }$/;"	c
+.highlight .gr	css/whitepaper.css	/^.highlight .gr { color: #aa0000; }$/;"	c
+.highlight .gs	_site/assets/css/style.css	/^.highlight .gs { font-weight: bold; }$/;"	c
+.highlight .gs	_site/css/whitepaper.css	/^.highlight .gs { font-weight: bold; }$/;"	c
+.highlight .gs	css/whitepaper.css	/^.highlight .gs { font-weight: bold; }$/;"	c
+.highlight .gt	_site/assets/css/style.css	/^.highlight .gt { color: #aa0000; }$/;"	c
+.highlight .gt	_site/css/whitepaper.css	/^.highlight .gt { color: #aa0000; }$/;"	c
+.highlight .gt	css/whitepaper.css	/^.highlight .gt { color: #aa0000; }$/;"	c
+.highlight .gu	_site/assets/css/style.css	/^.highlight .gu { color: #aaaaaa; }$/;"	c
+.highlight .gu	_site/css/whitepaper.css	/^.highlight .gu { color: #aaaaaa; }$/;"	c
+.highlight .gu	css/whitepaper.css	/^.highlight .gu { color: #aaaaaa; }$/;"	c
+.highlight .il	_site/assets/css/style.css	/^.highlight .il { color: #009999; }$/;"	c
+.highlight .il	_site/css/whitepaper.css	/^.highlight .il { color: #009999; }$/;"	c
+.highlight .il	css/whitepaper.css	/^.highlight .il { color: #009999; }$/;"	c
+.highlight .k	_site/assets/css/style.css	/^.highlight .k, .highlight .kv { color: #000000; font-weight: bold; }$/;"	c
+.highlight .k	_site/css/whitepaper.css	/^.highlight .k, .highlight .kv { color: #000000; font-weight: bold; }$/;"	c
+.highlight .k	css/whitepaper.css	/^.highlight .k, .highlight .kv { color: #000000; font-weight: bold; }$/;"	c
+.highlight .kc	_site/assets/css/style.css	/^.highlight .kc { color: #000000; font-weight: bold; }$/;"	c
+.highlight .kc	_site/css/whitepaper.css	/^.highlight .kc { color: #000000; font-weight: bold; }$/;"	c
+.highlight .kc	css/whitepaper.css	/^.highlight .kc { color: #000000; font-weight: bold; }$/;"	c
+.highlight .kd	_site/assets/css/style.css	/^.highlight .kd { color: #000000; font-weight: bold; }$/;"	c
+.highlight .kd	_site/css/whitepaper.css	/^.highlight .kd { color: #000000; font-weight: bold; }$/;"	c
+.highlight .kd	css/whitepaper.css	/^.highlight .kd { color: #000000; font-weight: bold; }$/;"	c
+.highlight .kn	_site/assets/css/style.css	/^.highlight .kn { color: #000000; font-weight: bold; }$/;"	c
+.highlight .kn	_site/css/whitepaper.css	/^.highlight .kn { color: #000000; font-weight: bold; }$/;"	c
+.highlight .kn	css/whitepaper.css	/^.highlight .kn { color: #000000; font-weight: bold; }$/;"	c
+.highlight .kp	_site/assets/css/style.css	/^.highlight .kp { color: #000000; font-weight: bold; }$/;"	c
+.highlight .kp	_site/css/whitepaper.css	/^.highlight .kp { color: #000000; font-weight: bold; }$/;"	c
+.highlight .kp	css/whitepaper.css	/^.highlight .kp { color: #000000; font-weight: bold; }$/;"	c
+.highlight .kr	_site/assets/css/style.css	/^.highlight .kr { color: #000000; font-weight: bold; }$/;"	c
+.highlight .kr	_site/css/whitepaper.css	/^.highlight .kr { color: #000000; font-weight: bold; }$/;"	c
+.highlight .kr	css/whitepaper.css	/^.highlight .kr { color: #000000; font-weight: bold; }$/;"	c
+.highlight .kt	_site/assets/css/style.css	/^.highlight .kt { color: #445588; font-weight: bold; }$/;"	c
+.highlight .kt	_site/css/whitepaper.css	/^.highlight .kt { color: #445588; font-weight: bold; }$/;"	c
+.highlight .kt	css/whitepaper.css	/^.highlight .kt { color: #445588; font-weight: bold; }$/;"	c
+.highlight .kv	_site/assets/css/style.css	/^.highlight .k, .highlight .kv { color: #000000; font-weight: bold; }$/;"	c
+.highlight .kv	_site/css/whitepaper.css	/^.highlight .k, .highlight .kv { color: #000000; font-weight: bold; }$/;"	c
+.highlight .kv	css/whitepaper.css	/^.highlight .k, .highlight .kv { color: #000000; font-weight: bold; }$/;"	c
+.highlight .m	_site/assets/css/style.css	/^.highlight .m, .highlight .mb, .highlight .mx { color: #009999; }$/;"	c
+.highlight .m	_site/css/whitepaper.css	/^.highlight .m, .highlight .mb, .highlight .mx { color: #009999; }$/;"	c
+.highlight .m	css/whitepaper.css	/^.highlight .m, .highlight .mb, .highlight .mx { color: #009999; }$/;"	c
+.highlight .mb	_site/assets/css/style.css	/^.highlight .m, .highlight .mb, .highlight .mx { color: #009999; }$/;"	c
+.highlight .mb	_site/css/whitepaper.css	/^.highlight .m, .highlight .mb, .highlight .mx { color: #009999; }$/;"	c
+.highlight .mb	css/whitepaper.css	/^.highlight .m, .highlight .mb, .highlight .mx { color: #009999; }$/;"	c
+.highlight .mf	_site/assets/css/style.css	/^.highlight .mf { color: #009999; }$/;"	c
+.highlight .mf	_site/css/whitepaper.css	/^.highlight .mf { color: #009999; }$/;"	c
+.highlight .mf	css/whitepaper.css	/^.highlight .mf { color: #009999; }$/;"	c
+.highlight .mh	_site/assets/css/style.css	/^.highlight .mh { color: #009999; }$/;"	c
+.highlight .mh	_site/css/whitepaper.css	/^.highlight .mh { color: #009999; }$/;"	c
+.highlight .mh	css/whitepaper.css	/^.highlight .mh { color: #009999; }$/;"	c
+.highlight .mi	_site/assets/css/style.css	/^.highlight .mi { color: #009999; }$/;"	c
+.highlight .mi	_site/css/whitepaper.css	/^.highlight .mi { color: #009999; }$/;"	c
+.highlight .mi	css/whitepaper.css	/^.highlight .mi { color: #009999; }$/;"	c
+.highlight .mo	_site/assets/css/style.css	/^.highlight .mo { color: #009999; }$/;"	c
+.highlight .mo	_site/css/whitepaper.css	/^.highlight .mo { color: #009999; }$/;"	c
+.highlight .mo	css/whitepaper.css	/^.highlight .mo { color: #009999; }$/;"	c
+.highlight .mx	_site/assets/css/style.css	/^.highlight .m, .highlight .mb, .highlight .mx { color: #009999; }$/;"	c
+.highlight .mx	_site/css/whitepaper.css	/^.highlight .m, .highlight .mb, .highlight .mx { color: #009999; }$/;"	c
+.highlight .mx	css/whitepaper.css	/^.highlight .m, .highlight .mb, .highlight .mx { color: #009999; }$/;"	c
+.highlight .na	_site/assets/css/style.css	/^.highlight .na { color: #008080; }$/;"	c
+.highlight .na	_site/css/whitepaper.css	/^.highlight .na { color: #d85030; }$/;"	c
+.highlight .na	css/whitepaper.css	/^.highlight .na { color: #d85030; }$/;"	c
+.highlight .nb	_site/assets/css/style.css	/^.highlight .nb { color: #0086B3; }$/;"	c
+.highlight .nb	_site/css/whitepaper.css	/^.highlight .nb { color: #0086B3; }$/;"	c
+.highlight .nb	css/whitepaper.css	/^.highlight .nb { color: #0086B3; }$/;"	c
+.highlight .nc	_site/assets/css/style.css	/^.highlight .nc { color: #445588; font-weight: bold; }$/;"	c
+.highlight .nc	_site/css/whitepaper.css	/^.highlight .nc { color: #445588; font-weight: bold; }$/;"	c
+.highlight .nc	css/whitepaper.css	/^.highlight .nc { color: #445588; font-weight: bold; }$/;"	c
+.highlight .nd	_site/assets/css/style.css	/^.highlight .nd { color: #3c5d5d; font-weight: bold; }$/;"	c
+.highlight .nd	_site/css/whitepaper.css	/^.highlight .nd { color: #3c5d5d; font-weight: bold; }$/;"	c
+.highlight .nd	css/whitepaper.css	/^.highlight .nd { color: #3c5d5d; font-weight: bold; }$/;"	c
+.highlight .ne	_site/assets/css/style.css	/^.highlight .ne { color: #990000; font-weight: bold; }$/;"	c
+.highlight .ne	_site/css/whitepaper.css	/^.highlight .ne { color: #990000; font-weight: bold; }$/;"	c
+.highlight .ne	css/whitepaper.css	/^.highlight .ne { color: #990000; font-weight: bold; }$/;"	c
+.highlight .nf	_site/assets/css/style.css	/^.highlight .nf { color: #990000; font-weight: bold; }$/;"	c
+.highlight .nf	_site/css/whitepaper.css	/^.highlight .nf { color: #990000; font-weight: bold; }$/;"	c
+.highlight .nf	css/whitepaper.css	/^.highlight .nf { color: #990000; font-weight: bold; }$/;"	c
+.highlight .ni	_site/assets/css/style.css	/^.highlight .ni { color: #800080; }$/;"	c
+.highlight .ni	_site/css/whitepaper.css	/^.highlight .ni { color: #800080; }$/;"	c
+.highlight .ni	css/whitepaper.css	/^.highlight .ni { color: #800080; }$/;"	c
+.highlight .nl	_site/assets/css/style.css	/^.highlight .nl { color: #990000; font-weight: bold; }$/;"	c
+.highlight .nl	_site/css/whitepaper.css	/^.highlight .nl { color: #990000; font-weight: bold; }$/;"	c
+.highlight .nl	css/whitepaper.css	/^.highlight .nl { color: #990000; font-weight: bold; }$/;"	c
+.highlight .nn	_site/assets/css/style.css	/^.highlight .nn { color: #555555; }$/;"	c
+.highlight .nn	_site/css/whitepaper.css	/^.highlight .nn { color: #555555; }$/;"	c
+.highlight .nn	css/whitepaper.css	/^.highlight .nn { color: #555555; }$/;"	c
+.highlight .no	_site/assets/css/style.css	/^.highlight .no { color: #008080; }$/;"	c
+.highlight .no	_site/css/whitepaper.css	/^.highlight .no { color: #b9c1cb; }$/;"	c
+.highlight .no	css/whitepaper.css	/^.highlight .no { color: #b9c1cb; }$/;"	c
+.highlight .nt	_site/assets/css/style.css	/^.highlight .nt { color: #000080; }$/;"	c
+.highlight .nt	_site/css/whitepaper.css	/^.highlight .nt { color: #b9c1cb; }$/;"	c
+.highlight .nt	css/whitepaper.css	/^.highlight .nt { color: #b9c1cb; }$/;"	c
+.highlight .nv	_site/assets/css/style.css	/^.highlight .nv { color: #008080; }$/;"	c
+.highlight .nv	_site/css/whitepaper.css	/^.highlight .nv { color: #008080; }$/;"	c
+.highlight .nv	css/whitepaper.css	/^.highlight .nv { color: #008080; }$/;"	c
+.highlight .nx	_site/css/whitepaper.css	/^.highlight .nx { color: #b9c1cb; }$/;"	c
+.highlight .nx	css/whitepaper.css	/^.highlight .nx { color: #b9c1cb; }$/;"	c
+.highlight .o	_site/assets/css/style.css	/^.highlight .o { color: #000000; font-weight: bold; }$/;"	c
+.highlight .o	_site/css/whitepaper.css	/^.highlight .o { color: #b9c1cb; font-weight: bold; }$/;"	c
+.highlight .o	css/whitepaper.css	/^.highlight .o { color: #b9c1cb; font-weight: bold; }$/;"	c
+.highlight .ow	_site/assets/css/style.css	/^.highlight .ow { color: #000000; font-weight: bold; }$/;"	c
+.highlight .ow	_site/css/whitepaper.css	/^.highlight .ow { color: #b9c1cb; font-weight: bold; }$/;"	c
+.highlight .ow	css/whitepaper.css	/^.highlight .ow { color: #b9c1cb; font-weight: bold; }$/;"	c
+.highlight .p	_site/css/whitepaper.css	/^.highlight .p { color: #b9c1cb; }$/;"	c
+.highlight .p	css/whitepaper.css	/^.highlight .p { color: #b9c1cb; }$/;"	c
+.highlight .s	_site/assets/css/style.css	/^.highlight .s { color: #d14; }$/;"	c
+.highlight .s	_site/css/whitepaper.css	/^.highlight .s { color: #d14; }$/;"	c
+.highlight .s	css/whitepaper.css	/^.highlight .s { color: #d14; }$/;"	c
+.highlight .s1	_site/assets/css/style.css	/^.highlight .s1 { color: #d14; }$/;"	c
+.highlight .s1	_site/css/whitepaper.css	/^.highlight .s1 { color: #ffc022; }$/;"	c
+.highlight .s1	css/whitepaper.css	/^.highlight .s1 { color: #ffc022; }$/;"	c
+.highlight .s2	_site/assets/css/style.css	/^.highlight .s2 { color: #d14; }$/;"	c
+.highlight .s2	_site/css/whitepaper.css	/^.highlight .s2 { color: #d14; }$/;"	c
+.highlight .s2	css/whitepaper.css	/^.highlight .s2 { color: #d14; }$/;"	c
+.highlight .sb	_site/assets/css/style.css	/^.highlight .sb { color: #d14; }$/;"	c
+.highlight .sb	_site/css/whitepaper.css	/^.highlight .sb { color: #d14; }$/;"	c
+.highlight .sb	css/whitepaper.css	/^.highlight .sb { color: #d14; }$/;"	c
+.highlight .sc	_site/assets/css/style.css	/^.highlight .sc { color: #d14; }$/;"	c
+.highlight .sc	_site/css/whitepaper.css	/^.highlight .sc { color: #d14; }$/;"	c
+.highlight .sc	css/whitepaper.css	/^.highlight .sc { color: #d14; }$/;"	c
+.highlight .sd	_site/assets/css/style.css	/^.highlight .sd { color: #d14; }$/;"	c
+.highlight .sd	_site/css/whitepaper.css	/^.highlight .sd { color: #d14; }$/;"	c
+.highlight .sd	css/whitepaper.css	/^.highlight .sd { color: #d14; }$/;"	c
+.highlight .se	_site/assets/css/style.css	/^.highlight .se { color: #d14; }$/;"	c
+.highlight .se	_site/css/whitepaper.css	/^.highlight .se { color: #d14; }$/;"	c
+.highlight .se	css/whitepaper.css	/^.highlight .se { color: #d14; }$/;"	c
+.highlight .sh	_site/assets/css/style.css	/^.highlight .sh { color: #d14; }$/;"	c
+.highlight .sh	_site/css/whitepaper.css	/^.highlight .sh { color: #d14; }$/;"	c
+.highlight .sh	css/whitepaper.css	/^.highlight .sh { color: #d14; }$/;"	c
+.highlight .si	_site/assets/css/style.css	/^.highlight .si { color: #d14; }$/;"	c
+.highlight .si	_site/css/whitepaper.css	/^.highlight .si { color: #d14; }$/;"	c
+.highlight .si	css/whitepaper.css	/^.highlight .si { color: #d14; }$/;"	c
+.highlight .sr	_site/assets/css/style.css	/^.highlight .sr { color: #009926; }$/;"	c
+.highlight .sr	_site/css/whitepaper.css	/^.highlight .sr { color: #009926; }$/;"	c
+.highlight .sr	css/whitepaper.css	/^.highlight .sr { color: #009926; }$/;"	c
+.highlight .ss	_site/assets/css/style.css	/^.highlight .ss { color: #990073; }$/;"	c
+.highlight .ss	_site/css/whitepaper.css	/^.highlight .ss { color: #990073; }$/;"	c
+.highlight .ss	css/whitepaper.css	/^.highlight .ss { color: #990073; }$/;"	c
+.highlight .sx	_site/assets/css/style.css	/^.highlight .sx { color: #d14; }$/;"	c
+.highlight .sx	_site/css/whitepaper.css	/^.highlight .sx { color: #d14; }$/;"	c
+.highlight .sx	css/whitepaper.css	/^.highlight .sx { color: #d14; }$/;"	c
+.highlight .vc	_site/assets/css/style.css	/^.highlight .vc { color: #008080; }$/;"	c
+.highlight .vc	_site/css/whitepaper.css	/^.highlight .vc { color: #008080; }$/;"	c
+.highlight .vc	css/whitepaper.css	/^.highlight .vc { color: #008080; }$/;"	c
+.highlight .vg	_site/assets/css/style.css	/^.highlight .vg { color: #008080; }$/;"	c
+.highlight .vg	_site/css/whitepaper.css	/^.highlight .vg { color: #008080; }$/;"	c
+.highlight .vg	css/whitepaper.css	/^.highlight .vg { color: #008080; }$/;"	c
+.highlight .vi	_site/assets/css/style.css	/^.highlight .vi { color: #008080; }$/;"	c
+.highlight .vi	_site/css/whitepaper.css	/^.highlight .vi { color: #008080; }$/;"	c
+.highlight .vi	css/whitepaper.css	/^.highlight .vi { color: #008080; }$/;"	c
+.highlight .w	_site/assets/css/style.css	/^.highlight .w { color: #bbbbbb; }$/;"	c
+.highlight .w	_site/css/whitepaper.css	/^.highlight .w { color: #bbbbbb; }$/;"	c
+.highlight .w	css/whitepaper.css	/^.highlight .w { color: #bbbbbb; }$/;"	c
+.highlight code	_site/css/whitepaper.css	/^  .highlight code {$/;"	s
+.highlight code	_site/css/whitepaper.css	/^.highlight code {$/;"	s
+.highlight code	css/whitepaper.css	/^  .highlight code {$/;"	s
+.highlight code	css/whitepaper.css	/^.highlight code {$/;"	s
+.highlight table pre	_site/assets/css/style.css	/^.highlight table pre { margin: 0; }$/;"	s
+.highlight table pre	_site/css/whitepaper.css	/^.highlight table pre { margin: 0; }$/;"	s
+.highlight table pre	css/whitepaper.css	/^.highlight table pre { margin: 0; }$/;"	s
+.highlight table td	_site/assets/css/style.css	/^.highlight table td { padding: 5px; }$/;"	s
+.highlight table td	_site/css/whitepaper.css	/^.highlight table td { padding: 5px; }$/;"	s
+.highlight table td	css/whitepaper.css	/^.highlight table td { padding: 5px; }$/;"	s
+.intro	_site/css/index.css	/^.intro {$/;"	c
+.intro	css/index.css	/^.intro {$/;"	c
+.intro img	_site/css/index.css	/^  .intro img {$/;"	s
+.intro img	_site/css/index.css	/^.intro img {$/;"	s
+.intro img	css/index.css	/^  .intro img {$/;"	s
+.intro img	css/index.css	/^.intro img {$/;"	s
+.main-content	_site/assets/css/style.css	/^.main-content { word-wrap: break-word; }$/;"	c
+.main-content	_site/assets/css/style.css	/^@media screen and (max-width: 42em) { .main-content { padding: 2rem 1rem; font-size: 1rem; } }$/;"	c
+.main-content	_site/assets/css/style.css	/^@media screen and (min-width: 42em) and (max-width: 64em) { .main-content { padding: 2rem 4rem; /;"	c
+.main-content	_site/assets/css/style.css	/^@media screen and (min-width: 64em) { .main-content { max-width: 64rem; padding: 2rem 6rem; marg/;"	c
+.main-content .highlight	_site/assets/css/style.css	/^.main-content .highlight { margin-bottom: 1rem; }$/;"	c
+.main-content .highlight pre	_site/assets/css/style.css	/^.main-content .highlight pre { margin-bottom: 0; word-break: normal; }$/;"	s
+.main-content .highlight pre	_site/assets/css/style.css	/^.main-content .highlight pre, .main-content pre { padding: 0.8rem; overflow: auto; font-size: 0./;"	s
+.main-content :first-child	_site/assets/css/style.css	/^.main-content :first-child { margin-top: 0; }$/;"	s
+.main-content blockquote	_site/assets/css/style.css	/^.main-content blockquote { padding: 0 1rem; margin-left: 0; color: #819198; border-left: 0.3rem /;"	s
+.main-content blockquote > :first-child	_site/assets/css/style.css	/^.main-content blockquote > :first-child { margin-top: 0; }$/;"	s
+.main-content blockquote > :last-child	_site/assets/css/style.css	/^.main-content blockquote > :last-child { margin-bottom: 0; }$/;"	s
+.main-content code	_site/assets/css/style.css	/^.main-content code { padding: 2px 4px; font-family: Consolas, "Liberation Mono", Menlo, Courier,/;"	s
+.main-content dl	_site/assets/css/style.css	/^.main-content dl { padding: 0; }$/;"	s
+.main-content dl dd	_site/assets/css/style.css	/^.main-content dl dd { padding: 0; margin-bottom: 1rem; }$/;"	s
+.main-content dl dt	_site/assets/css/style.css	/^.main-content dl dt { padding: 0; margin-top: 1rem; font-size: 1rem; font-weight: bold; }$/;"	s
+.main-content h1	_site/assets/css/style.css	/^.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-/;"	s
+.main-content h2	_site/assets/css/style.css	/^.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-/;"	s
+.main-content h3	_site/assets/css/style.css	/^.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-/;"	s
+.main-content h4	_site/assets/css/style.css	/^.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-/;"	s
+.main-content h5	_site/assets/css/style.css	/^.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-/;"	s
+.main-content h6	_site/assets/css/style.css	/^.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-/;"	s
+.main-content hr	_site/assets/css/style.css	/^.main-content hr { height: 2px; padding: 0; margin: 1rem 0; background-color: #eff0f1; border: 0/;"	s
+.main-content img	_site/assets/css/style.css	/^.main-content img { max-width: 100%; }$/;"	s
+.main-content ol	_site/assets/css/style.css	/^.main-content ul, .main-content ol { margin-top: 0; }$/;"	s
+.main-content p	_site/assets/css/style.css	/^.main-content p { margin-bottom: 1em; }$/;"	s
+.main-content pre	_site/assets/css/style.css	/^.main-content .highlight pre, .main-content pre { padding: 0.8rem; overflow: auto; font-size: 0./;"	s
+.main-content pre	_site/assets/css/style.css	/^.main-content pre { padding: 0.8rem; margin-top: 0; margin-bottom: 1rem; font: 1rem Consolas, "L/;"	s
+.main-content pre > code	_site/assets/css/style.css	/^.main-content pre > code { padding: 0; margin: 0; font-size: 0.9rem; color: #567482; word-break:/;"	s
+.main-content pre code	_site/assets/css/style.css	/^.main-content pre code, .main-content pre tt { display: inline; max-width: initial; padding: 0; /;"	s
+.main-content pre code:after	_site/assets/css/style.css	/^.main-content pre code:before, .main-content pre code:after, .main-content pre tt:before, .main-/;"	s
+.main-content pre code:before	_site/assets/css/style.css	/^.main-content pre code:before, .main-content pre code:after, .main-content pre tt:before, .main-/;"	s
+.main-content pre tt	_site/assets/css/style.css	/^.main-content pre code, .main-content pre tt { display: inline; max-width: initial; padding: 0; /;"	s
+.main-content pre tt:after	_site/assets/css/style.css	/^.main-content pre code:before, .main-content pre code:after, .main-content pre tt:before, .main-/;"	s
+.main-content pre tt:before	_site/assets/css/style.css	/^.main-content pre code:before, .main-content pre code:after, .main-content pre tt:before, .main-/;"	s
+.main-content table	_site/assets/css/style.css	/^.main-content table { display: block; width: 100%; overflow: auto; word-break: normal; word-brea/;"	s
+.main-content table td	_site/assets/css/style.css	/^.main-content table th, .main-content table td { padding: 0.5rem 1rem; border: 1px solid #e9ebec/;"	s
+.main-content table th	_site/assets/css/style.css	/^.main-content table th { font-weight: bold; }$/;"	s
+.main-content table th	_site/assets/css/style.css	/^.main-content table th, .main-content table td { padding: 0.5rem 1rem; border: 1px solid #e9ebec/;"	s
+.main-content ul	_site/assets/css/style.css	/^.main-content ul, .main-content ol { margin-top: 0; }$/;"	s
+.menu	_site/css/main.css	/^  .menu {$/;"	c
+.menu	_site/css/main.css	/^.menu {$/;"	c
+.menu	_site/css/main.css	/^header, section, footer, .menu {$/;"	c
+.menu	css/main.css	/^  .menu {$/;"	c
+.menu	css/main.css	/^.menu {$/;"	c
+.menu	css/main.css	/^header, section, footer, .menu {$/;"	c
+.menu a	_site/css/index.css	/^  .menu a {$/;"	s
+.menu a	_site/css/main.css	/^  .menu a {$/;"	s
+.menu a	_site/css/main.css	/^.menu a {$/;"	s
+.menu a	css/index.css	/^  .menu a {$/;"	s
+.menu a	css/main.css	/^  .menu a {$/;"	s
+.menu a	css/main.css	/^.menu a {$/;"	s
+.menu a > img	_site/css/main.css	/^  .menu a > img {$/;"	s
+.menu a > img	_site/css/main.css	/^.menu a > img {$/;"	s
+.menu a > img	css/main.css	/^  .menu a > img {$/;"	s
+.menu a > img	css/main.css	/^.menu a > img {$/;"	s
+.menu a > img:hover	_site/css/main.css	/^.menu a > img:hover {$/;"	s
+.menu a > img:hover	css/main.css	/^.menu a > img:hover {$/;"	s
+.menu a:hover	_site/css/main.css	/^.menu a:hover {$/;"	s
+.menu a:hover	css/main.css	/^.menu a:hover {$/;"	s
+.menu li	_site/css/main.css	/^  .menu li {$/;"	s
+.menu li	_site/css/main.css	/^.menu li {$/;"	s
+.menu li	css/main.css	/^  .menu li {$/;"	s
+.menu li	css/main.css	/^.menu li {$/;"	s
+.menu ul	_site/css/main.css	/^  .menu ul {$/;"	s
+.menu ul	_site/css/main.css	/^.menu ul {$/;"	s
+.menu ul	css/main.css	/^  .menu ul {$/;"	s
+.menu ul	css/main.css	/^.menu ul {$/;"	s
+.mobile	_site/css/main.css	/^  .mobile {$/;"	c
+.mobile	css/main.css	/^  .mobile {$/;"	c
+.page-header	_site/assets/css/style.css	/^.page-header { color: #fff; text-align: center; background-color: #159957; background-image: lin/;"	c
+.page-header	_site/assets/css/style.css	/^@media screen and (max-width: 42em) { .page-header { padding: 2rem 1rem; } }$/;"	c
+.page-header	_site/assets/css/style.css	/^@media screen and (min-width: 42em) and (max-width: 64em) { .page-header { padding: 3rem 4rem; }/;"	c
+.page-header	_site/assets/css/style.css	/^@media screen and (min-width: 64em) { .page-header { padding: 5rem 6rem; } }$/;"	c
+.page-title	_site/css/team.css	/^.page-title {$/;"	c
+.page-title	_site/css/whitepaper.css	/^.page-title {$/;"	c
+.page-title	css/team.css	/^.page-title {$/;"	c
+.page-title	css/whitepaper.css	/^.page-title {$/;"	c
+.page-title h1	_site/css/team.css	/^  .page-title h1 {$/;"	s
+.page-title h1	_site/css/team.css	/^.page-title h1 {$/;"	s
+.page-title h1	_site/css/whitepaper.css	/^  .page-title h1 {$/;"	s
+.page-title h1	_site/css/whitepaper.css	/^.page-title h1 {$/;"	s
+.page-title h1	css/team.css	/^  .page-title h1 {$/;"	s
+.page-title h1	css/team.css	/^.page-title h1 {$/;"	s
+.page-title h1	css/whitepaper.css	/^  .page-title h1 {$/;"	s
+.page-title h1	css/whitepaper.css	/^.page-title h1 {$/;"	s
+.page-title p	_site/css/team.css	/^.page-title p {$/;"	s
+.page-title p	_site/css/whitepaper.css	/^  .page-title p {$/;"	s
+.page-title p	_site/css/whitepaper.css	/^.page-title p {$/;"	s
+.page-title p	css/team.css	/^.page-title p {$/;"	s
+.page-title p	css/whitepaper.css	/^  .page-title p {$/;"	s
+.page-title p	css/whitepaper.css	/^.page-title p {$/;"	s
+.profiles	_site/css/team.css	/^.profiles {$/;"	c
+.profiles	css/team.css	/^.profiles {$/;"	c
+.profiles img	_site/css/team.css	/^.profiles img {$/;"	s
+.profiles img	css/team.css	/^.profiles img {$/;"	s
+.project-name	_site/assets/css/style.css	/^.project-name { margin-top: 0; margin-bottom: 0.1rem; }$/;"	c
+.project-name	_site/assets/css/style.css	/^@media screen and (max-width: 42em) { .project-name { font-size: 1.75rem; } }$/;"	c
+.project-name	_site/assets/css/style.css	/^@media screen and (min-width: 42em) and (max-width: 64em) { .project-name { font-size: 2.25rem; /;"	c
+.project-name	_site/assets/css/style.css	/^@media screen and (min-width: 64em) { .project-name { font-size: 3.25rem; } }$/;"	c
+.project-tagline	_site/assets/css/style.css	/^.project-tagline { margin-bottom: 2rem; font-weight: normal; opacity: 0.7; }$/;"	c
+.project-tagline	_site/assets/css/style.css	/^@media screen and (max-width: 42em) { .project-tagline { font-size: 1rem; } }$/;"	c
+.project-tagline	_site/assets/css/style.css	/^@media screen and (min-width: 42em) and (max-width: 64em) { .project-tagline { font-size: 1.15re/;"	c
+.project-tagline	_site/assets/css/style.css	/^@media screen and (min-width: 64em) { .project-tagline { font-size: 1.25rem; } }$/;"	c
+.selected	_site/css/whitepaper.css	/^.selected {$/;"	c
+.selected	css/whitepaper.css	/^.selected {$/;"	c
+.site-footer	_site/assets/css/style.css	/^.site-footer { padding-top: 2rem; margin-top: 2rem; border-top: solid 1px #eff0f1; }$/;"	c
+.site-footer	_site/assets/css/style.css	/^@media screen and (max-width: 42em) { .site-footer { font-size: 0.9rem; } }$/;"	c
+.site-footer	_site/assets/css/style.css	/^@media screen and (min-width: 42em) and (max-width: 64em) { .site-footer { font-size: 1rem; } }$/;"	c
+.site-footer	_site/assets/css/style.css	/^@media screen and (min-width: 64em) { .site-footer { font-size: 1rem; } }$/;"	c
+.site-footer-credits	_site/assets/css/style.css	/^.site-footer-credits { color: #819198; }$/;"	c
+.site-footer-owner	_site/assets/css/style.css	/^.site-footer-owner { display: block; font-weight: bold; }$/;"	c
+.social-links	_site/css/team.css	/^.social-links {$/;"	c
+.social-links	css/team.css	/^.social-links {$/;"	c
+.social-links a	_site/css/team.css	/^.social-links a {$/;"	s
+.social-links a	css/team.css	/^.social-links a {$/;"	s
+.social-links a:hover	_site/css/team.css	/^.social-links a:hover {$/;"	s
+.social-links a:hover	css/team.css	/^.social-links a:hover {$/;"	s
+.team a	_site/css/index.css	/^  .team a {$/;"	s
+.team a	_site/css/main.css	/^  .team a {$/;"	s
+.team a	_site/css/main.css	/^.team a {$/;"	s
+.team a	css/index.css	/^  .team a {$/;"	s
+.team a	css/main.css	/^  .team a {$/;"	s
+.team a	css/main.css	/^.team a {$/;"	s
+.team a:hover	_site/css/main.css	/^.team a:hover {$/;"	s
+.team a:hover	css/main.css	/^.team a:hover {$/;"	s
+.team h3 a	_site/css/main.css	/^.team h3 a {$/;"	s
+.team h3 a	css/main.css	/^.team h3 a {$/;"	s
+.team span	_site/css/main.css	/^.team span {$/;"	s
+.team span	css/main.css	/^.team span {$/;"	s
+.title	_site/css/index.css	/^  .title {$/;"	c
+.title	_site/css/main.css	/^  .title {$/;"	c
+.title	_site/css/main.css	/^.title {$/;"	c
+.title	css/index.css	/^  .title {$/;"	c
+.title	css/main.css	/^  .title {$/;"	c
+.title	css/main.css	/^.title {$/;"	c
+.triangle	_site/css/team.css	/^.triangle {$/;"	c
+.triangle	css/team.css	/^.triangle {$/;"	c
+1 Introduction	_site/markdown/whitepaper.html	/^<h1 id="1-introduction">1 Introduction<\/h1>$/;"	h
+1 Introduction	_site/markdown/whitepaper.md	/^# 1 Introduction$/;"	c
+1 Introduction	_site/whitepaper.html	/^<h1 id="1-introduction">1 Introduction<\/h1>$/;"	h
+1 Introduction	markdown/whitepaper.md	/^# 1 Introduction$/;"	c
+1.1 High-Level Goals	_site/markdown/whitepaper.html	/^<h2 id="11-high-level-goals">1.1 High-Level Goals<\/h2>$/;"	i
+1.1 High-Level Goals	_site/markdown/whitepaper.md	/^## 1.1 High-Level Goals$/;"	s
+1.1 High-Level Goals	_site/whitepaper.html	/^<h2 id="11-high-level-goals">1.1 High-Level Goals<\/h2>$/;"	i
+1.1 High-Level Goals	markdown/whitepaper.md	/^## 1.1 High-Level Goals$/;"	s
+1.2 Challenges	_site/markdown/whitepaper.html	/^<h2 id="12-challenges">1.2 Challenges<\/h2>$/;"	i
+1.2 Challenges	_site/markdown/whitepaper.md	/^## 1.2 Challenges$/;"	s
+1.2 Challenges	_site/whitepaper.html	/^<h2 id="12-challenges">1.2 Challenges<\/h2>$/;"	i
+1.2 Challenges	markdown/whitepaper.md	/^## 1.2 Challenges$/;"	s
+2 Network Architecture	_site/markdown/whitepaper.html	/^<h1 id="2-network-architecture">2 Network Architecture<\/h1>$/;"	h
+2 Network Architecture	_site/markdown/whitepaper.md	/^# 2 Network Architecture$/;"	c
+2 Network Architecture	_site/whitepaper.html	/^<h1 id="2-network-architecture">2 Network Architecture<\/h1>$/;"	h
+2 Network Architecture	markdown/whitepaper.md	/^# 2 Network Architecture$/;"	c
+2.1 Problems with a Peer-to-peer Architecture	_site/markdown/whitepaper.html	/^<h2 id="21-problems-with-a-peer-to-peer-architecture">2.1 Problems with a Peer-to-peer Architect/;"	i
+2.1 Problems with a Peer-to-peer Architecture	_site/markdown/whitepaper.md	/^## 2.1 Problems with a Peer-to-peer Architecture$/;"	s
+2.1 Problems with a Peer-to-peer Architecture	_site/whitepaper.html	/^<h2 id="21-problems-with-a-peer-to-peer-architecture">2.1 Problems with a Peer-to-peer Architect/;"	i
+2.1 Problems with a Peer-to-peer Architecture	markdown/whitepaper.md	/^## 2.1 Problems with a Peer-to-peer Architecture$/;"	s
+2.2 Client-server Architecture	_site/markdown/whitepaper.html	/^<h2 id="22-client-server-architecture">2.2 Client-server Architecture<\/h2>$/;"	i
+2.2 Client-server Architecture	_site/markdown/whitepaper.md	/^## 2.2 Client-server Architecture$/;"	s
+2.2 Client-server Architecture	_site/whitepaper.html	/^<h2 id="22-client-server-architecture">2.2 Client-server Architecture<\/h2>$/;"	i
+2.2 Client-server Architecture	markdown/whitepaper.md	/^## 2.2 Client-server Architecture$/;"	s
+2.3 Network Protocol	_site/markdown/whitepaper.html	/^<h2 id="23-network-protocol">2.3 Network Protocol<\/h2>$/;"	i
+2.3 Network Protocol	_site/markdown/whitepaper.md	/^## 2.3 Network Protocol$/;"	s
+2.3 Network Protocol	_site/whitepaper.html	/^<h2 id="23-network-protocol">2.3 Network Protocol<\/h2>$/;"	i
+2.3 Network Protocol	markdown/whitepaper.md	/^## 2.3 Network Protocol$/;"	s
+2.3.1 HTTP	_site/markdown/whitepaper.html	/^<h3 id="231-http">2.3.1 HTTP<\/h3>$/;"	j
+2.3.1 HTTP	_site/markdown/whitepaper.md	/^### 2.3.1 HTTP$/;"	S
+2.3.1 HTTP	_site/whitepaper.html	/^<h3 id="231-http">2.3.1 HTTP<\/h3>$/;"	j
+2.3.1 HTTP	markdown/whitepaper.md	/^### 2.3.1 HTTP$/;"	S
+2.3.2 WebSockets	_site/markdown/whitepaper.html	/^<h3 id="232-websockets">2.3.2 WebSockets<\/h3>$/;"	j
+2.3.2 WebSockets	_site/markdown/whitepaper.md	/^### 2.3.2 WebSockets$/;"	S
+2.3.2 WebSockets	_site/whitepaper.html	/^<h3 id="232-websockets">2.3.2 WebSockets<\/h3>$/;"	j
+2.3.2 WebSockets	markdown/whitepaper.md	/^### 2.3.2 WebSockets$/;"	S
+2.4 Where Should We Execute the Code?	_site/markdown/whitepaper.html	/^<h2 id="24-where-should-we-execute-the-code">2.4 Where Should We Execute the Code?<\/h2>$/;"	i
+2.4 Where Should We Execute the Code?	_site/markdown/whitepaper.md	/^## 2.4 Where Should We Execute the Code?$/;"	s
+2.4 Where Should We Execute the Code?	_site/whitepaper.html	/^<h2 id="24-where-should-we-execute-the-code">2.4 Where Should We Execute the Code?<\/h2>$/;"	i
+2.4 Where Should We Execute the Code?	markdown/whitepaper.md	/^## 2.4 Where Should We Execute the Code?$/;"	s
+2.4.1 Executing code on the client-side	_site/markdown/whitepaper.html	/^<h3 id="241-executing-code-on-the-client-side">2.4.1 Executing code on the client-side<\/h3>$/;"	j
+2.4.1 Executing code on the client-side	_site/markdown/whitepaper.md	/^### 2.4.1 Executing code on the client-side$/;"	S
+2.4.1 Executing code on the client-side	_site/whitepaper.html	/^<h3 id="241-executing-code-on-the-client-side">2.4.1 Executing code on the client-side<\/h3>$/;"	j
+2.4.1 Executing code on the client-side	markdown/whitepaper.md	/^### 2.4.1 Executing code on the client-side$/;"	S
+2.4.2 Solution: Executing code on the server-side	_site/markdown/whitepaper.html	/^<h3 id="242-solution-executing-code-on-the-server-side">2.4.2 Solution: Executing code on the se/;"	j
+2.4.2 Solution: Executing code on the server-side	_site/markdown/whitepaper.md	/^### 2.4.2 Solution: Executing code on the server-side$/;"	S
+2.4.2 Solution: Executing code on the server-side	_site/whitepaper.html	/^<h3 id="242-solution-executing-code-on-the-server-side">2.4.2 Solution: Executing code on the se/;"	j
+2.4.2 Solution: Executing code on the server-side	markdown/whitepaper.md	/^### 2.4.2 Solution: Executing code on the server-side$/;"	S
+3 Building a REPL	_site/markdown/whitepaper.html	/^<h1 id="3-building-a-repl">3 Building a REPL<\/h1>$/;"	h
+3 Building a REPL	_site/markdown/whitepaper.md	/^# 3 Building a REPL$/;"	c
+3 Building a REPL	_site/whitepaper.html	/^<h1 id="3-building-a-repl">3 Building a REPL<\/h1>$/;"	h
+3 Building a REPL	markdown/whitepaper.md	/^# 3 Building a REPL$/;"	c
+3.1 Creating the User Interface	_site/markdown/whitepaper.html	/^<h2 id="31-creating-the-user-interface">3.1 Creating the User Interface<\/h2>$/;"	i
+3.1 Creating the User Interface	_site/markdown/whitepaper.md	/^## 3.1 Creating the User Interface$/;"	s
+3.1 Creating the User Interface	_site/whitepaper.html	/^<h2 id="31-creating-the-user-interface">3.1 Creating the User Interface<\/h2>$/;"	i
+3.1 Creating the User Interface	markdown/whitepaper.md	/^## 3.1 Creating the User Interface$/;"	s
+3.2 Interacting with the REPL program on the Back End	_site/markdown/whitepaper.html	/^<h2 id="32-interacting-with-the-repl-program-on-the-back-end">3.2 Interacting with the REPL prog/;"	i
+3.2 Interacting with the REPL program on the Back End	_site/markdown/whitepaper.md	/^## 3.2 Interacting with the REPL program on the Back End$/;"	s
+3.2 Interacting with the REPL program on the Back End	_site/whitepaper.html	/^<h2 id="32-interacting-with-the-repl-program-on-the-back-end">3.2 Interacting with the REPL prog/;"	i
+3.2 Interacting with the REPL program on the Back End	markdown/whitepaper.md	/^## 3.2 Interacting with the REPL program on the Back End$/;"	s
+4 Collaboration with Multiple Users	_site/markdown/whitepaper.html	/^<h1 id="4-collaboration-with-multiple-users">4 Collaboration with Multiple Users<\/h1>$/;"	h
+4 Collaboration with Multiple Users	_site/markdown/whitepaper.md	/^# 4 Collaboration with Multiple Users$/;"	c
+4 Collaboration with Multiple Users	_site/whitepaper.html	/^<h1 id="4-collaboration-with-multiple-users">4 Collaboration with Multiple Users<\/h1>$/;"	h
+4 Collaboration with Multiple Users	markdown/whitepaper.md	/^# 4 Collaboration with Multiple Users$/;"	c
+4.1 Syncing Output	_site/markdown/whitepaper.html	/^<h2 id="41-syncing-output">4.1 Syncing Output<\/h2>$/;"	i
+4.1 Syncing Output	_site/markdown/whitepaper.md	/^## 4.1 Syncing Output$/;"	s
+4.1 Syncing Output	_site/whitepaper.html	/^<h2 id="41-syncing-output">4.1 Syncing Output<\/h2>$/;"	i
+4.1 Syncing Output	markdown/whitepaper.md	/^## 4.1 Syncing Output$/;"	s
+4.2 Syncing Input	_site/markdown/whitepaper.html	/^<h2 id="42-syncing-input">4.2 Syncing Input<\/h2>$/;"	i
+4.2 Syncing Input	_site/markdown/whitepaper.md	/^## 4.2 Syncing Input$/;"	s
+4.2 Syncing Input	_site/whitepaper.html	/^<h2 id="42-syncing-input">4.2 Syncing Input<\/h2>$/;"	i
+4.2 Syncing Input	markdown/whitepaper.md	/^## 4.2 Syncing Input$/;"	s
+4.3 Handling Conflicts in Shared Editing	_site/markdown/whitepaper.html	/^<h2 id="43-handling-conflicts-in-shared-editing">4.3 Handling Conflicts in Shared Editing<\/h2>$/;"	i
+4.3 Handling Conflicts in Shared Editing	_site/markdown/whitepaper.md	/^## 4.3 Handling Conflicts in Shared Editing$/;"	s
+4.3 Handling Conflicts in Shared Editing	_site/whitepaper.html	/^<h2 id="43-handling-conflicts-in-shared-editing">4.3 Handling Conflicts in Shared Editing<\/h2>$/;"	i
+4.3 Handling Conflicts in Shared Editing	markdown/whitepaper.md	/^## 4.3 Handling Conflicts in Shared Editing$/;"	s
+4.3.1 Conflict Resolution in REPL terminal	_site/markdown/whitepaper.html	/^<h3 id="431-conflict-resolution-in-repl-terminal">4.3.1 Conflict Resolution in REPL terminal<\/h/;"	j
+4.3.1 Conflict Resolution in REPL terminal	_site/markdown/whitepaper.md	/^### 4.3.1 Conflict Resolution in REPL terminal$/;"	S
+4.3.1 Conflict Resolution in REPL terminal	_site/whitepaper.html	/^<h3 id="431-conflict-resolution-in-repl-terminal">4.3.1 Conflict Resolution in REPL terminal<\/h/;"	j
+4.3.1 Conflict Resolution in REPL terminal	markdown/whitepaper.md	/^### 4.3.1 Conflict Resolution in REPL terminal$/;"	S
+4.3.2 Conflict Resolution in Text Editor	_site/markdown/whitepaper.html	/^<h3 id="432-conflict-resolution-in-text-editor">4.3.2 Conflict Resolution in Text Editor<\/h3>$/;"	j
+4.3.2 Conflict Resolution in Text Editor	_site/markdown/whitepaper.md	/^### 4.3.2 Conflict Resolution in Text Editor$/;"	S
+4.3.2 Conflict Resolution in Text Editor	_site/whitepaper.html	/^<h3 id="432-conflict-resolution-in-text-editor">4.3.2 Conflict Resolution in Text Editor<\/h3>$/;"	j
+4.3.2 Conflict Resolution in Text Editor	markdown/whitepaper.md	/^### 4.3.2 Conflict Resolution in Text Editor$/;"	S
+5 Security & Resource Management with Containers	_site/markdown/whitepaper.md	/^# 5 Security & Resource Management with Containers$/;"	c
+5 Security & Resource Management with Containers	markdown/whitepaper.md	/^# 5 Security & Resource Management with Containers$/;"	c
+5 Security &amp; Resource Management with Containers	_site/markdown/whitepaper.html	/^<h1 id="5-security--resource-management-with-containers">5 Security &amp; Resource Management wi/;"	h
+5 Security &amp; Resource Management with Containers	_site/whitepaper.html	/^<h1 id="5-security--resource-management-with-containers">5 Security &amp; Resource Management wi/;"	h
+5.1 Naive Approach: Check User Input Against List	_site/markdown/whitepaper.html	/^<h2 id="51-naive-approach-check-user-input-against-list">5.1 Naive Approach: Check User Input Ag/;"	i
+5.1 Naive Approach: Check User Input Against List	_site/markdown/whitepaper.md	/^## 5.1 Naive Approach: Check User Input Against List$/;"	s
+5.1 Naive Approach: Check User Input Against List	_site/whitepaper.html	/^<h2 id="51-naive-approach-check-user-input-against-list">5.1 Naive Approach: Check User Input Ag/;"	i
+5.1 Naive Approach: Check User Input Against List	markdown/whitepaper.md	/^## 5.1 Naive Approach: Check User Input Against List$/;"	s
+5.2 Solution: Isolation via Containers	_site/markdown/whitepaper.html	/^<h2 id="52-solution-isolation-via-containers">5.2 Solution: Isolation via Containers<\/h2>$/;"	i
+5.2 Solution: Isolation via Containers	_site/markdown/whitepaper.md	/^## 5.2 Solution: Isolation via Containers$/;"	s
+5.2 Solution: Isolation via Containers	_site/whitepaper.html	/^<h2 id="52-solution-isolation-via-containers">5.2 Solution: Isolation via Containers<\/h2>$/;"	i
+5.2 Solution: Isolation via Containers	markdown/whitepaper.md	/^## 5.2 Solution: Isolation via Containers$/;"	s
+5.3 Segmenting Users by Container	_site/markdown/whitepaper.html	/^<h2 id="53-segmenting-users-by-container">5.3 Segmenting Users by Container<\/h2>$/;"	i
+5.3 Segmenting Users by Container	_site/markdown/whitepaper.md	/^## 5.3 Segmenting Users by Container$/;"	s
+5.3 Segmenting Users by Container	_site/whitepaper.html	/^<h2 id="53-segmenting-users-by-container">5.3 Segmenting Users by Container<\/h2>$/;"	i
+5.3 Segmenting Users by Container	markdown/whitepaper.md	/^## 5.3 Segmenting Users by Container$/;"	s
+5.4 Securing Containers	_site/markdown/whitepaper.html	/^<h2 id="54-securing-containers">5.4 Securing Containers<\/h2>$/;"	i
+5.4 Securing Containers	_site/markdown/whitepaper.md	/^## 5.4 Securing Containers$/;"	s
+5.4 Securing Containers	_site/whitepaper.html	/^<h2 id="54-securing-containers">5.4 Securing Containers<\/h2>$/;"	i
+5.4 Securing Containers	markdown/whitepaper.md	/^## 5.4 Securing Containers$/;"	s
+5.4.1 Remove Root-level Access	_site/markdown/whitepaper.html	/^<h3 id="541-remove-root-level-access">5.4.1 Remove Root-level Access<\/h3>$/;"	j
+5.4.1 Remove Root-level Access	_site/markdown/whitepaper.md	/^### 5.4.1 Remove Root-level Access$/;"	S
+5.4.1 Remove Root-level Access	_site/whitepaper.html	/^<h3 id="541-remove-root-level-access">5.4.1 Remove Root-level Access<\/h3>$/;"	j
+5.4.1 Remove Root-level Access	markdown/whitepaper.md	/^### 5.4.1 Remove Root-level Access$/;"	S
+5.4.2 Strengthen Isolation with Container Runtime Sandbox	_site/markdown/whitepaper.html	/^<h3 id="542-strengthen-isolation-with-container-runtime-sandbox">5.4.2 Strengthen Isolation with/;"	j
+5.4.2 Strengthen Isolation with Container Runtime Sandbox	_site/markdown/whitepaper.md	/^### 5.4.2 Strengthen Isolation with Container Runtime Sandbox$/;"	S
+5.4.2 Strengthen Isolation with Container Runtime Sandbox	_site/whitepaper.html	/^<h3 id="542-strengthen-isolation-with-container-runtime-sandbox">5.4.2 Strengthen Isolation with/;"	j
+5.4.2 Strengthen Isolation with Container Runtime Sandbox	markdown/whitepaper.md	/^### 5.4.2 Strengthen Isolation with Container Runtime Sandbox$/;"	S
+5.5 Managing Container Resources	_site/markdown/whitepaper.html	/^<h2 id="55-managing-container-resources">5.5 Managing Container Resources<\/h2>$/;"	i
+5.5 Managing Container Resources	_site/markdown/whitepaper.md	/^## 5.5 Managing Container Resources$/;"	s
+5.5 Managing Container Resources	_site/whitepaper.html	/^<h2 id="55-managing-container-resources">5.5 Managing Container Resources<\/h2>$/;"	i
+5.5 Managing Container Resources	markdown/whitepaper.md	/^## 5.5 Managing Container Resources$/;"	s
+6 Connecting Users to Containers	_site/markdown/whitepaper.html	/^<h1 id="6-connecting-users-to-containers">6 Connecting Users to Containers<\/h1>$/;"	h
+6 Connecting Users to Containers	_site/markdown/whitepaper.md	/^# 6 Connecting Users to Containers$/;"	c
+6 Connecting Users to Containers	_site/whitepaper.html	/^<h1 id="6-connecting-users-to-containers">6 Connecting Users to Containers<\/h1>$/;"	h
+6 Connecting Users to Containers	markdown/whitepaper.md	/^# 6 Connecting Users to Containers$/;"	c
+6.1 Naive Approach: Port Forwarding	_site/markdown/whitepaper.html	/^<h2 id="61-naive-approach-port-forwarding">6.1 Naive Approach: Port Forwarding<\/h2>$/;"	i
+6.1 Naive Approach: Port Forwarding	_site/markdown/whitepaper.md	/^## 6.1 Naive Approach: Port Forwarding$/;"	s
+6.1 Naive Approach: Port Forwarding	_site/whitepaper.html	/^<h2 id="61-naive-approach-port-forwarding">6.1 Naive Approach: Port Forwarding<\/h2>$/;"	i
+6.1 Naive Approach: Port Forwarding	markdown/whitepaper.md	/^## 6.1 Naive Approach: Port Forwarding$/;"	s
+6.2 Solution: A Reverse Proxy	_site/markdown/whitepaper.html	/^<h2 id="62-solution-a-reverse-proxy">6.2 Solution: A Reverse Proxy<\/h2>$/;"	i
+6.2 Solution: A Reverse Proxy	_site/markdown/whitepaper.md	/^## 6.2 Solution: A Reverse Proxy$/;"	s
+6.2 Solution: A Reverse Proxy	_site/whitepaper.html	/^<h2 id="62-solution-a-reverse-proxy">6.2 Solution: A Reverse Proxy<\/h2>$/;"	i
+6.2 Solution: A Reverse Proxy	markdown/whitepaper.md	/^## 6.2 Solution: A Reverse Proxy$/;"	s
+7 Session Management	_site/markdown/whitepaper.html	/^<h1 id="7-session-management">7 Session Management<\/h1>$/;"	h
+7 Session Management	_site/markdown/whitepaper.md	/^# 7 Session Management$/;"	c
+7 Session Management	_site/whitepaper.html	/^<h1 id="7-session-management">7 Session Management<\/h1>$/;"	h
+7 Session Management	markdown/whitepaper.md	/^# 7 Session Management$/;"	c
+7.1 Generating Unique URL	_site/markdown/whitepaper.html	/^<h2 id="71-generating-unique-url">7.1 Generating Unique URL<\/h2>$/;"	i
+7.1 Generating Unique URL	_site/markdown/whitepaper.md	/^## 7.1 Generating Unique URL$/;"	s
+7.1 Generating Unique URL	_site/whitepaper.html	/^<h2 id="71-generating-unique-url">7.1 Generating Unique URL<\/h2>$/;"	i
+7.1 Generating Unique URL	markdown/whitepaper.md	/^## 7.1 Generating Unique URL$/;"	s
+7.1.2 Path-based URL forwarding	_site/markdown/whitepaper.html	/^<h3 id="712-path-based-url-forwarding">7.1.2 Path-based URL forwarding<\/h3>$/;"	j
+7.1.2 Path-based URL forwarding	_site/markdown/whitepaper.md	/^### 7.1.2 Path-based URL forwarding$/;"	S
+7.1.2 Path-based URL forwarding	_site/whitepaper.html	/^<h3 id="712-path-based-url-forwarding">7.1.2 Path-based URL forwarding<\/h3>$/;"	j
+7.1.2 Path-based URL forwarding	markdown/whitepaper.md	/^### 7.1.2 Path-based URL forwarding$/;"	S
+7.1.3 Subdomain forwarding	_site/markdown/whitepaper.html	/^<h3 id="713-subdomain-forwarding">7.1.3 Subdomain forwarding<\/h3>$/;"	j
+7.1.3 Subdomain forwarding	_site/markdown/whitepaper.md	/^### 7.1.3 Subdomain forwarding$/;"	S
+7.1.3 Subdomain forwarding	_site/whitepaper.html	/^<h3 id="713-subdomain-forwarding">7.1.3 Subdomain forwarding<\/h3>$/;"	j
+7.1.3 Subdomain forwarding	markdown/whitepaper.md	/^### 7.1.3 Subdomain forwarding$/;"	S
+7.2 URL Mapping to Designated Container	_site/markdown/whitepaper.html	/^<h2 id="72-url-mapping-to-designated-container">7.2 URL Mapping to Designated Container<\/h2>$/;"	i
+7.2 URL Mapping to Designated Container	_site/markdown/whitepaper.md	/^## 7.2 URL Mapping to Designated Container$/;"	s
+7.2 URL Mapping to Designated Container	_site/whitepaper.html	/^<h2 id="72-url-mapping-to-designated-container">7.2 URL Mapping to Designated Container<\/h2>$/;"	i
+7.2 URL Mapping to Designated Container	markdown/whitepaper.md	/^## 7.2 URL Mapping to Designated Container$/;"	s
+7.3 Destroying a Session	_site/markdown/whitepaper.html	/^<h2 id="73-destroying-a-session">7.3 Destroying a Session<\/h2>$/;"	i
+7.3 Destroying a Session	_site/markdown/whitepaper.md	/^## 7.3 Destroying a Session$/;"	s
+7.3 Destroying a Session	_site/whitepaper.html	/^<h2 id="73-destroying-a-session">7.3 Destroying a Session<\/h2>$/;"	i
+7.3 Destroying a Session	markdown/whitepaper.md	/^## 7.3 Destroying a Session$/;"	s
+8 Performance Benchmarking: Streaming vs. Buffering Outputs	_site/markdown/whitepaper.html	/^<h1 id="8-performance-benchmarking-streaming-vs-buffering-outputs">8 Performance Benchmarking: S/;"	h
+8 Performance Benchmarking: Streaming vs. Buffering Outputs	_site/markdown/whitepaper.md	/^# 8 Performance Benchmarking: Streaming vs. Buffering Outputs$/;"	c
+8 Performance Benchmarking: Streaming vs. Buffering Outputs	_site/whitepaper.html	/^<h1 id="8-performance-benchmarking-streaming-vs-buffering-outputs">8 Performance Benchmarking: S/;"	h
+8 Performance Benchmarking: Streaming vs. Buffering Outputs	markdown/whitepaper.md	/^# 8 Performance Benchmarking: Streaming vs. Buffering Outputs$/;"	c
+8.1 Buffering Outputs	_site/markdown/whitepaper.html	/^<h2 id="81-buffering-outputs">8.1 Buffering Outputs<\/h2>$/;"	i
+8.1 Buffering Outputs	_site/markdown/whitepaper.md	/^## 8.1 Buffering Outputs$/;"	s
+8.1 Buffering Outputs	_site/whitepaper.html	/^<h2 id="81-buffering-outputs">8.1 Buffering Outputs<\/h2>$/;"	i
+8.1 Buffering Outputs	markdown/whitepaper.md	/^## 8.1 Buffering Outputs$/;"	s
+8.2 Streaming Outputs	_site/markdown/whitepaper.html	/^<h2 id="82-streaming-outputs">8.2 Streaming Outputs<\/h2>$/;"	i
+8.2 Streaming Outputs	_site/markdown/whitepaper.md	/^## 8.2 Streaming Outputs$/;"	s
+8.2 Streaming Outputs	_site/whitepaper.html	/^<h2 id="82-streaming-outputs">8.2 Streaming Outputs<\/h2>$/;"	i
+8.2 Streaming Outputs	markdown/whitepaper.md	/^## 8.2 Streaming Outputs$/;"	s
+8.3 Results and Analysis	_site/markdown/whitepaper.html	/^<h2 id="83-results-and-analysis">8.3 Results and Analysis<\/h2>$/;"	i
+8.3 Results and Analysis	_site/markdown/whitepaper.md	/^## 8.3 Results and Analysis$/;"	s
+8.3 Results and Analysis	_site/whitepaper.html	/^<h2 id="83-results-and-analysis">8.3 Results and Analysis<\/h2>$/;"	i
+8.3 Results and Analysis	markdown/whitepaper.md	/^## 8.3 Results and Analysis$/;"	s
+9 Future Work	_site/markdown/whitepaper.html	/^<h1 id="9-future-work">9 Future Work<\/h1>$/;"	h
+9 Future Work	_site/markdown/whitepaper.md	/^# 9 Future Work$/;"	c
+9 Future Work	_site/whitepaper.html	/^<h1 id="9-future-work">9 Future Work<\/h1>$/;"	h
+9 Future Work	markdown/whitepaper.md	/^# 9 Future Work$/;"	c
+9.1 Improve User Experiences	_site/markdown/whitepaper.html	/^<h2 id="91-improve-user-experiences">9.1 Improve User Experiences<\/h2>$/;"	i
+9.1 Improve User Experiences	_site/markdown/whitepaper.md	/^## 9.1 Improve User Experiences$/;"	s
+9.1 Improve User Experiences	_site/whitepaper.html	/^<h2 id="91-improve-user-experiences">9.1 Improve User Experiences<\/h2>$/;"	i
+9.1 Improve User Experiences	markdown/whitepaper.md	/^## 9.1 Improve User Experiences$/;"	s
+9.2 Allow Code Upload and Download	_site/markdown/whitepaper.html	/^<h2 id="92-allow-code-upload-and-download">9.2 Allow Code Upload and Download<\/h2>$/;"	i
+9.2 Allow Code Upload and Download	_site/markdown/whitepaper.md	/^## 9.2 Allow Code Upload and Download$/;"	s
+9.2 Allow Code Upload and Download	_site/whitepaper.html	/^<h2 id="92-allow-code-upload-and-download">9.2 Allow Code Upload and Download<\/h2>$/;"	i
+9.2 Allow Code Upload and Download	markdown/whitepaper.md	/^## 9.2 Allow Code Upload and Download$/;"	s
+9.3 Support Low-Level Languages	_site/markdown/whitepaper.html	/^<h2 id="93-support-low-level-languages">9.3 Support Low-Level Languages<\/h2>$/;"	i
+9.3 Support Low-Level Languages	_site/markdown/whitepaper.md	/^## 9.3 Support Low-Level Languages$/;"	s
+9.3 Support Low-Level Languages	_site/whitepaper.html	/^<h2 id="93-support-low-level-languages">9.3 Support Low-Level Languages<\/h2>$/;"	i
+9.3 Support Low-Level Languages	markdown/whitepaper.md	/^## 9.3 Support Low-Level Languages$/;"	s
+9.4 Implement a Request Queue	_site/markdown/whitepaper.html	/^<h2 id="94-implement-a-request-queue">9.4 Implement a Request Queue<\/h2>$/;"	i
+9.4 Implement a Request Queue	_site/markdown/whitepaper.md	/^## 9.4 Implement a Request Queue$/;"	s
+9.4 Implement a Request Queue	_site/whitepaper.html	/^<h2 id="94-implement-a-request-queue">9.4 Implement a Request Queue<\/h2>$/;"	i
+9.4 Implement a Request Queue	markdown/whitepaper.md	/^## 9.4 Implement a Request Queue$/;"	s
+About the Team	_site/markdown/whitepaper.html	/^<h1 id="about-the-team">About the Team<\/h1>$/;"	h
+About the Team	_site/markdown/whitepaper.md	/^# About the Team$/;"	c
+About the Team	_site/whitepaper.html	/^<h1 id="about-the-team">About the Team<\/h1>$/;"	h
+About the Team	markdown/whitepaper.md	/^# About the Team$/;"	c
+Approach #1: Interact with the language’s built-in REPL API library	_site/markdown/whitepaper.html	/^<h3 id="approach-1-interact-with-the-languages-built-in-repl-api-library">Approach #1: Interact /;"	j
+Approach #1: Interact with the language’s built-in REPL API library	_site/markdown/whitepaper.md	/^### Approach #1: Interact with the language’s built-in REPL API library$/;"	S
+Approach #1: Interact with the language’s built-in REPL API library	_site/whitepaper.html	/^<h3 id="approach-1-interact-with-the-languages-built-in-repl-api-library">Approach #1: Interact /;"	j
+Approach #1: Interact with the language’s built-in REPL API library	markdown/whitepaper.md	/^### Approach #1: Interact with the language’s built-in REPL API library$/;"	S
+Approach #2: Spawn a REPL Child Process and Perform Read/Write on It	_site/markdown/whitepaper.html	/^<h3 id="approach-2-spawn-a-repl-child-process-and-perform-readwrite-on-it">Approach #2: Spawn a /;"	j
+Approach #2: Spawn a REPL Child Process and Perform Read/Write on It	_site/markdown/whitepaper.md	/^### Approach #2: Spawn a REPL Child Process and Perform Read\/Write on It$/;"	S
+Approach #2: Spawn a REPL Child Process and Perform Read/Write on It	_site/whitepaper.html	/^<h3 id="approach-2-spawn-a-repl-child-process-and-perform-readwrite-on-it">Approach #2: Spawn a /;"	j
+Approach #2: Spawn a REPL Child Process and Perform Read/Write on It	markdown/whitepaper.md	/^### Approach #2: Spawn a REPL Child Process and Perform Read\/Write on It$/;"	S
+Approach #3: Pseudoterminals	_site/markdown/whitepaper.html	/^<h3 id="approach-3-pseudoterminals">Approach #3: Pseudoterminals<\/h3>$/;"	j
+Approach #3: Pseudoterminals	_site/markdown/whitepaper.md	/^### Approach #3: Pseudoterminals$/;"	S
+Approach #3: Pseudoterminals	_site/whitepaper.html	/^<h3 id="approach-3-pseudoterminals">Approach #3: Pseudoterminals<\/h3>$/;"	j
+Approach #3: Pseudoterminals	markdown/whitepaper.md	/^### Approach #3: Pseudoterminals$/;"	S
+Area of Interest:	_includes/profile.html	/^  <h3>Area of Interest:<\/h3>$/;"	j
+Area of Interest:	_site/team.html	/^  <h3>Area of Interest:<\/h3>$/;"	j
+Books	_site/markdown/whitepaper.html	/^<h2 id="books">Books<\/h2>$/;"	i
+Books	_site/markdown/whitepaper.md	/^## Books$/;"	s
+Books	_site/whitepaper.html	/^<h2 id="books">Books<\/h2>$/;"	i
+Books	markdown/whitepaper.md	/^## Books$/;"	s
+Case Study	_site/whitepaper.html	/^      <h1>Case Study<\/h1>$/;"	h
+Case Study	whitepaper.html	/^      <h1>Case Study<\/h1>$/;"	h
+Collaborative REPL/Editors	_site/markdown/whitepaper.html	/^<h2 id="collaborative-repleditors">Collaborative REPL\/Editors<\/h2>$/;"	i
+Collaborative REPL/Editors	_site/markdown/whitepaper.md	/^## Collaborative REPL\/Editors$/;"	s
+Collaborative REPL/Editors	_site/whitepaper.html	/^<h2 id="collaborative-repleditors">Collaborative REPL\/Editors<\/h2>$/;"	i
+Collaborative REPL/Editors	markdown/whitepaper.md	/^## Collaborative REPL\/Editors$/;"	s
+Containers	_site/markdown/whitepaper.html	/^<h2 id="containers">Containers<\/h2>$/;"	i
+Containers	_site/markdown/whitepaper.md	/^## Containers$/;"	s
+Containers	_site/whitepaper.html	/^<h2 id="containers">Containers<\/h2>$/;"	i
+Containers	markdown/whitepaper.md	/^## Containers$/;"	s
+Fun Fact:	_includes/profile.html	/^  <h3>Fun Fact:<\/h3>$/;"	j
+Fun Fact:	_site/team.html	/^  <h3>Fun Fact:<\/h3>$/;"	j
+HTTP vs. WebSockets & Network Architecture	_site/markdown/whitepaper.md	/^## HTTP vs. WebSockets & Network Architecture$/;"	s
+HTTP vs. WebSockets & Network Architecture	markdown/whitepaper.md	/^## HTTP vs. WebSockets & Network Architecture$/;"	s
+HTTP vs. WebSockets &amp; Network Architecture	_site/markdown/whitepaper.html	/^<h2 id="http-vs-websockets--network-architecture">HTTP vs. WebSockets &amp; Network Architecture/;"	i
+HTTP vs. WebSockets &amp; Network Architecture	_site/whitepaper.html	/^<h2 id="http-vs-websockets--network-architecture">HTTP vs. WebSockets &amp; Network Architecture/;"	i
+Julius Zerwick	_site/team.html	/^    <h2>Julius Zerwick<\/h2>$/;"	i
+Meet the Team	_site/team.html	/^      <h1>Meet the Team<\/h1>$/;"	h
+Meet the Team	team.html	/^      <h1>Meet the Team<\/h1>$/;"	h
+Nick Johnson	_site/team.html	/^    <h2>Nick Johnson<\/h2>$/;"	i
+Psuedoterminals and Shell Processes	_site/markdown/whitepaper.html	/^<h2 id="psuedoterminals-and-shell-processes">Psuedoterminals and Shell Processes<\/h2>$/;"	i
+Psuedoterminals and Shell Processes	_site/markdown/whitepaper.md	/^## Psuedoterminals and Shell Processes$/;"	s
+Psuedoterminals and Shell Processes	_site/whitepaper.html	/^<h2 id="psuedoterminals-and-shell-processes">Psuedoterminals and Shell Processes<\/h2>$/;"	i
+Psuedoterminals and Shell Processes	markdown/whitepaper.md	/^## Psuedoterminals and Shell Processes$/;"	s
+References	_site/markdown/whitepaper.html	/^<h1 id="references">References<\/h1>$/;"	h
+References	_site/markdown/whitepaper.md	/^# References$/;"	c
+References	_site/whitepaper.html	/^<h1 id="references">References<\/h1>$/;"	h
+References	markdown/whitepaper.md	/^# References$/;"	c
+Reverse Proxy and Port Forwarding	_site/markdown/whitepaper.html	/^<h2 id="reverse-proxy-and-port-forwarding">Reverse Proxy and Port Forwarding<\/h2>$/;"	i
+Reverse Proxy and Port Forwarding	_site/markdown/whitepaper.md	/^## Reverse Proxy and Port Forwarding$/;"	s
+Reverse Proxy and Port Forwarding	_site/whitepaper.html	/^<h2 id="reverse-proxy-and-port-forwarding">Reverse Proxy and Port Forwarding<\/h2>$/;"	i
+Reverse Proxy and Port Forwarding	markdown/whitepaper.md	/^## Reverse Proxy and Port Forwarding$/;"	s
+SpaceCraft: A Real-Time, Collaborative REPL	_site/markdown/whitepaper.html	/^      <h1 class="project-name">SpaceCraft: A Real-Time, Collaborative REPL<\/h1>$/;"	h
+Static webpage for SpaceCraft.	_site/markdown/whitepaper.html	/^      <h2 class="project-tagline">Static webpage for SpaceCraft.<\/h2>$/;"	i
+The Team //	_includes/footer.html	/^  <h3><a href="\/team">The Team<\/a> <span>\/\/<\/span><\/h3>$/;"	j
+The Team //	_site/index.html	/^  <h3><a href="\/team">The Team<\/a> <span>\/\/<\/span><\/h3>$/;"	j
+The Team //	_site/team.html	/^  <h3><a href="\/team">The Team<\/a> <span>\/\/<\/span><\/h3>$/;"	j
+The Team //	_site/whitepaper.html	/^  <h3><a href="\/team">The Team<\/a> <span>\/\/<\/span><\/h3>$/;"	j
+What is SpaceCraft?	_site/index.html	/^      <h2>What is SpaceCraft?<\/h2>$/;"	i
+What is SpaceCraft?	index.html	/^      <h2>What is SpaceCraft?<\/h2>$/;"	i
+Ying Chyi Gooi	_site/team.html	/^    <h2>Ying Chyi Gooi<\/h2>$/;"	i
+a	_site/assets/css/style.css	/^a { background-color: transparent; }$/;"	s
+a	_site/assets/css/style.css	/^a { color: #1e6bb8; text-decoration: none; }$/;"	s
+a	_site/css/reset.css	/^a {$/;"	s
+a	_site/css/reset.css	/^a, abbr, acronym, address, big, cite, code,$/;"	s
+a	_site/css/reset.css	/^a, div {$/;"	s
+a	css/reset.css	/^a {$/;"	s
+a	css/reset.css	/^a, abbr, acronym, address, big, cite, code,$/;"	s
+a	css/reset.css	/^a, div {$/;"	s
+a.email	_site/css/team.css	/^a.email {$/;"	c
+a.email	css/team.css	/^a.email {$/;"	c
+a.linkedin	_site/css/team.css	/^a.linkedin {$/;"	c
+a.linkedin	css/team.css	/^a.linkedin {$/;"	c
+a.profile	_site/css/team.css	/^a.profile {$/;"	c
+a.profile	css/team.css	/^a.profile {$/;"	c
+a.profile:hover	_site/css/team.css	/^a.profile:hover {$/;"	c
+a.profile:hover	css/team.css	/^a.profile:hover {$/;"	c
+a.website	_site/css/team.css	/^a.website {$/;"	c
+a.website	css/team.css	/^a.website {$/;"	c
+a:active	_site/assets/css/style.css	/^a:active, a:hover { outline: 0; }$/;"	s
+a:hover	_site/assets/css/style.css	/^a:active, a:hover { outline: 0; }$/;"	s
+a:hover	_site/assets/css/style.css	/^a:hover { text-decoration: underline; }$/;"	s
+abbr	_site/css/reset.css	/^a, abbr, acronym, address, big, cite, code,$/;"	s
+abbr	css/reset.css	/^a, abbr, acronym, address, big, cite, code,$/;"	s
+abbr[title]	_site/assets/css/style.css	/^abbr[title] { border-bottom: 1px dotted; }$/;"	s
+absPosition	_site/javascript/menu.js	/^const absPosition = (element) => element.style.position = 'absolute';$/;"	C
+absPosition	javascript/menu.js	/^const absPosition = (element) => element.style.position = 'absolute';$/;"	C
+acronym	_site/css/reset.css	/^a, abbr, acronym, address, big, cite, code,$/;"	s
+acronym	css/reset.css	/^a, abbr, acronym, address, big, cite, code,$/;"	s
+address	_site/css/reset.css	/^a, abbr, acronym, address, big, cite, code,$/;"	s
+address	css/reset.css	/^a, abbr, acronym, address, big, cite, code,$/;"	s
+applet	_site/css/reset.css	/^html, body, div, span, applet, object, iframe,$/;"	s
+applet	css/reset.css	/^html, body, div, span, applet, object, iframe,$/;"	s
+article	_site/assets/css/style.css	/^article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, s/;"	s
+article	_site/css/index.css	/^  article {$/;"	s
+article	_site/css/main.css	/^article {$/;"	s
+article	_site/css/reset.css	/^article, aside, canvas, details, embed, $/;"	s
+article	_site/css/reset.css	/^article, aside, details, figcaption, figure, $/;"	s
+article	_site/css/team.css	/^article {$/;"	s
+article	css/index.css	/^  article {$/;"	s
+article	css/main.css	/^article {$/;"	s
+article	css/reset.css	/^article, aside, canvas, details, embed, $/;"	s
+article	css/reset.css	/^article, aside, details, figcaption, figure, $/;"	s
+article	css/team.css	/^article {$/;"	s
+article a	_site/css/team.css	/^article a {$/;"	s
+article a	css/team.css	/^article a {$/;"	s
+article a:hover	_site/css/team.css	/^article a:hover {$/;"	s
+article a:hover	css/team.css	/^article a:hover {$/;"	s
+article h3	_site/css/team.css	/^article h3 {$/;"	s
+article h3	css/team.css	/^article h3 {$/;"	s
+article p	_site/css/main.css	/^article p {$/;"	s
+article p	_site/css/team.css	/^article p,$/;"	s
+article p	css/main.css	/^article p {$/;"	s
+article p	css/team.css	/^article p,$/;"	s
+article p:first-of-type	_site/css/team.css	/^article p:first-of-type {$/;"	s
+article p:first-of-type	css/team.css	/^article p:first-of-type {$/;"	s
+aside	_site/assets/css/style.css	/^article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, s/;"	s
+aside	_site/css/reset.css	/^article, aside, canvas, details, embed, $/;"	s
+aside	_site/css/reset.css	/^article, aside, details, figcaption, figure, $/;"	s
+aside	css/reset.css	/^article, aside, canvas, details, embed, $/;"	s
+aside	css/reset.css	/^article, aside, details, figcaption, figure, $/;"	s
+audio	_site/assets/css/style.css	/^audio, canvas, progress, video { display: inline-block; \/* 1 *\/ vertical-align: baseline; \/* /;"	s
+audio	_site/css/reset.css	/^time, mark, audio, video {$/;"	s
+audio	css/reset.css	/^time, mark, audio, video {$/;"	s
+audio:not([controls] )	_site/assets/css/style.css	/^audio:not([controls]) { display: none; height: 0; }$/;"	s
+b	_site/assets/css/style.css	/^b, strong { font-weight: bold; }$/;"	s
+b	_site/css/reset.css	/^b, u, i, center,$/;"	s
+b	css/reset.css	/^b, u, i, center,$/;"	s
+big	_site/css/reset.css	/^a, abbr, acronym, address, big, cite, code,$/;"	s
+big	css/reset.css	/^a, abbr, acronym, address, big, cite, code,$/;"	s
+blockquote	_site/css/reset.css	/^blockquote, q {$/;"	s
+blockquote	_site/css/reset.css	/^h1, h2, h3, h4, h5, h6, p, blockquote, pre,$/;"	s
+blockquote	css/reset.css	/^blockquote, q {$/;"	s
+blockquote	css/reset.css	/^h1, h2, h3, h4, h5, h6, p, blockquote, pre,$/;"	s
+blockquote p	_site/css/whitepaper.css	/^  blockquote p {$/;"	s
+blockquote p	_site/css/whitepaper.css	/^blockquote p {$/;"	s
+blockquote p	css/whitepaper.css	/^  blockquote p {$/;"	s
+blockquote p	css/whitepaper.css	/^blockquote p {$/;"	s
+blockquote:after	_site/css/reset.css	/^blockquote:before, blockquote:after,$/;"	s
+blockquote:after	css/reset.css	/^blockquote:before, blockquote:after,$/;"	s
+blockquote:before	_site/css/reset.css	/^blockquote:before, blockquote:after,$/;"	s
+blockquote:before	css/reset.css	/^blockquote:before, blockquote:after,$/;"	s
+body	_site/assets/css/style.css	/^body { margin: 0; }$/;"	s
+body	_site/assets/css/style.css	/^body { padding: 0; margin: 0; font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans/;"	s
+body	_site/css/main.css	/^body {$/;"	s
+body	_site/css/reset.css	/^body {$/;"	s
+body	_site/css/reset.css	/^html, body, div, span, applet, object, iframe,$/;"	s
+body	_site/css/team.css	/^body {$/;"	s
+body	_site/css/whitepaper.css	/^  body {$/;"	s
+body	_site/css/whitepaper.css	/^body {$/;"	s
+body	css/main.css	/^body {$/;"	s
+body	css/reset.css	/^body {$/;"	s
+body	css/reset.css	/^html, body, div, span, applet, object, iframe,$/;"	s
+body	css/team.css	/^body {$/;"	s
+body	css/whitepaper.css	/^  body {$/;"	s
+body	css/whitepaper.css	/^body {$/;"	s
+button	_site/assets/css/style.css	/^button { overflow: visible; }$/;"	s
+button	_site/assets/css/style.css	/^button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearanc/;"	s
+button	_site/assets/css/style.css	/^button, input, optgroup, select, textarea { color: inherit; \/* 1 *\/ font: inherit; \/* 2 *\/ m/;"	s
+button	_site/assets/css/style.css	/^button, select { text-transform: none; }$/;"	s
+button	_site/css/reset.css	/^button {$/;"	s
+button	css/reset.css	/^button {$/;"	s
+button.action	_site/css/index.css	/^button.action {$/;"	c
+button.action	css/index.css	/^button.action {$/;"	c
+button.action:hover	_site/css/index.css	/^button.action:hover {$/;"	c
+button.action:hover	css/index.css	/^button.action:hover {$/;"	c
+button::-moz-focus-inner	_site/assets/css/style.css	/^button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }$/;"	s
+button:focus	_site/css/reset.css	/^button:focus {$/;"	s
+button:focus	css/reset.css	/^button:focus {$/;"	s
+button[disabled]	_site/assets/css/style.css	/^button[disabled], html input[disabled] { cursor: default; }$/;"	s
+canvas	_site/assets/css/style.css	/^audio, canvas, progress, video { display: inline-block; \/* 1 *\/ vertical-align: baseline; \/* /;"	s
+canvas	_site/css/reset.css	/^article, aside, canvas, details, embed, $/;"	s
+canvas	css/reset.css	/^article, aside, canvas, details, embed, $/;"	s
+caption	_site/css/reset.css	/^table, caption, tbody, tfoot, thead, tr, th, td,$/;"	s
+caption	css/reset.css	/^table, caption, tbody, tfoot, thead, tr, th, td,$/;"	s
+center	_site/css/reset.css	/^b, u, i, center,$/;"	s
+center	css/reset.css	/^b, u, i, center,$/;"	s
+cite	_site/css/reset.css	/^a, abbr, acronym, address, big, cite, code,$/;"	s
+cite	css/reset.css	/^a, abbr, acronym, address, big, cite, code,$/;"	s
+code	_site/assets/css/style.css	/^code, kbd, pre, samp { font-family: monospace, monospace; font-size: 1em; }$/;"	s
+code	_site/css/reset.css	/^a, abbr, acronym, address, big, cite, code,$/;"	s
+code	_site/css/whitepaper.css	/^code {$/;"	s
+code	css/reset.css	/^a, abbr, acronym, address, big, cite, code,$/;"	s
+code	css/whitepaper.css	/^code {$/;"	s
+dd	_site/css/reset.css	/^dl, dt, dd, ol, ul, li,$/;"	s
+dd	css/reset.css	/^dl, dt, dd, ol, ul, li,$/;"	s
+del	_site/css/reset.css	/^del, dfn, em, img, ins, kbd, q, s, samp,$/;"	s
+del	css/reset.css	/^del, dfn, em, img, ins, kbd, q, s, samp,$/;"	s
+details	_site/assets/css/style.css	/^article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, s/;"	s
+details	_site/css/reset.css	/^article, aside, canvas, details, embed, $/;"	s
+details	_site/css/reset.css	/^article, aside, details, figcaption, figure, $/;"	s
+details	css/reset.css	/^article, aside, canvas, details, embed, $/;"	s
+details	css/reset.css	/^article, aside, details, figcaption, figure, $/;"	s
+dfn	_site/assets/css/style.css	/^dfn { font-style: italic; }$/;"	s
+dfn	_site/css/reset.css	/^del, dfn, em, img, ins, kbd, q, s, samp,$/;"	s
+dfn	css/reset.css	/^del, dfn, em, img, ins, kbd, q, s, samp,$/;"	s
+div	_site/css/reset.css	/^a, div {$/;"	s
+div	_site/css/reset.css	/^html, body, div, span, applet, object, iframe,$/;"	s
+div	css/reset.css	/^a, div {$/;"	s
+div	css/reset.css	/^html, body, div, span, applet, object, iframe,$/;"	s
+div.flex-placeholder	_site/css/team.css	/^  div.flex-placeholder {$/;"	c
+div.flex-placeholder	css/team.css	/^  div.flex-placeholder {$/;"	c
+div.social-links	_site/css/team.css	/^  div.social-links {$/;"	c
+div.social-links	css/team.css	/^  div.social-links {$/;"	c
+div.triangle	_site/css/team.css	/^  div.triangle {$/;"	c
+div.triangle	css/team.css	/^  div.triangle {$/;"	c
+dl	_site/css/reset.css	/^dl, dt, dd, ol, ul, li,$/;"	s
+dl	css/reset.css	/^dl, dt, dd, ol, ul, li,$/;"	s
+dt	_site/css/reset.css	/^dl, dt, dd, ol, ul, li,$/;"	s
+dt	css/reset.css	/^dl, dt, dd, ol, ul, li,$/;"	s
+em	_site/css/reset.css	/^del, dfn, em, img, ins, kbd, q, s, samp,$/;"	s
+em	css/reset.css	/^del, dfn, em, img, ins, kbd, q, s, samp,$/;"	s
+embed	_site/css/reset.css	/^article, aside, canvas, details, embed, $/;"	s
+embed	css/reset.css	/^article, aside, canvas, details, embed, $/;"	s
+fieldset	_site/assets/css/style.css	/^fieldset { border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em; }$/;"	s
+fieldset	_site/css/reset.css	/^fieldset, form, label, legend,$/;"	s
+fieldset	css/reset.css	/^fieldset, form, label, legend,$/;"	s
+figcaption	_site/assets/css/style.css	/^article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, s/;"	s
+figcaption	_site/css/reset.css	/^article, aside, details, figcaption, figure, $/;"	s
+figcaption	_site/css/reset.css	/^figure, figcaption, footer, header, hgroup, $/;"	s
+figcaption	css/reset.css	/^article, aside, details, figcaption, figure, $/;"	s
+figcaption	css/reset.css	/^figure, figcaption, footer, header, hgroup, $/;"	s
+figure	_site/assets/css/style.css	/^article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, s/;"	s
+figure	_site/assets/css/style.css	/^figure { margin: 1em 40px; }$/;"	s
+figure	_site/css/reset.css	/^article, aside, details, figcaption, figure, $/;"	s
+figure	_site/css/reset.css	/^figure, figcaption, footer, header, hgroup, $/;"	s
+figure	css/reset.css	/^article, aside, details, figcaption, figure, $/;"	s
+figure	css/reset.css	/^figure, figcaption, footer, header, hgroup, $/;"	s
+fixPosition	_site/javascript/menu.js	/^const fixPosition = (element) => element.style.position = 'fixed';$/;"	C
+fixPosition	javascript/menu.js	/^const fixPosition = (element) => element.style.position = 'fixed';$/;"	C
+footer	_site/assets/css/style.css	/^article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, s/;"	s
+footer	_site/css/index.css	/^  footer {$/;"	s
+footer	_site/css/main.css	/^  footer {$/;"	s
+footer	_site/css/main.css	/^footer {$/;"	s
+footer	_site/css/main.css	/^header, section, footer, .menu {$/;"	s
+footer	_site/css/reset.css	/^figure, figcaption, footer, header, hgroup, $/;"	s
+footer	_site/css/reset.css	/^footer, header, hgroup, menu, nav, section {$/;"	s
+footer	css/index.css	/^  footer {$/;"	s
+footer	css/main.css	/^  footer {$/;"	s
+footer	css/main.css	/^footer {$/;"	s
+footer	css/main.css	/^header, section, footer, .menu {$/;"	s
+footer	css/reset.css	/^figure, figcaption, footer, header, hgroup, $/;"	s
+footer	css/reset.css	/^footer, header, hgroup, menu, nav, section {$/;"	s
+footer > *	_site/css/main.css	/^  footer > * {$/;"	s
+footer > *	css/main.css	/^  footer > * {$/;"	s
+form	_site/css/reset.css	/^fieldset, form, label, legend,$/;"	s
+form	css/reset.css	/^fieldset, form, label, legend,$/;"	s
+h1	_site/assets/css/style.css	/^h1 { font-size: 2em; margin: 0.67em 0; }$/;"	s
+h1	_site/css/reset.css	/^h1, h2, h3, h4, h5, h6, p, blockquote, pre,$/;"	s
+h1	_site/css/whitepaper.css	/^h1 {$/;"	s
+h1	_site/css/whitepaper.css	/^h1, h2, main h3, h4 {$/;"	s
+h1	css/reset.css	/^h1, h2, h3, h4, h5, h6, p, blockquote, pre,$/;"	s
+h1	css/whitepaper.css	/^h1 {$/;"	s
+h1	css/whitepaper.css	/^h1, h2, main h3, h4 {$/;"	s
+h1.placeholder	_site/css/whitepaper.css	/^h1.placeholder {$/;"	c
+h1.placeholder	css/whitepaper.css	/^h1.placeholder {$/;"	c
+h2	_site/css/index.css	/^  h2 {$/;"	s
+h2	_site/css/main.css	/^h2 {$/;"	s
+h2	_site/css/reset.css	/^h1, h2, h3, h4, h5, h6, p, blockquote, pre,$/;"	s
+h2	_site/css/whitepaper.css	/^h1, h2, main h3, h4 {$/;"	s
+h2	_site/css/whitepaper.css	/^h2 {$/;"	s
+h2	css/index.css	/^  h2 {$/;"	s
+h2	css/main.css	/^h2 {$/;"	s
+h2	css/reset.css	/^h1, h2, h3, h4, h5, h6, p, blockquote, pre,$/;"	s
+h2	css/whitepaper.css	/^h1, h2, main h3, h4 {$/;"	s
+h2	css/whitepaper.css	/^h2 {$/;"	s
+h3	_site/css/index.css	/^  h3 {$/;"	s
+h3	_site/css/reset.css	/^h1, h2, h3, h4, h5, h6, p, blockquote, pre,$/;"	s
+h3	css/index.css	/^  h3 {$/;"	s
+h3	css/reset.css	/^h1, h2, h3, h4, h5, h6, p, blockquote, pre,$/;"	s
+h4	_site/css/reset.css	/^h1, h2, h3, h4, h5, h6, p, blockquote, pre,$/;"	s
+h4	_site/css/whitepaper.css	/^h1, h2, main h3, h4 {$/;"	s
+h4	css/reset.css	/^h1, h2, h3, h4, h5, h6, p, blockquote, pre,$/;"	s
+h4	css/whitepaper.css	/^h1, h2, main h3, h4 {$/;"	s
+h5	_site/css/reset.css	/^h1, h2, h3, h4, h5, h6, p, blockquote, pre,$/;"	s
+h5	css/reset.css	/^h1, h2, h3, h4, h5, h6, p, blockquote, pre,$/;"	s
+h6	_site/css/reset.css	/^h1, h2, h3, h4, h5, h6, p, blockquote, pre,$/;"	s
+h6	css/reset.css	/^h1, h2, h3, h4, h5, h6, p, blockquote, pre,$/;"	s
+hamburger	_site/javascript/menu.js	/^const hamburger = $('#hamburger');$/;"	C
+hamburger	javascript/menu.js	/^const hamburger = $('#hamburger');$/;"	C
+hamburgerImg	_site/javascript/menu.js	/^const hamburgerImg = $('#hamburger img');$/;"	C
+hamburgerImg	javascript/menu.js	/^const hamburgerImg = $('#hamburger img');$/;"	C
+header	_site/assets/css/style.css	/^article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, s/;"	s
+header	_site/css/index.css	/^header {$/;"	s
+header	_site/css/main.css	/^header {$/;"	s
+header	_site/css/main.css	/^header, section, footer, .menu {$/;"	s
+header	_site/css/reset.css	/^figure, figcaption, footer, header, hgroup, $/;"	s
+header	_site/css/reset.css	/^footer, header, hgroup, menu, nav, section {$/;"	s
+header	_site/css/team.css	/^header {$/;"	s
+header	_site/css/whitepaper.css	/^  header {$/;"	s
+header	_site/css/whitepaper.css	/^header {$/;"	s
+header	css/index.css	/^header {$/;"	s
+header	css/main.css	/^header {$/;"	s
+header	css/main.css	/^header, section, footer, .menu {$/;"	s
+header	css/reset.css	/^figure, figcaption, footer, header, hgroup, $/;"	s
+header	css/reset.css	/^footer, header, hgroup, menu, nav, section {$/;"	s
+header	css/team.css	/^header {$/;"	s
+header	css/whitepaper.css	/^  header {$/;"	s
+header	css/whitepaper.css	/^header {$/;"	s
+header > nav	_site/css/main.css	/^header > nav {$/;"	s
+header > nav	css/main.css	/^header > nav {$/;"	s
+header > nav a	_site/css/main.css	/^  header > nav a {$/;"	s
+header > nav a	_site/css/main.css	/^header > nav a {$/;"	s
+header > nav a	css/main.css	/^  header > nav a {$/;"	s
+header > nav a	css/main.css	/^header > nav a {$/;"	s
+header > nav a:hover	_site/css/main.css	/^header > nav a:hover {$/;"	s
+header > nav a:hover	css/main.css	/^header > nav a:hover {$/;"	s
+headerLogo	_site/javascript/menu.js	/^const headerLogo = $('header > nav a');$/;"	C
+headerLogo	javascript/menu.js	/^const headerLogo = $('header > nav a');$/;"	C
+hgroup	_site/assets/css/style.css	/^article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, s/;"	s
+hgroup	_site/css/reset.css	/^figure, figcaption, footer, header, hgroup, $/;"	s
+hgroup	_site/css/reset.css	/^footer, header, hgroup, menu, nav, section {$/;"	s
+hgroup	css/reset.css	/^figure, figcaption, footer, header, hgroup, $/;"	s
+hgroup	css/reset.css	/^footer, header, hgroup, menu, nav, section {$/;"	s
+hidden	_site/assets/css/style.css	/^[hidden], template { display: none; }$/;"	s
+hide	_site/javascript/menu.js	/^const hide = (element) => element.classList.add('hidden');$/;"	C
+hide	javascript/menu.js	/^const hide = (element) => element.classList.add('hidden');$/;"	C
+hr	_site/assets/css/style.css	/^hr { box-sizing: content-box; height: 0; }$/;"	s
+html	_site/assets/css/style.css	/^html { font-family: sans-serif; \/* 1 *\/ -ms-text-size-adjust: 100%; \/* 2 *\/ -webkit-text-siz/;"	s
+html	_site/css/reset.css	/^html, body, div, span, applet, object, iframe,$/;"	s
+html	css/reset.css	/^html, body, div, span, applet, object, iframe,$/;"	s
+html input[disabled]	_site/assets/css/style.css	/^button[disabled], html input[disabled] { cursor: default; }$/;"	s
+html input[type="button"]	_site/assets/css/style.css	/^button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearanc/;"	s
+i	_site/css/reset.css	/^b, u, i, center,$/;"	s
+i	css/reset.css	/^b, u, i, center,$/;"	s
+iframe	_site/css/reset.css	/^html, body, div, span, applet, object, iframe,$/;"	s
+iframe	css/reset.css	/^html, body, div, span, applet, object, iframe,$/;"	s
+img	_site/assets/css/style.css	/^img { border: 0; }$/;"	s
+img	_site/css/reset.css	/^del, dfn, em, img, ins, kbd, q, s, samp,$/;"	s
+img	css/reset.css	/^del, dfn, em, img, ins, kbd, q, s, samp,$/;"	s
+img.white	_site/css/main.css	/^img.white {$/;"	c
+img.white	css/main.css	/^img.white {$/;"	c
+input	_site/assets/css/style.css	/^button, input, optgroup, select, textarea { color: inherit; \/* 1 *\/ font: inherit; \/* 2 *\/ m/;"	s
+input	_site/assets/css/style.css	/^input { line-height: normal; }$/;"	s
+input::-moz-focus-inner	_site/assets/css/style.css	/^button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }$/;"	s
+input[type="checkbox"]	_site/assets/css/style.css	/^input[type="checkbox"], input[type="radio"] { box-sizing: border-box; \/* 1 *\/ padding: 0; \/* /;"	s
+input[type="number"] ::-webkit-inner-spin-button	_site/assets/css/style.css	/^input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button/;"	s
+input[type="number"] ::-webkit-outer-spin-button	_site/assets/css/style.css	/^input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button/;"	s
+input[type="radio"]	_site/assets/css/style.css	/^input[type="checkbox"], input[type="radio"] { box-sizing: border-box; \/* 1 *\/ padding: 0; \/* /;"	s
+input[type="reset"]	_site/assets/css/style.css	/^button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearanc/;"	s
+input[type="search"]	_site/assets/css/style.css	/^input[type="search"] { -webkit-appearance: textfield; \/* 1 *\/ \/* 2 *\/ box-sizing: content-bo/;"	s
+input[type="search"] ::-webkit-search-cancel-button	_site/assets/css/style.css	/^input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decorat/;"	s
+input[type="search"] ::-webkit-search-decoration	_site/assets/css/style.css	/^input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decorat/;"	s
+input[type="submit"]	_site/assets/css/style.css	/^button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearanc/;"	s
+ins	_site/css/reset.css	/^del, dfn, em, img, ins, kbd, q, s, samp,$/;"	s
+ins	css/reset.css	/^del, dfn, em, img, ins, kbd, q, s, samp,$/;"	s
+kbd	_site/assets/css/style.css	/^code, kbd, pre, samp { font-family: monospace, monospace; font-size: 1em; }$/;"	s
+kbd	_site/css/reset.css	/^del, dfn, em, img, ins, kbd, q, s, samp,$/;"	s
+kbd	css/reset.css	/^del, dfn, em, img, ins, kbd, q, s, samp,$/;"	s
+label	_site/css/reset.css	/^fieldset, form, label, legend,$/;"	s
+label	css/reset.css	/^fieldset, form, label, legend,$/;"	s
+legend	_site/assets/css/style.css	/^legend { border: 0; \/* 1 *\/ padding: 0; \/* 2 *\/ }$/;"	s
+legend	_site/css/reset.css	/^fieldset, form, label, legend,$/;"	s
+legend	css/reset.css	/^fieldset, form, label, legend,$/;"	s
+li	_site/css/reset.css	/^dl, dt, dd, ol, ul, li,$/;"	s
+li	css/reset.css	/^dl, dt, dd, ol, ul, li,$/;"	s
+li > code	_site/css/whitepaper.css	/^li > code {$/;"	s
+li > code	css/whitepaper.css	/^li > code {$/;"	s
+li img	_site/css/whitepaper.css	/^  li img {$/;"	s
+li img	css/whitepaper.css	/^  li img {$/;"	s
+main	_site/assets/css/style.css	/^article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, s/;"	s
+main	_site/css/team.css	/^  main {$/;"	s
+main	_site/css/team.css	/^main {$/;"	s
+main	_site/css/whitepaper.css	/^  main {$/;"	s
+main	_site/css/whitepaper.css	/^main {$/;"	s
+main	css/team.css	/^  main {$/;"	s
+main	css/team.css	/^main {$/;"	s
+main	css/whitepaper.css	/^  main {$/;"	s
+main	css/whitepaper.css	/^main {$/;"	s
+main a	_site/css/whitepaper.css	/^main a {$/;"	s
+main a	css/whitepaper.css	/^main a {$/;"	s
+main a:hover	_site/css/whitepaper.css	/^main a:hover {$/;"	s
+main a:hover	css/whitepaper.css	/^main a:hover {$/;"	s
+main article	_site/css/team.css	/^  main article {$/;"	s
+main article	css/team.css	/^  main article {$/;"	s
+main code	_site/css/whitepaper.css	/^  main code {$/;"	s
+main code	css/whitepaper.css	/^  main code {$/;"	s
+main em	_site/css/team.css	/^main em {$/;"	s
+main em	css/team.css	/^main em {$/;"	s
+main h1	_site/css/whitepaper.css	/^  main h1 {$/;"	s
+main h1	css/whitepaper.css	/^  main h1 {$/;"	s
+main h1:first-of-type	_site/css/whitepaper.css	/^  main h1:first-of-type {$/;"	s
+main h1:first-of-type	_site/css/whitepaper.css	/^main h1:first-of-type {$/;"	s
+main h1:first-of-type	css/whitepaper.css	/^  main h1:first-of-type {$/;"	s
+main h1:first-of-type	css/whitepaper.css	/^main h1:first-of-type {$/;"	s
+main h2	_site/css/team.css	/^main h2 {$/;"	s
+main h2	css/team.css	/^main h2 {$/;"	s
+main h3	_site/css/whitepaper.css	/^h1, h2, main h3, h4 {$/;"	s
+main h3	_site/css/whitepaper.css	/^main h3 {$/;"	s
+main h3	css/whitepaper.css	/^h1, h2, main h3, h4 {$/;"	s
+main h3	css/whitepaper.css	/^main h3 {$/;"	s
+main img	_site/css/whitepaper.css	/^  main img,$/;"	s
+main img	_site/css/whitepaper.css	/^main img {$/;"	s
+main img	css/whitepaper.css	/^  main img,$/;"	s
+main img	css/whitepaper.css	/^main img {$/;"	s
+main li	_site/css/team.css	/^  main li {$/;"	s
+main li	_site/css/team.css	/^main li {$/;"	s
+main li	_site/css/whitepaper.css	/^  main li {$/;"	s
+main li	_site/css/whitepaper.css	/^main li {$/;"	s
+main li	css/team.css	/^  main li {$/;"	s
+main li	css/team.css	/^main li {$/;"	s
+main li	css/whitepaper.css	/^  main li {$/;"	s
+main li	css/whitepaper.css	/^main li {$/;"	s
+main ol	_site/css/whitepaper.css	/^main ol {$/;"	s
+main ol	css/whitepaper.css	/^main ol {$/;"	s
+main ol + *	_site/css/whitepaper.css	/^main ol + * {$/;"	s
+main ol + *	css/whitepaper.css	/^main ol + * {$/;"	s
+main ol + p	_site/css/whitepaper.css	/^main ol + p {$/;"	s
+main ol + p	css/whitepaper.css	/^main ol + p {$/;"	s
+main ol > li	_site/css/whitepaper.css	/^main ol > li {$/;"	s
+main ol > li	css/whitepaper.css	/^main ol > li {$/;"	s
+main p	_site/css/team.css	/^main p {$/;"	s
+main p	css/team.css	/^main p {$/;"	s
+main ul	_site/css/team.css	/^  main ul {$/;"	s
+main ul	_site/css/whitepaper.css	/^  main ul {$/;"	s
+main ul	_site/css/whitepaper.css	/^main ul {$/;"	s
+main ul	css/team.css	/^  main ul {$/;"	s
+main ul	css/whitepaper.css	/^  main ul {$/;"	s
+main ul	css/whitepaper.css	/^main ul {$/;"	s
+main ul + *	_site/css/whitepaper.css	/^main ul + *,$/;"	s
+main ul + *	css/whitepaper.css	/^main ul + *,$/;"	s
+main ul + p	_site/css/whitepaper.css	/^main ul + p,$/;"	s
+main ul + p	css/whitepaper.css	/^main ul + p,$/;"	s
+main ul > li	_site/css/whitepaper.css	/^main ul > li {$/;"	s
+main ul > li	css/whitepaper.css	/^main ul > li {$/;"	s
+mark	_site/assets/css/style.css	/^mark { background: #ff0; color: #000; }$/;"	s
+mark	_site/css/reset.css	/^time, mark, audio, video {$/;"	s
+mark	css/reset.css	/^time, mark, audio, video {$/;"	s
+menu	_site/assets/css/style.css	/^article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, s/;"	s
+menu	_site/css/reset.css	/^footer, header, hgroup, menu, nav, section {$/;"	s
+menu	_site/css/reset.css	/^menu, nav, output, ruby, section, summary,$/;"	s
+menu	_site/javascript/menu.js	/^const menu = $('.menu');$/;"	C
+menu	css/reset.css	/^footer, header, hgroup, menu, nav, section {$/;"	s
+menu	css/reset.css	/^menu, nav, output, ruby, section, summary,$/;"	s
+menu	javascript/menu.js	/^const menu = $('.menu');$/;"	C
+nav	_site/assets/css/style.css	/^article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, s/;"	s
+nav	_site/css/reset.css	/^footer, header, hgroup, menu, nav, section {$/;"	s
+nav	_site/css/reset.css	/^menu, nav, output, ruby, section, summary,$/;"	s
+nav	css/reset.css	/^footer, header, hgroup, menu, nav, section {$/;"	s
+nav	css/reset.css	/^menu, nav, output, ruby, section, summary,$/;"	s
+nav img	_site/css/main.css	/^nav img {$/;"	s
+nav img	css/main.css	/^nav img {$/;"	s
+nav.team	_site/css/index.css	/^  nav.team {$/;"	c
+nav.team	_site/css/main.css	/^  nav.team {$/;"	c
+nav.team	_site/css/main.css	/^nav.team {$/;"	c
+nav.team	css/index.css	/^  nav.team {$/;"	c
+nav.team	css/main.css	/^  nav.team {$/;"	c
+nav.team	css/main.css	/^nav.team {$/;"	c
+object	_site/css/reset.css	/^html, body, div, span, applet, object, iframe,$/;"	s
+object	css/reset.css	/^html, body, div, span, applet, object, iframe,$/;"	s
+ol	_site/css/reset.css	/^dl, dt, dd, ol, ul, li,$/;"	s
+ol	_site/css/reset.css	/^ol, ul {$/;"	s
+ol	css/reset.css	/^dl, dt, dd, ol, ul, li,$/;"	s
+ol	css/reset.css	/^ol, ul {$/;"	s
+optgroup	_site/assets/css/style.css	/^button, input, optgroup, select, textarea { color: inherit; \/* 1 *\/ font: inherit; \/* 2 *\/ m/;"	s
+optgroup	_site/assets/css/style.css	/^optgroup { font-weight: bold; }$/;"	s
+output	_site/css/reset.css	/^menu, nav, output, ruby, section, summary,$/;"	s
+output	css/reset.css	/^menu, nav, output, ruby, section, summary,$/;"	s
+p	_site/css/index.css	/^  p {$/;"	s
+p	_site/css/reset.css	/^h1, h2, h3, h4, h5, h6, p, blockquote, pre,$/;"	s
+p	_site/css/whitepaper.css	/^  p {$/;"	s
+p	_site/css/whitepaper.css	/^p {$/;"	s
+p	css/index.css	/^  p {$/;"	s
+p	css/reset.css	/^h1, h2, h3, h4, h5, h6, p, blockquote, pre,$/;"	s
+p	css/whitepaper.css	/^  p {$/;"	s
+p	css/whitepaper.css	/^p {$/;"	s
+p + ul	_site/css/whitepaper.css	/^p + ul {$/;"	s
+p + ul	css/whitepaper.css	/^p + ul {$/;"	s
+p > code	_site/css/whitepaper.css	/^p > code,$/;"	s
+p > code	css/whitepaper.css	/^p > code,$/;"	s
+pre	_site/assets/css/style.css	/^code, kbd, pre, samp { font-family: monospace, monospace; font-size: 1em; }$/;"	s
+pre	_site/assets/css/style.css	/^pre { overflow: auto; }$/;"	s
+pre	_site/css/reset.css	/^h1, h2, h3, h4, h5, h6, p, blockquote, pre,$/;"	s
+pre	css/reset.css	/^h1, h2, h3, h4, h5, h6, p, blockquote, pre,$/;"	s
+pre.highlight	_site/css/whitepaper.css	/^  pre.highlight {$/;"	c
+pre.highlight	_site/css/whitepaper.css	/^pre.highlight {$/;"	c
+pre.highlight	css/whitepaper.css	/^  pre.highlight {$/;"	c
+pre.highlight	css/whitepaper.css	/^pre.highlight {$/;"	c
+progress	_site/assets/css/style.css	/^audio, canvas, progress, video { display: inline-block; \/* 1 *\/ vertical-align: baseline; \/* /;"	s
+q	_site/css/reset.css	/^blockquote, q {$/;"	s
+q	_site/css/reset.css	/^del, dfn, em, img, ins, kbd, q, s, samp,$/;"	s
+q	css/reset.css	/^blockquote, q {$/;"	s
+q	css/reset.css	/^del, dfn, em, img, ins, kbd, q, s, samp,$/;"	s
+q:after	_site/css/reset.css	/^q:before, q:after {$/;"	s
+q:after	css/reset.css	/^q:before, q:after {$/;"	s
+q:before	_site/css/reset.css	/^q:before, q:after {$/;"	s
+q:before	css/reset.css	/^q:before, q:after {$/;"	s
+ruby	_site/css/reset.css	/^menu, nav, output, ruby, section, summary,$/;"	s
+ruby	css/reset.css	/^menu, nav, output, ruby, section, summary,$/;"	s
+s	_site/css/reset.css	/^del, dfn, em, img, ins, kbd, q, s, samp,$/;"	s
+s	css/reset.css	/^del, dfn, em, img, ins, kbd, q, s, samp,$/;"	s
+samp	_site/assets/css/style.css	/^code, kbd, pre, samp { font-family: monospace, monospace; font-size: 1em; }$/;"	s
+samp	_site/css/reset.css	/^del, dfn, em, img, ins, kbd, q, s, samp,$/;"	s
+samp	css/reset.css	/^del, dfn, em, img, ins, kbd, q, s, samp,$/;"	s
+section	_site/assets/css/style.css	/^article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, s/;"	s
+section	_site/css/main.css	/^header, section, footer, .menu {$/;"	s
+section	_site/css/reset.css	/^footer, header, hgroup, menu, nav, section {$/;"	s
+section	_site/css/reset.css	/^menu, nav, output, ruby, section, summary,$/;"	s
+section	css/main.css	/^header, section, footer, .menu {$/;"	s
+section	css/reset.css	/^footer, header, hgroup, menu, nav, section {$/;"	s
+section	css/reset.css	/^menu, nav, output, ruby, section, summary,$/;"	s
+section img	_site/css/team.css	/^section img {$/;"	s
+section img	css/team.css	/^section img {$/;"	s
+select	_site/assets/css/style.css	/^button, input, optgroup, select, textarea { color: inherit; \/* 1 *\/ font: inherit; \/* 2 *\/ m/;"	s
+select	_site/assets/css/style.css	/^button, select { text-transform: none; }$/;"	s
+show	_site/javascript/menu.js	/^const show = (element) => element.classList.remove('hidden');$/;"	C
+show	javascript/menu.js	/^const show = (element) => element.classList.remove('hidden');$/;"	C
+small	_site/assets/css/style.css	/^small { font-size: 80%; }$/;"	s
+small	_site/css/index.css	/^  small {$/;"	s
+small	_site/css/main.css	/^small {$/;"	s
+small	_site/css/reset.css	/^small, strike, strong, sub, sup, tt, var,$/;"	s
+small	css/index.css	/^  small {$/;"	s
+small	css/main.css	/^small {$/;"	s
+small	css/reset.css	/^small, strike, strong, sub, sup, tt, var,$/;"	s
+span	_site/css/reset.css	/^html, body, div, span, applet, object, iframe,$/;"	s
+span	css/reset.css	/^html, body, div, span, applet, object, iframe,$/;"	s
+strike	_site/css/reset.css	/^small, strike, strong, sub, sup, tt, var,$/;"	s
+strike	css/reset.css	/^small, strike, strong, sub, sup, tt, var,$/;"	s
+strong	_site/assets/css/style.css	/^b, strong { font-weight: bold; }$/;"	s
+strong	_site/css/reset.css	/^small, strike, strong, sub, sup, tt, var,$/;"	s
+strong	css/reset.css	/^small, strike, strong, sub, sup, tt, var,$/;"	s
+strong a	_site/css/whitepaper.css	/^strong a {$/;"	s
+strong a	css/whitepaper.css	/^strong a {$/;"	s
+sub	_site/assets/css/style.css	/^sub { bottom: -0.25em; }$/;"	s
+sub	_site/assets/css/style.css	/^sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }$/;"	s
+sub	_site/css/reset.css	/^small, strike, strong, sub, sup, tt, var,$/;"	s
+sub	css/reset.css	/^small, strike, strong, sub, sup, tt, var,$/;"	s
+summary	_site/assets/css/style.css	/^article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, s/;"	s
+summary	_site/css/reset.css	/^menu, nav, output, ruby, section, summary,$/;"	s
+summary	css/reset.css	/^menu, nav, output, ruby, section, summary,$/;"	s
+sup	_site/assets/css/style.css	/^sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }$/;"	s
+sup	_site/assets/css/style.css	/^sup { top: -0.5em; }$/;"	s
+sup	_site/css/reset.css	/^small, strike, strong, sub, sup, tt, var,$/;"	s
+sup	_site/css/whitepaper.css	/^sup {$/;"	s
+sup	css/reset.css	/^small, strike, strong, sub, sup, tt, var,$/;"	s
+sup	css/whitepaper.css	/^sup {$/;"	s
+svg:not(:root)	_site/assets/css/style.css	/^svg:not(:root) { overflow: hidden; }$/;"	s
+table	_site/assets/css/style.css	/^table { border-collapse: collapse; border-spacing: 0; }$/;"	s
+table	_site/css/reset.css	/^table {$/;"	s
+table	_site/css/reset.css	/^table, caption, tbody, tfoot, thead, tr, th, td,$/;"	s
+table	_site/css/whitepaper.css	/^  table {$/;"	s
+table	_site/css/whitepaper.css	/^table { $/;"	s
+table	css/reset.css	/^table {$/;"	s
+table	css/reset.css	/^table, caption, tbody, tfoot, thead, tr, th, td,$/;"	s
+table	css/whitepaper.css	/^  table {$/;"	s
+table	css/whitepaper.css	/^table { $/;"	s
+table code	_site/css/whitepaper.css	/^table code {$/;"	s
+table code	css/whitepaper.css	/^table code {$/;"	s
+tbody	_site/css/reset.css	/^table, caption, tbody, tfoot, thead, tr, th, td,$/;"	s
+tbody	css/reset.css	/^table, caption, tbody, tfoot, thead, tr, th, td,$/;"	s
+td	_site/assets/css/style.css	/^td, th { padding: 0; }$/;"	s
+td	_site/css/reset.css	/^table, caption, tbody, tfoot, thead, tr, th, td,$/;"	s
+td	_site/css/whitepaper.css	/^  th, td {$/;"	s
+td	_site/css/whitepaper.css	/^th, td { $/;"	s
+td	css/reset.css	/^table, caption, tbody, tfoot, thead, tr, th, td,$/;"	s
+td	css/whitepaper.css	/^  th, td {$/;"	s
+td	css/whitepaper.css	/^th, td { $/;"	s
+template	_site/assets/css/style.css	/^[hidden], template { display: none; }$/;"	s
+textarea	_site/assets/css/style.css	/^button, input, optgroup, select, textarea { color: inherit; \/* 1 *\/ font: inherit; \/* 2 *\/ m/;"	s
+textarea	_site/assets/css/style.css	/^textarea { overflow: auto; }$/;"	s
+tfoot	_site/css/reset.css	/^table, caption, tbody, tfoot, thead, tr, th, td,$/;"	s
+tfoot	css/reset.css	/^table, caption, tbody, tfoot, thead, tr, th, td,$/;"	s
+th	_site/assets/css/style.css	/^td, th { padding: 0; }$/;"	s
+th	_site/css/reset.css	/^table, caption, tbody, tfoot, thead, tr, th, td,$/;"	s
+th	_site/css/whitepaper.css	/^  th, td {$/;"	s
+th	_site/css/whitepaper.css	/^th { $/;"	s
+th	_site/css/whitepaper.css	/^th, td { $/;"	s
+th	css/reset.css	/^table, caption, tbody, tfoot, thead, tr, th, td,$/;"	s
+th	css/whitepaper.css	/^  th, td {$/;"	s
+th	css/whitepaper.css	/^th { $/;"	s
+th	css/whitepaper.css	/^th, td { $/;"	s
+thead	_site/css/reset.css	/^table, caption, tbody, tfoot, thead, tr, th, td,$/;"	s
+thead	css/reset.css	/^table, caption, tbody, tfoot, thead, tr, th, td,$/;"	s
+thead tr	_site/css/whitepaper.css	/^thead tr {$/;"	s
+thead tr	css/whitepaper.css	/^thead tr {$/;"	s
+time	_site/css/reset.css	/^time, mark, audio, video {$/;"	s
+time	css/reset.css	/^time, mark, audio, video {$/;"	s
+toggleExpand	_site/javascript/menu.js	/^const toggleExpand = (element) => element.classList.toggle('expand');$/;"	C
+toggleExpand	javascript/menu.js	/^const toggleExpand = (element) => element.classList.toggle('expand');$/;"	C
+tr	_site/css/reset.css	/^table, caption, tbody, tfoot, thead, tr, th, td,$/;"	s
+tr	css/reset.css	/^table, caption, tbody, tfoot, thead, tr, th, td,$/;"	s
+tr:nth-child(odd)	_site/css/whitepaper.css	/^tr:nth-child(odd) {$/;"	s
+tr:nth-child(odd)	css/whitepaper.css	/^tr:nth-child(odd) {$/;"	s
+tt	_site/css/reset.css	/^small, strike, strong, sub, sup, tt, var,$/;"	s
+tt	css/reset.css	/^small, strike, strong, sub, sup, tt, var,$/;"	s
+u	_site/css/reset.css	/^b, u, i, center,$/;"	s
+u	css/reset.css	/^b, u, i, center,$/;"	s
+ul	_site/css/reset.css	/^dl, dt, dd, ol, ul, li,$/;"	s
+ul	_site/css/reset.css	/^ol, ul {$/;"	s
+ul	css/reset.css	/^dl, dt, dd, ol, ul, li,$/;"	s
+ul	css/reset.css	/^ol, ul {$/;"	s
+var	_site/css/reset.css	/^small, strike, strong, sub, sup, tt, var,$/;"	s
+var	css/reset.css	/^small, strike, strong, sub, sup, tt, var,$/;"	s
+video	_site/assets/css/style.css	/^audio, canvas, progress, video { display: inline-block; \/* 1 *\/ vertical-align: baseline; \/* /;"	s
+video	_site/css/reset.css	/^time, mark, audio, video {$/;"	s
+video	css/reset.css	/^time, mark, audio, video {$/;"	s
+xButton	_site/javascript/menu.js	/^const xButton = $('#x');$/;"	C
+xButton	javascript/menu.js	/^const xButton = $('#x');$/;"	C
+{{ include.name }}	_includes/profile.html	/^    <h2>{{ include.name }}<\/h2>$/;"	i
